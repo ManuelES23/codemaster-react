@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { Rocket } from "lucide-react";
 
 const Hero = () => {
   return (
@@ -26,7 +27,7 @@ const Hero = () => {
               transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
             >
               <motion.span
-                className='bg-orange-500/10 text-orange-500 px-4 py-2 rounded-full text-sm font-semibold border border-orange-500/20'
+                className='bg-orange-500/10 text-orange-500 px-5 py-2.5 rounded-full text-sm font-semibold border border-orange-500/20 inline-flex items-center gap-2'
                 animate={{
                   boxShadow: [
                     "0 0 20px rgba(255, 102, 0, 0.3)",
@@ -36,7 +37,20 @@ const Hero = () => {
                 }}
                 transition={{ duration: 2, repeat: Infinity }}
               >
-                🚀 Transformación Digital
+                <motion.div
+                  animate={{
+                    y: [0, -3, 0],
+                    rotate: [0, 5, -5, 0],
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                >
+                  <Rocket className='w-4 h-4' />
+                </motion.div>
+                Transformación Digital
               </motion.span>
             </motion.div>
 

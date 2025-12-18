@@ -1,0 +1,26 @@
+# robots.txt para CodeMaster
+User-agent: *
+Allow: /
+
+# Permitir acceso a todos los recursos
+Allow: /servicios/
+Allow: /portfolio/
+Allow: /nosotros/
+Allow: /contacto/
+
+# Bloquear acceso a archivos sensibles
+Disallow: /api/
+Disallow: /*.json$
+
+# Sitemap
+Sitemap: https://www.codemaster.com.mx/sitemap.xml
+
+# Rastreadores específicos
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /img/
+
+User-agent: Bingbot
+Allow: /

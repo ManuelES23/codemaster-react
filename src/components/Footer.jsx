@@ -156,23 +156,23 @@ const Footer = () => {
             <ul className='space-y-3'>
               <li>
                 <a
-                  href='mailto:contacto@codemaster.com'
+                  href='mailto:manuel@codemaster.com.mx'
                   className='text-gray-400 hover:text-orange-500 transition-colors duration-300 text-sm'
                 >
-                  contacto@codemaster.com
+                  manuel@codemaster.com.mx
                 </a>
               </li>
               <li>
                 <a
-                  href='tel:+18091234567'
+                  href='tel:+526681316931'
                   className='text-gray-400 hover:text-orange-500 transition-colors duration-300 text-sm'
                 >
-                  +1 (809) 123-4567
+                  +52 668 131 6931
                 </a>
               </li>
               <li>
                 <span className='text-gray-400 text-sm'>
-                  República Dominicana
+                  Los Mochis, Ahome, Sinaloa, México
                 </span>
               </li>
               <li>
