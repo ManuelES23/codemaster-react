@@ -20,13 +20,13 @@ const Contacto = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+
     // Netlify Forms maneja el envío automáticamente
     // El formulario se enviará a Netlify y llegará a tu panel de control
-    
+
     // Mensaje de confirmación
     alert("¡Gracias por tu mensaje! Te contactaremos pronto.");
-    
+
     // Limpiar formulario
     setFormData({
       nombre: "",
@@ -117,7 +117,9 @@ const Contacto = () => {
                   </div>
                   <div>
                     <h4 className='text-white font-semibold mb-1'>Ubicación</h4>
-                    <p className='text-gray-400'>Los Mochis, Ahome, Sinaloa, México</p>
+                    <p className='text-gray-400'>
+                      Los Mochis, Ahome, Sinaloa, México
+                    </p>
                   </div>
                 </div>
 
@@ -177,7 +179,7 @@ const Contacto = () => {
               >
                 {/* Campo oculto para Netlify Forms */}
                 <input type='hidden' name='form-name' value='contacto' />
-                
+
                 {/* Honeypot para spam */}
                 <p className='hidden'>
                   <label>
