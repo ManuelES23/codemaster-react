@@ -3,7 +3,7 @@ import { Shield, Lock, Eye, FileText } from "lucide-react";
 
 const Privacidad = () => {
   return (
-    <div className='min-h-screen bg-gradient-to-b from-black via-gray-900 to-black text-white'>
+    <div className='min-h-screen bg-gradient-to-b from-black from-30% via-gray-900 via-70% to-black text-white'>
       {/* Hero Section */}
       <motion.section
         initial={{ opacity: 0 }}
@@ -26,7 +26,7 @@ const Privacidad = () => {
               </span>
             </div>
             <h1 className='text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent'>
-              Política de Privacidad
+              Política de privacidad
             </h1>
             <p className='text-xl text-gray-400 max-w-3xl mx-auto'>
               En CodeMaster nos comprometemos a proteger tu privacidad y tus
@@ -50,7 +50,7 @@ const Privacidad = () => {
               <FileText className='w-6 h-6 text-orange-500 flex-shrink-0 mt-1' />
               <div>
                 <h2 className='text-2xl font-bold mb-4'>
-                  1. Información que Recopilamos
+                  1. Información que recopilamos
                 </h2>
                 <div className='space-y-4 text-gray-300'>
                   <p>En CodeMaster recopilamos la siguiente información:</p>
@@ -91,7 +91,7 @@ const Privacidad = () => {
               <Eye className='w-6 h-6 text-orange-500 flex-shrink-0 mt-1' />
               <div>
                 <h2 className='text-2xl font-bold mb-4'>
-                  2. Cómo Utilizamos tu Información
+                  2. Cómo utilizamos tu información
                 </h2>
                 <div className='space-y-4 text-gray-300'>
                   <p>Utilizamos la información recopilada para:</p>
@@ -127,7 +127,7 @@ const Privacidad = () => {
               <Lock className='w-6 h-6 text-orange-500 flex-shrink-0 mt-1' />
               <div>
                 <h2 className='text-2xl font-bold mb-4'>
-                  3. Protección de tus Datos
+                  3. Protección de tus datos
                 </h2>
                 <div className='space-y-4 text-gray-300'>
                   <p>
@@ -164,7 +164,7 @@ const Privacidad = () => {
             className='bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-8 mb-8'
           >
             <h2 className='text-2xl font-bold mb-4'>
-              4. Compartir Información
+              4. Compartir información
             </h2>
             <div className='space-y-4 text-gray-300'>
               <p>
@@ -199,7 +199,7 @@ const Privacidad = () => {
             className='bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-8 mb-8'
           >
             <h2 className='text-2xl font-bold mb-4'>
-              5. Tus Derechos (LFPDPPP - México)
+              5. Tus derechos (LFPDPPP - México)
             </h2>
             <div className='space-y-4 text-gray-300'>
               <p>
@@ -252,7 +252,7 @@ const Privacidad = () => {
             className='bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-8 mb-8'
           >
             <h2 className='text-2xl font-bold mb-4'>
-              6. Cookies y Tecnologías Similares
+              6. Cookies y tecnologías similares
             </h2>
             <div className='space-y-4 text-gray-300'>
               <p>
@@ -262,7 +262,7 @@ const Privacidad = () => {
                   href='/cookies'
                   className='text-orange-500 hover:text-orange-400'
                 >
-                  Política de Cookies
+                  Política de cookies
                 </a>
                 .
               </p>
@@ -276,7 +276,7 @@ const Privacidad = () => {
             transition={{ duration: 0.6, delay: 0.6 }}
             className='bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-8 mb-8'
           >
-            <h2 className='text-2xl font-bold mb-4'>7. Retención de Datos</h2>
+            <h2 className='text-2xl font-bold mb-4'>7. Retención de datos</h2>
             <div className='space-y-4 text-gray-300'>
               <p>
                 Conservamos tus datos personales durante el tiempo necesario
@@ -304,7 +304,7 @@ const Privacidad = () => {
             transition={{ duration: 0.6, delay: 0.7 }}
             className='bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-8 mb-8'
           >
-            <h2 className='text-2xl font-bold mb-4'>8. Menores de Edad</h2>
+            <h2 className='text-2xl font-bold mb-4'>8. Menores de edad</h2>
             <div className='space-y-4 text-gray-300'>
               <p>
                 Nuestros servicios no están dirigidos a menores de 18 años. No
@@ -323,7 +323,7 @@ const Privacidad = () => {
             className='bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-8 mb-8'
           >
             <h2 className='text-2xl font-bold mb-4'>
-              9. Cambios a esta Política
+              9. Cambios a esta política
             </h2>
             <div className='space-y-4 text-gray-300'>
               <p>

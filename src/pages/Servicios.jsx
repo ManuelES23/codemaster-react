@@ -17,7 +17,7 @@ const Servicios = () => {
       id: 1,
       slug: "desarrollo-web",
       icon: <Globe className='w-12 h-12 text-orange-500' />,
-      title: "Desarrollo Web",
+      title: "Desarrollo web",
       description:
         "Creamos sitios web modernos, responsivos y optimizados para SEO. Desde landing pages hasta e-commerce completos.",
       features: [
@@ -31,7 +31,7 @@ const Servicios = () => {
       id: 2,
       slug: "apps-moviles",
       icon: <Smartphone className='w-12 h-12 text-orange-500' />,
-      title: "Aplicaciones Móviles",
+      title: "Aplicaciones móviles",
       description:
         "Desarrollamos apps nativas y multiplataforma para iOS y Android con las últimas tecnologías.",
       features: [
@@ -45,7 +45,7 @@ const Servicios = () => {
       id: 3,
       slug: "sistemas-medida",
       icon: <Laptop className='w-12 h-12 text-orange-500' />,
-      title: "Sistemas a Medida",
+      title: "Sistemas a medida",
       description:
         "Soluciones personalizadas para automatizar y optimizar los procesos de tu empresa.",
       features: ["ERP/CRM", "Gestión de Inventario", "Facturación", "Reportes"],
@@ -54,7 +54,7 @@ const Servicios = () => {
       id: 4,
       slug: "redes-sociales",
       icon: <Share2 className='w-12 h-12 text-orange-500' />,
-      title: "Gestión de Redes Sociales",
+      title: "Gestión de redes sociales",
       description:
         "Estrategias completas de social media para aumentar tu presencia digital y engagement.",
       features: [
@@ -68,7 +68,7 @@ const Servicios = () => {
       id: 5,
       slug: "diseno-grafico",
       icon: <Palette className='w-12 h-12 text-orange-500' />,
-      title: "Diseño Gráfico",
+      title: "Diseño gráfico",
       description:
         "Branding, identidad corporativa y diseño creativo para destacar tu marca.",
       features: [
@@ -105,7 +105,7 @@ const Servicios = () => {
       id: 8,
       slug: "hosting-cloud",
       icon: <Cloud className='w-12 h-12 text-orange-500' />,
-      title: "Hosting & Cloud",
+      title: "Hosting & cloud",
       description:
         "Servicios de hosting confiables y soluciones en la nube para tu negocio.",
       features: ["Hosting Web", "Servidores Cloud", "Backups", "Migración"],
@@ -116,7 +116,7 @@ const Servicios = () => {
     <div className='bg-black min-h-screen'>
       {/* Hero Section */}
       <motion.section
-        className='bg-linear-to-r from-black via-gray-900 to-black py-24 border-b border-gray-800'
+        className='bg-linear-to-r from-black from-30% via-gray-900 via-70% to-black py-24 border-b border-gray-800'
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
@@ -128,7 +128,7 @@ const Servicios = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Nuestros <span className='text-orange-500'>Servicios</span>
+            Nuestros <span className='text-orange-500'>servicios</span>
           </motion.h1>
           <motion.p
             className='text-xl text-gray-400 max-w-2xl mx-auto'

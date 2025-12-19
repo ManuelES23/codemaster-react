@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Rocket } from "lucide-react";
+import { Rocket, Award, Headphones } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className='relative min-h-screen bg-linear-to-b from-black via-gray-900 to-gray-900 pt-20'>
+    <section className='relative min-h-screen bg-linear-to-b from-black from-40% to-gray-900 pt-20'>
       {/* Animated background elements */}
       <div className='absolute inset-0 overflow-hidden'>
         <div className='absolute top-20 left-10 w-72 h-72 bg-orange-500/10 rounded-full blur-3xl animate-pulse'></div>
@@ -109,31 +109,46 @@ const Hero = () => {
               </motion.div>
             </motion.div>
 
-            {/* Stats */}
+            {/* Trust Badges */}
             <motion.div
-              className='grid grid-cols-3 gap-6 pt-8'
+              className='grid grid-cols-3 gap-4 pt-8'
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.9, duration: 0.8 }}
             >
-              <div className='text-center'>
-                <div className='text-4xl font-bold text-orange-500 mb-2'>
-                  200+
+              <motion.div
+                className='bg-black border border-gray-800 rounded-xl p-4 hover:border-orange-500 transition-all duration-300 group'
+                whileHover={{ scale: 1.05, y: -5 }}
+              >
+                <div className='flex flex-col items-center gap-2'>
+                  <Rocket className='w-6 h-6 text-orange-500 group-hover:scale-110 transition-transform duration-300' />
+                  <div className='text-xs font-semibold text-white text-center'>
+                    Entrega rápida
+                  </div>
                 </div>
-                <div className='text-sm text-gray-400'>Proyectos</div>
-              </div>
-              <div className='text-center'>
-                <div className='text-4xl font-bold text-orange-500 mb-2'>
-                  150+
+              </motion.div>
+              <motion.div
+                className='bg-black border border-gray-800 rounded-xl p-4 hover:border-orange-500 transition-all duration-300 group'
+                whileHover={{ scale: 1.05, y: -5 }}
+              >
+                <div className='flex flex-col items-center gap-2'>
+                  <Award className='w-6 h-6 text-orange-500 group-hover:scale-110 transition-transform duration-300' />
+                  <div className='text-xs font-semibold text-white text-center'>
+                    Calidad premium
+                  </div>
                 </div>
-                <div className='text-sm text-gray-400'>Clientes</div>
-              </div>
-              <div className='text-center'>
-                <div className='text-4xl font-bold text-orange-500 mb-2'>
-                  100%
+              </motion.div>
+              <motion.div
+                className='bg-black border border-gray-800 rounded-xl p-4 hover:border-orange-500 transition-all duration-300 group'
+                whileHover={{ scale: 1.05, y: -5 }}
+              >
+                <div className='flex flex-col items-center gap-2'>
+                  <Headphones className='w-6 h-6 text-orange-500 group-hover:scale-110 transition-transform duration-300' />
+                  <div className='text-xs font-semibold text-white text-center'>
+                    Soporte 24/7
+                  </div>
                 </div>
-                <div className='text-sm text-gray-400'>Satisfacción</div>
-              </div>
+              </motion.div>
             </motion.div>
           </motion.div>
 
@@ -157,26 +172,26 @@ const Hero = () => {
             </motion.div>
           </motion.div>
         </div>
-      </div>
 
-      {/* Scroll Indicator */}
-      <motion.div
-        className='absolute bottom-10 left-1/2 transform -translate-x-1/2'
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 1.5, repeat: Infinity }}
-      >
-        <svg
-          className='w-6 h-6 text-orange-500'
-          fill='none'
-          strokeLinecap='round'
-          strokeLinejoin='round'
-          strokeWidth='2'
-          viewBox='0 0 24 24'
-          stroke='currentColor'
+        {/* Scroll Indicator */}
+        <motion.div
+          className='absolute bottom-10 left-1/2 transform -translate-x-1/2'
+          animate={{ y: [0, 10, 0] }}
+          transition={{ duration: 1.5, repeat: Infinity }}
         >
-          <path d='M19 14l-7 7m0 0l-7-7m7 7V3'></path>
-        </svg>
-      </motion.div>
+          <svg
+            className='w-6 h-6 text-orange-500'
+            fill='none'
+            strokeLinecap='round'
+            strokeLinejoin='round'
+            strokeWidth='2'
+            viewBox='0 0 24 24'
+            stroke='currentColor'
+          >
+            <path d='M19 14l-7 7m0 0l-7-7m7 7V3'></path>
+          </svg>
+        </motion.div>
+      </div>
     </section>
   );
 };

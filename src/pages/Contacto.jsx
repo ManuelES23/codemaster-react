@@ -19,32 +19,19 @@ const Contacto = () => {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-
-    // Netlify Forms maneja el envío automáticamente
-    // El formulario se enviará a Netlify y llegará a tu panel de control
-
-    // Mensaje de confirmación
-    alert("¡Gracias por tu mensaje! Te contactaremos pronto.");
-
-    // Limpiar formulario
-    setFormData({
-      nombre: "",
-      email: "",
-      telefono: "",
-      empresa: "",
-      servicio: "",
-      mensaje: "",
-    });
+    // NO prevenir el default para permitir que Netlify maneje el envío
+    // Netlify Forms necesita el envío nativo del formulario
+    // Mensaje de confirmación (opcional - se puede comentar)
+    // alert("¡Gracias por tu mensaje! Te contactaremos pronto.");
   };
 
   return (
     <div className='bg-black min-h-screen'>
       {/* Hero Section */}
-      <section className='bg-linear-to-r from-black via-gray-900 to-black py-24 border-b border-gray-800'>
+      <section className='bg-linear-to-r from-black from-30% via-gray-900 via-70% to-black py-24 border-b border-gray-800'>
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center'>
-          <h1 className='text-5xl md:text-6xl font-bold text-white mb-6'>
-            Contáct<span className='text-orange-500'>anos</span>
+          <h1 className='text-5xl md:text-6xl font-bold text-orange-500 mb-6'>
+            Contáctanos
           </h1>
           <p className='text-xl text-gray-400 max-w-2xl mx-auto'>
             Estamos listos para hacer realidad tu proyecto digital
@@ -172,8 +159,8 @@ const Contacto = () => {
               <form
                 name='contacto'
                 method='POST'
-                netlify='true'
-                netlify-honeypot='bot-field'
+                data-netlify='true'
+                data-netlify-honeypot='bot-field'
                 onSubmit={handleSubmit}
                 className='bg-gray-800/40 backdrop-blur-sm border border-gray-700 rounded-2xl p-8'
               >
@@ -191,7 +178,7 @@ const Contacto = () => {
                     htmlFor='nombre'
                     className='block text-white font-semibold mb-2'
                   >
-                    Nombre Completo *
+                    Nombre completo *
                   </label>
                   <input
                     type='text'
@@ -267,7 +254,7 @@ const Contacto = () => {
                     htmlFor='servicio'
                     className='block text-white font-semibold mb-2'
                   >
-                    Servicio de Interés *
+                    Servicio de interés *
                   </label>
                   <select
                     id='servicio'
@@ -278,10 +265,10 @@ const Contacto = () => {
                     className='w-full px-4 py-3 bg-gray-900 text-white border border-gray-700 rounded-lg focus:outline-none focus:border-orange-500 transition-colors duration-300'
                   >
                     <option value=''>Selecciona un servicio</option>
-                    <option value='web'>Desarrollo Web</option>
-                    <option value='app'>Aplicación Móvil</option>
-                    <option value='sistema'>Sistema a Medida</option>
-                    <option value='redes'>Gestión de Redes Sociales</option>
+                    <option value='web'>Desarrollo web</option>
+                    <option value='app'>Aplicación móvil</option>
+                    <option value='sistema'>Sistema a medida</option>
+                    <option value='redes'>Gestión de redes sociales</option>
                     <option value='microsoft'>Licencias Microsoft</option>
                     <option value='consultoria'>Consultoría IT</option>
                     <option value='otro'>Otro</option>
@@ -311,7 +298,7 @@ const Contacto = () => {
                   type='submit'
                   className='w-full bg-orange-500 text-white py-4 rounded-lg font-semibold hover:bg-orange-600 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-orange-500/50'
                 >
-                  Enviar Mensaje
+                  Enviar mensaje
                 </button>
               </form>
             </div>

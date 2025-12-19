@@ -21,15 +21,12 @@ const Navbar = () => {
           {/* Logo */}
           <Link to='/' className='flex items-center group'>
             <motion.img
-              src='/img/cm-icon-little.png'
+              src='/img/codemaster_logo_vertical.png'
               alt='CodeMaster'
-              className='h-10 w-10'
+              className='h-7 w-auto object-contain'
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 400 }}
             />
-            <h1 className='ml-3 text-2xl font-bold text-white'>
-              Code<span className='text-orange-500'>Master</span>
-            </h1>
           </Link>
 
           {/* Desktop Menu */}

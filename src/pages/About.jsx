@@ -1,4 +1,14 @@
-import { Share2, Key, Search, Globe, Smartphone, Laptop } from "lucide-react";
+import {
+  Share2,
+  Key,
+  Search,
+  Globe,
+  Smartphone,
+  Laptop,
+  Target,
+  Shield,
+  Gem,
+} from "lucide-react";
 import { motion } from "framer-motion";
 
 const About = () => {
@@ -6,7 +16,7 @@ const About = () => {
     <div className='bg-black min-h-screen'>
       {/* Hero Section */}
       <motion.section
-        className='bg-linear-to-r from-black via-gray-900 to-black py-24 border-b border-gray-800'
+        className='bg-linear-to-r from-black from-30% via-gray-900 via-70% to-black py-24 border-b border-gray-800'
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
@@ -43,7 +53,7 @@ const About = () => {
             transition={{ duration: 0.8 }}
           >
             <h2 className='text-3xl md:text-4xl font-bold text-white mb-6'>
-              ¿Quiénes <span className='text-orange-500'>Somos</span>?
+              ¿Quiénes <span className='text-orange-500'>somos</span>?
             </h2>
             <p className='text-gray-400 text-lg leading-relaxed'>
               CodeMaster es una empresa líder en soluciones digitales,
@@ -86,7 +96,7 @@ const About = () => {
               whileHover={{ scale: 1.02, y: -5 }}
             >
               <h2 className='text-2xl font-bold text-white mb-4'>
-                Nuestra <span className='text-orange-500'>Misión</span>
+                Nuestra <span className='text-orange-500'>misión</span>
               </h2>
               <p className='text-gray-400 leading-relaxed'>
                 Empoderar a las empresas con tecnología de vanguardia, creando
@@ -113,7 +123,7 @@ const About = () => {
               whileHover={{ scale: 1.02, y: -5 }}
             >
               <h2 className='text-2xl font-bold text-white mb-4'>
-                Nuestra <span className='text-orange-500'>Visión</span>
+                Nuestra <span className='text-orange-500'>visión</span>
               </h2>
               <p className='text-gray-400 leading-relaxed'>
                 Ser la empresa líder en soluciones digitales en la región,
@@ -134,7 +144,7 @@ const About = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              Nuestros <span className='text-orange-500'>Valores</span>
+              Nuestros <span className='text-orange-500'>valores</span>
             </motion.h2>
             <motion.div
               className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'
@@ -269,7 +279,7 @@ const About = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              ¿Qué <span className='text-orange-500'>Ofrecemos</span>?
+              ¿Qué <span className='text-orange-500'>ofrecemos</span>?
             </motion.h2>
 
             {/* Services Grid with Images */}
@@ -312,7 +322,7 @@ const About = () => {
                     <Share2 className='w-10 h-10 text-orange-500' />
                   </div>
                   <h4 className='text-white font-semibold text-lg'>
-                    Redes Sociales
+                    Redes sociales
                   </h4>
                   <p className='text-gray-400 text-sm mt-2'>
                     Gestión profesional de tu presencia digital
@@ -421,7 +431,7 @@ const About = () => {
                   <Globe className='w-10 h-10 text-orange-500' />
                 </div>
                 <h4 className='text-white font-semibold text-sm'>
-                  Desarrollo Web
+                  Desarrollo web
                 </h4>
               </motion.div>
               <motion.div
@@ -443,7 +453,7 @@ const About = () => {
                   <Smartphone className='w-10 h-10 text-orange-500' />
                 </div>
                 <h4 className='text-white font-semibold text-sm'>
-                  Apps Móviles
+                  Apps móviles
                 </h4>
               </motion.div>
               <motion.div
@@ -465,103 +475,94 @@ const About = () => {
                   <Laptop className='w-10 h-10 text-orange-500' />
                 </div>
                 <h4 className='text-white font-semibold text-sm'>
-                  Sistemas a Medida
+                  Sistemas a medida
                 </h4>
               </motion.div>
             </motion.div>
           </div>
 
-          {/* Stats */}
+          {/* Mensaje de Compromiso y Confianza */}
           <motion.div
-            className='grid grid-cols-2 md:grid-cols-4 gap-6'
-            initial='hidden'
-            whileInView='visible'
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
-            variants={{
-              hidden: {},
-              visible: {
-                transition: {
-                  staggerChildren: 0.15,
-                },
-              },
-            }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className='mt-16'
           >
-            <motion.div
-              className='bg-linear-to-br from-orange-500 to-orange-600 rounded-2xl p-8 text-center'
-              variants={{
-                hidden: { opacity: 0, scale: 0.8 },
-                visible: {
-                  opacity: 1,
-                  scale: 1,
-                  transition: {
-                    duration: 0.6,
-                    ease: "easeOut",
-                  },
-                },
-              }}
-              whileHover={{ scale: 1.05, y: -5 }}
-            >
-              <h3 className='text-5xl font-bold text-white mb-2'>200+</h3>
-              <p className='text-white/90 font-semibold'>
-                Proyectos Completados
-              </p>
-            </motion.div>
-            <motion.div
-              className='bg-linear-to-br from-orange-500 to-orange-600 rounded-2xl p-8 text-center'
-              variants={{
-                hidden: { opacity: 0, scale: 0.8 },
-                visible: {
-                  opacity: 1,
-                  scale: 1,
-                  transition: {
-                    duration: 0.6,
-                    ease: "easeOut",
-                  },
-                },
-              }}
-              whileHover={{ scale: 1.05, y: -5 }}
-            >
-              <h3 className='text-5xl font-bold text-white mb-2'>150+</h3>
-              <p className='text-white/90 font-semibold'>
-                Clientes Satisfechos
-              </p>
-            </motion.div>
-            <motion.div
-              className='bg-linear-to-br from-orange-500 to-orange-600 rounded-2xl p-8 text-center'
-              variants={{
-                hidden: { opacity: 0, scale: 0.8 },
-                visible: {
-                  opacity: 1,
-                  scale: 1,
-                  transition: {
-                    duration: 0.6,
-                    ease: "easeOut",
-                  },
-                },
-              }}
-              whileHover={{ scale: 1.05, y: -5 }}
-            >
-              <h3 className='text-5xl font-bold text-white mb-2'>5+</h3>
-              <p className='text-white/90 font-semibold'>Años de Experiencia</p>
-            </motion.div>
-            <motion.div
-              className='bg-linear-to-br from-orange-500 to-orange-600 rounded-2xl p-8 text-center'
-              variants={{
-                hidden: { opacity: 0, scale: 0.8 },
-                visible: {
-                  opacity: 1,
-                  scale: 1,
-                  transition: {
-                    duration: 0.6,
-                    ease: "easeOut",
-                  },
-                },
-              }}
-              whileHover={{ scale: 1.05, y: -5 }}
-            >
-              <h3 className='text-5xl font-bold text-white mb-2'>100%</h3>
-              <p className='text-white/90 font-semibold'>Compromiso</p>
-            </motion.div>
+            <div className='bg-black border border-gray-800 rounded-3xl p-12 md:p-16 text-center hover:border-orange-500 transition-all duration-300'>
+              <motion.div
+                initial={{ scale: 0.9, opacity: 0 }}
+                whileInView={{ scale: 1, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2, duration: 0.6 }}
+              >
+                <h2 className='text-3xl md:text-4xl font-bold text-white mb-6'>
+                  Tu confianza es nuestro mayor compromiso
+                </h2>
+                <p className='text-xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed'>
+                  En CodeMaster, cada proyecto es una oportunidad para crear
+                  algo extraordinario. Trabajamos codo a codo contigo,
+                  transformando tus ideas en soluciones digitales que no solo
+                  cumplen expectativas, sino que las superan.
+                </p>
+                <div className='grid grid-cols-1 md:grid-cols-3 gap-8 mt-12'>
+                  <motion.div
+                    whileHover={{ scale: 1.05, y: -5 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                    className='bg-black border border-gray-800 rounded-2xl p-8 text-center hover:border-orange-500 transition-all duration-300 group'
+                  >
+                    <div className='inline-flex items-center justify-center w-16 h-16 bg-orange-500 rounded-2xl mb-4 group-hover:scale-110 transition-transform duration-300'>
+                      <Target className='w-8 h-8 text-white' />
+                    </div>
+                    <h3 className='text-xl font-semibold text-white mb-3'>
+                      Enfoque personalizado
+                    </h3>
+                    <p className='text-gray-400 leading-relaxed'>
+                      Cada cliente es único, cada solución es diseñada a medida
+                    </p>
+                  </motion.div>
+                  <motion.div
+                    whileHover={{ scale: 1.05, y: -5 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                    className='bg-black border border-gray-800 rounded-2xl p-8 text-center hover:border-orange-500 transition-all duration-300 group'
+                  >
+                    <div className='inline-flex items-center justify-center w-16 h-16 bg-orange-500 rounded-2xl mb-4 group-hover:scale-110 transition-transform duration-300'>
+                      <Shield className='w-8 h-8 text-white' />
+                    </div>
+                    <h3 className='text-xl font-semibold text-white mb-3'>
+                      Transparencia total
+                    </h3>
+                    <p className='text-gray-400 leading-relaxed'>
+                      Comunicación clara en cada etapa de tu proyecto
+                    </p>
+                  </motion.div>
+                  <motion.div
+                    whileHover={{ scale: 1.05, y: -5 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                    className='bg-black border border-gray-800 rounded-2xl p-8 text-center hover:border-orange-500 transition-all duration-300 group'
+                  >
+                    <div className='inline-flex items-center justify-center w-16 h-16 bg-orange-500 rounded-2xl mb-4 group-hover:scale-110 transition-transform duration-300'>
+                      <Gem className='w-8 h-8 text-white' />
+                    </div>
+                    <h3 className='text-xl font-semibold text-white mb-3'>
+                      Calidad garantizada
+                    </h3>
+                    <p className='text-gray-400 leading-relaxed'>
+                      Excelencia en cada línea de código, cada diseño, cada
+                      detalle
+                    </p>
+                  </motion.div>
+                </div>
+                <motion.div className='mt-12' whileHover={{ scale: 1.05 }}>
+                  <a
+                    href='/contacto'
+                    className='inline-block bg-orange-500 hover:bg-orange-600 text-white font-semibold px-10 py-4 rounded-full shadow-xl hover:shadow-2xl hover:shadow-orange-500/50 transition-all duration-300'
+                  >
+                    Comienza tu proyecto hoy
+                  </a>
+                </motion.div>
+              </motion.div>
+            </div>
           </motion.div>
         </div>
       </section>

@@ -56,7 +56,7 @@ const Home = () => {
   ];
 
   return (
-    <div className='bg-black min-h-screen'>
+    <div className='bg-gradient-to-b from-black from-40% via-gray-900 via-60% to-black min-h-screen'>
       <Hero />
 
       {/* Services Section */}
@@ -76,7 +76,7 @@ const Home = () => {
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             >
-              ¿Qué <span className='text-orange-500'>Hacemos</span>?
+              ¿Qué <span className='text-orange-500'>hacemos</span>?
             </motion.h2>
             <motion.p
               className='text-xl text-gray-400 max-w-3xl mx-auto'
@@ -170,7 +170,7 @@ const Home = () => {
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            ¿Por Qué <span className='text-orange-500'>Elegirnos</span>?
+            ¿Por qué <span className='text-orange-500'>elegirnos</span>?
           </motion.h2>
 
           <motion.div
@@ -212,7 +212,7 @@ const Home = () => {
                 </svg>
               </div>
               <h3 className='text-xl font-bold text-white mb-4'>
-                Rapidez y Eficiencia
+                Rapidez y eficiencia
               </h3>
               <p className='text-gray-400'>
                 Entregamos proyectos de calidad en tiempo récord sin comprometer
@@ -244,7 +244,7 @@ const Home = () => {
                 </svg>
               </div>
               <h3 className='text-xl font-bold text-white mb-4'>
-                Enfoque Personalizado
+                Enfoque personalizado
               </h3>
               <p className='text-gray-400'>
                 Cada proyecto es único. Adaptamos nuestras soluciones a tus
@@ -276,7 +276,7 @@ const Home = () => {
                 </svg>
               </div>
               <h3 className='text-xl font-bold text-white mb-4'>
-                Innovación Constante
+                Innovación constante
               </h3>
               <p className='text-gray-400'>
                 Utilizamos las últimas tecnologías para mantenerte a la
@@ -308,7 +308,7 @@ const Home = () => {
                 </svg>
               </div>
               <h3 className='text-xl font-bold text-white mb-4'>
-                Soporte Continuo
+                Soporte continuo
               </h3>
               <p className='text-gray-400'>
                 Te acompañamos después del lanzamiento con mantenimiento y
@@ -340,7 +340,7 @@ const Home = () => {
                 </svg>
               </div>
               <h3 className='text-xl font-bold text-white mb-4'>
-                Precios Competitivos
+                Precios competitivos
               </h3>
               <p className='text-gray-400'>
                 Calidad profesional a precios justos y transparentes.
@@ -371,7 +371,7 @@ const Home = () => {
                 </svg>
               </div>
               <h3 className='text-xl font-bold text-white mb-4'>
-                Resultados Medibles
+                Resultados medibles
               </h3>
               <p className='text-gray-400'>
                 Enfocados en generar ROI y resultados tangibles para tu negocio.

@@ -3,7 +3,7 @@ import { FileCheck, Scale, AlertCircle, Users } from "lucide-react";
 
 const Terminos = () => {
   return (
-    <div className='min-h-screen bg-gradient-to-b from-black via-gray-900 to-black text-white'>
+    <div className='min-h-screen bg-gradient-to-b from-black from-30% via-gray-900 via-70% to-black text-white'>
       {/* Hero Section */}
       <motion.section
         initial={{ opacity: 0 }}
@@ -26,7 +26,7 @@ const Terminos = () => {
               </span>
             </div>
             <h1 className='text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent'>
-              Términos y Condiciones
+              Términos y condiciones
             </h1>
             <p className='text-xl text-gray-400 max-w-3xl mx-auto'>
               Condiciones generales de uso y contratación de servicios de
@@ -50,7 +50,7 @@ const Terminos = () => {
               <FileCheck className='w-6 h-6 text-orange-500 flex-shrink-0 mt-1' />
               <div>
                 <h2 className='text-2xl font-bold mb-4'>
-                  1. Aceptación de los Términos
+                  1. Aceptación de los términos
                 </h2>
                 <div className='space-y-4 text-gray-300'>
                   <p>
@@ -80,7 +80,7 @@ const Terminos = () => {
               <Users className='w-6 h-6 text-orange-500 flex-shrink-0 mt-1' />
               <div>
                 <h2 className='text-2xl font-bold mb-4'>
-                  2. Servicios Ofrecidos
+                  2. Servicios ofrecidos
                 </h2>
                 <div className='space-y-4 text-gray-300'>
                   <p>CodeMaster ofrece los siguientes servicios:</p>
@@ -113,7 +113,7 @@ const Terminos = () => {
             className='bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-8 mb-8'
           >
             <h2 className='text-2xl font-bold mb-4'>
-              3. Proceso de Contratación
+              3. Proceso de contratación
             </h2>
             <div className='space-y-4 text-gray-300'>
               <p>
@@ -156,7 +156,7 @@ const Terminos = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className='bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-8 mb-8'
           >
-            <h2 className='text-2xl font-bold mb-4'>4. Precios y Pagos</h2>
+            <h2 className='text-2xl font-bold mb-4'>4. Precios y pagos</h2>
             <div className='space-y-4 text-gray-300'>
               <p>
                 <strong>4.1 Precios:</strong> Todos los precios están expresados
@@ -193,7 +193,7 @@ const Terminos = () => {
             className='bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-8 mb-8'
           >
             <h2 className='text-2xl font-bold mb-4'>
-              5. Propiedad Intelectual
+              5. Propiedad intelectual
             </h2>
             <div className='space-y-4 text-gray-300'>
               <p>
@@ -231,7 +231,7 @@ const Terminos = () => {
             transition={{ duration: 0.6, delay: 0.5 }}
             className='bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-8 mb-8'
           >
-            <h2 className='text-2xl font-bold mb-4'>6. Garantías y Soporte</h2>
+            <h2 className='text-2xl font-bold mb-4'>6. Garantías y soporte</h2>
             <div className='space-y-4 text-gray-300'>
               <p>
                 <strong>6.1 Período de garantía:</strong> CodeMaster ofrece 30
@@ -264,7 +264,7 @@ const Terminos = () => {
             className='bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-8 mb-8'
           >
             <h2 className='text-2xl font-bold mb-4'>
-              7. Responsabilidades del Cliente
+              7. Responsabilidades del cliente
             </h2>
             <div className='space-y-4 text-gray-300'>
               <p>El Cliente se compromete a:</p>
@@ -305,7 +305,7 @@ const Terminos = () => {
               <AlertCircle className='w-6 h-6 text-orange-500 flex-shrink-0 mt-1' />
               <div>
                 <h2 className='text-2xl font-bold mb-4'>
-                  8. Limitación de Responsabilidad
+                  8. Limitación de responsabilidad
                 </h2>
                 <div className='space-y-4 text-gray-300'>
                   <p>
@@ -341,7 +341,7 @@ const Terminos = () => {
             className='bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-8 mb-8'
           >
             <h2 className='text-2xl font-bold mb-4'>
-              9. Cancelación y Reembolsos
+              9. Cancelación y reembolsos
             </h2>
             <div className='space-y-4 text-gray-300'>
               <p>
@@ -394,7 +394,7 @@ const Terminos = () => {
             className='bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-8 mb-8'
           >
             <h2 className='text-2xl font-bold mb-4'>
-              11. Jurisdicción y Ley Aplicable
+              11. Jurisdicción y ley aplicable
             </h2>
             <div className='space-y-4 text-gray-300'>
               <p>

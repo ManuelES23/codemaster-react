@@ -7,17 +7,14 @@ const Footer = () => {
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8'>
           {/* Brand Section */}
           <div className='space-y-4'>
-            <div className='flex items-center space-x-3'>
+            <div className='flex items-start'>
               <motion.img
-                src='/img/cm-icon-little.png'
+                src='/img/codemaster_logo_vertical.png'
                 alt='CodeMaster'
-                className='h-10 w-10'
+                className='h-6 w-auto object-contain'
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 400 }}
               />
-              <h3 className='text-2xl font-bold text-white'>
-                Code<span className='text-orange-500'>Master</span>
-              </h3>
             </div>
             <p className='text-gray-400 text-sm leading-relaxed'>
               Soluciones digitales integrales para impulsar tu negocio al

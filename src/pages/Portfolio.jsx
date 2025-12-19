@@ -11,7 +11,7 @@ const Portfolio = () => {
       descripcion:
         "Tienda online completa con carrito de compras, pasarela de pago y panel administrativo.",
       imagen:
-        "https://via.placeholder.com/400x300/667eea/ffffff?text=E-Commerce",
+        "https://placehold.co/400x300/667eea/ffffff?text=E-Commerce&font=roboto",
       tecnologias: ["React", "Node.js", "MongoDB"],
     },
     {
@@ -21,7 +21,7 @@ const Portfolio = () => {
       descripcion:
         "Aplicación móvil para pedidos de comida con tracking en tiempo real y múltiples métodos de pago.",
       imagen:
-        "https://via.placeholder.com/400x300/764ba2/ffffff?text=Delivery+App",
+        "https://placehold.co/400x300/764ba2/ffffff?text=Delivery+App&font=roboto",
       tecnologias: ["React Native", "Firebase", "Google Maps API"],
     },
     {
@@ -31,7 +31,7 @@ const Portfolio = () => {
       descripcion:
         "Sistema integral para administración de hospitales con gestión de pacientes, citas y facturación.",
       imagen:
-        "https://via.placeholder.com/400x300/667eea/ffffff?text=Hospital+System",
+        "https://placehold.co/400x300/667eea/ffffff?text=Hospital+System&font=roboto",
       tecnologias: ["Vue.js", "Laravel", "MySQL"],
     },
     {
@@ -41,7 +41,7 @@ const Portfolio = () => {
       descripcion:
         "Estrategia completa de redes sociales con aumento del 300% en engagement y ventas online.",
       imagen:
-        "https://via.placeholder.com/400x300/ffd700/333333?text=Social+Media",
+        "https://placehold.co/400x300/ff6600/ffffff?text=Social+Media&font=roboto",
       tecnologias: ["Facebook Ads", "Instagram", "Analytics"],
     },
     {
@@ -51,7 +51,7 @@ const Portfolio = () => {
       descripcion:
         "Sitio web corporativo multiidioma con blog integrado y sistema de contacto CRM.",
       imagen:
-        "https://via.placeholder.com/400x300/764ba2/ffffff?text=Corporate+Site",
+        "https://placehold.co/400x300/764ba2/ffffff?text=Corporate+Site&font=roboto",
       tecnologias: ["WordPress", "PHP", "MySQL"],
     },
     {
@@ -61,17 +61,17 @@ const Portfolio = () => {
       descripcion:
         "Aplicación para seguimiento de ejercicios, nutrición y métricas de salud con planes personalizados.",
       imagen:
-        "https://via.placeholder.com/400x300/667eea/ffffff?text=Fitness+App",
+        "https://placehold.co/400x300/667eea/ffffff?text=Fitness+App&font=roboto",
       tecnologias: ["Flutter", "Firebase", "HealthKit"],
     },
   ];
 
   const categorias = [
     { id: "todos", nombre: "Todos" },
-    { id: "web", nombre: "Desarrollo Web" },
-    { id: "app", nombre: "Apps Móviles" },
+    { id: "web", nombre: "Desarrollo web" },
+    { id: "app", nombre: "Apps móviles" },
     { id: "sistema", nombre: "Sistemas" },
-    { id: "marketing", nombre: "Marketing Digital" },
+    { id: "marketing", nombre: "Marketing digital" },
   ];
 
   const proyectosFiltrados =
@@ -82,10 +82,10 @@ const Portfolio = () => {
   return (
     <div className='bg-black min-h-screen'>
       {/* Hero Section */}
-      <section className='bg-linear-to-r from-black via-gray-900 to-black py-24 border-b border-gray-800'>
+      <section className='bg-linear-to-r from-black from-30% via-gray-900 via-70% to-black py-24 border-b border-gray-800'>
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center'>
           <h1 className='text-5xl md:text-6xl font-bold text-white mb-6 animate-slideInLeft'>
-            Nuestro <span className='text-orange-500'>Portfolio</span>
+            Nuestro <span className='text-orange-500'>portfolio</span>
           </h1>
           <p className='text-xl text-gray-400 max-w-2xl mx-auto animate-fadeIn delay-200'>
             Proyectos que transforman ideas en realidad digital

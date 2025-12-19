@@ -3,7 +3,7 @@ import { Cookie, Settings, BarChart3, Shield } from "lucide-react";
 
 const Cookies = () => {
   return (
-    <div className='min-h-screen bg-gradient-to-b from-black via-gray-900 to-black text-white'>
+    <div className='min-h-screen bg-gradient-to-b from-black from-30% via-gray-900 via-70% to-black text-white'>
       {/* Hero Section */}
       <motion.section
         initial={{ opacity: 0 }}
@@ -26,7 +26,7 @@ const Cookies = () => {
               </span>
             </div>
             <h1 className='text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent'>
-              Política de Cookies
+              Política de cookies
             </h1>
             <p className='text-xl text-gray-400 max-w-3xl mx-auto'>
               Información sobre el uso de cookies y tecnologías similares en
@@ -50,7 +50,7 @@ const Cookies = () => {
               <Cookie className='w-6 h-6 text-orange-500 flex-shrink-0 mt-1' />
               <div>
                 <h2 className='text-2xl font-bold mb-4'>
-                  1. ¿Qué son las Cookies?
+                  1. ¿Qué son las cookies?
                 </h2>
                 <div className='space-y-4 text-gray-300'>
                   <p>
@@ -94,7 +94,7 @@ const Cookies = () => {
               <Settings className='w-6 h-6 text-orange-500 flex-shrink-0 mt-1' />
               <div>
                 <h2 className='text-2xl font-bold mb-4'>
-                  2. ¿Cómo Utilizamos las Cookies?
+                  2. ¿Cómo utilizamos las cookies?
                 </h2>
                 <div className='space-y-4 text-gray-300'>
                   <p>CodeMaster utiliza cookies para:</p>
@@ -119,7 +119,7 @@ const Cookies = () => {
             className='bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-8 mb-8'
           >
             <h2 className='text-2xl font-bold mb-6'>
-              3. Tipos de Cookies que Utilizamos
+              3. Tipos de cookies que utilizamos
             </h2>
 
             {/* Cookies Esenciales */}
@@ -127,7 +127,7 @@ const Cookies = () => {
               <div className='flex items-center gap-3 mb-3'>
                 <Shield className='w-5 h-5 text-green-500' />
                 <h3 className='text-xl font-semibold text-green-400'>
-                  Cookies Esenciales (Obligatorias)
+                  Cookies esenciales (obligatorias)
                 </h3>
               </div>
               <p className='text-gray-300 mb-3'>
@@ -155,7 +155,7 @@ const Cookies = () => {
               <div className='flex items-center gap-3 mb-3'>
                 <BarChart3 className='w-5 h-5 text-blue-500' />
                 <h3 className='text-xl font-semibold text-blue-400'>
-                  Cookies de Rendimiento y Análisis
+                  Cookies de rendimiento y análisis
                 </h3>
               </div>
               <p className='text-gray-300 mb-3'>
@@ -187,7 +187,7 @@ const Cookies = () => {
               <div className='flex items-center gap-3 mb-3'>
                 <Settings className='w-5 h-5 text-purple-500' />
                 <h3 className='text-xl font-semibold text-purple-400'>
-                  Cookies Funcionales
+                  Cookies funcionales
                 </h3>
               </div>
               <p className='text-gray-300 mb-3'>
@@ -216,7 +216,7 @@ const Cookies = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className='bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-8 mb-8'
           >
-            <h2 className='text-2xl font-bold mb-4'>4. Cookies de Terceros</h2>
+            <h2 className='text-2xl font-bold mb-4'>4. Cookies de terceros</h2>
             <div className='space-y-4 text-gray-300'>
               <p>
                 Algunos servicios de terceros pueden establecer cookies en tu
@@ -298,7 +298,7 @@ const Cookies = () => {
             className='bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-8 mb-8'
           >
             <h2 className='text-2xl font-bold mb-4'>
-              5. Cómo Gestionar las Cookies
+              5. Cómo gestionar las cookies
             </h2>
             <div className='space-y-4 text-gray-300'>
               <p>
@@ -309,7 +309,7 @@ const Cookies = () => {
               <div className='mt-4 space-y-3'>
                 <div className='p-4 bg-orange-600/10 border border-orange-600/30 rounded-lg'>
                   <h4 className='font-semibold text-white mb-2'>
-                    Configuración del Navegador
+                    Configuración del navegador
                   </h4>
                   <p className='text-sm'>
                     Todos los navegadores permiten gestionar las cookies a
@@ -337,7 +337,7 @@ const Cookies = () => {
 
                 <div className='p-4 bg-orange-600/10 border border-orange-600/30 rounded-lg'>
                   <h4 className='font-semibold text-white mb-2'>
-                    Eliminar Cookies
+                    Eliminar cookies
                   </h4>
                   <p className='text-sm'>
                     Puedes eliminar las cookies almacenadas en cualquier momento
@@ -347,7 +347,7 @@ const Cookies = () => {
 
                 <div className='p-4 bg-orange-600/10 border border-orange-600/30 rounded-lg'>
                   <h4 className='font-semibold text-white mb-2'>
-                    Bloquear Cookies
+                    Bloquear cookies
                   </h4>
                   <p className='text-sm'>
                     Puedes configurar tu navegador para bloquear todas las
@@ -370,7 +370,7 @@ const Cookies = () => {
             className='bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-8 mb-8'
           >
             <h2 className='text-2xl font-bold mb-4'>
-              6. Cookies y Dispositivos Móviles
+              6. Cookies y dispositivos móviles
             </h2>
             <div className='space-y-4 text-gray-300'>
               <p>
@@ -398,7 +398,7 @@ const Cookies = () => {
             className='bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-8 mb-8'
           >
             <h2 className='text-2xl font-bold mb-4'>
-              7. Actualizaciones de esta Política
+              7. Actualizaciones de esta política
             </h2>
             <div className='space-y-4 text-gray-300'>
               <p>

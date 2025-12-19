@@ -19,7 +19,7 @@ const ServicioDetalle = () => {
   const serviciosData = {
     "desarrollo-web": {
       icon: <Globe className='w-20 h-20 text-orange-500' />,
-      titulo: "Desarrollo Web",
+      titulo: "Desarrollo web",
       descripcion:
         "Creamos sitios web modernos, responsivos y optimizados para SEO. Desde landing pages hasta e-commerce completos con las últimas tecnologías del mercado.",
       detalles: [
@@ -85,7 +85,7 @@ const ServicioDetalle = () => {
     },
     "apps-moviles": {
       icon: <Smartphone className='w-20 h-20 text-orange-500' />,
-      titulo: "Aplicaciones Móviles",
+      titulo: "Aplicaciones móviles",
       descripcion:
         "Desarrollamos aplicaciones móviles nativas y multiplataforma para iOS y Android con las últimas tecnologías, garantizando rendimiento óptimo y excelente experiencia de usuario.",
       detalles: [
@@ -151,7 +151,7 @@ const ServicioDetalle = () => {
     },
     "redes-sociales": {
       icon: <Share2 className='w-20 h-20 text-orange-500' />,
-      titulo: "Gestión de Redes Sociales",
+      titulo: "Gestión de redes sociales",
       descripcion:
         "Estrategias completas de social media para aumentar tu presencia digital, engagement y conversiones. Creamos contenido de calidad y gestionamos tu comunidad de forma profesional.",
       detalles: [
@@ -214,7 +214,7 @@ const ServicioDetalle = () => {
     },
     "sistemas-medida": {
       icon: <Laptop className='w-20 h-20 text-orange-500' />,
-      titulo: "Sistemas a Medida",
+      titulo: "Sistemas a medida",
       descripcion:
         "Soluciones personalizadas para automatizar y optimizar los procesos de tu empresa. Desarrollamos sistemas ERP, CRM, gestión de inventarios y cualquier software específico para tu negocio.",
       detalles: [
@@ -406,7 +406,7 @@ const ServicioDetalle = () => {
     },
     "diseno-grafico": {
       icon: <Palette className='w-20 h-20 text-orange-500' />,
-      titulo: "Diseño Gráfico",
+      titulo: "Diseño gráfico",
       descripcion:
         "Branding, identidad corporativa y diseño creativo para destacar tu marca. Creamos diseños profesionales que comunican efectivamente tu mensaje.",
       detalles: [
@@ -470,7 +470,7 @@ const ServicioDetalle = () => {
     },
     "hosting-cloud": {
       icon: <Cloud className='w-20 h-20 text-orange-500' />,
-      titulo: "Hosting & Cloud",
+      titulo: "Hosting & cloud",
       descripcion:
         "Servicios de hosting confiables y soluciones en la nube para tu negocio. Garantizamos máximo uptime, velocidad y seguridad para tu presencia online.",
       detalles: [
@@ -597,7 +597,7 @@ const ServicioDetalle = () => {
       <section className='bg-gray-900 py-20'>
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
           <h2 className='text-3xl font-bold text-white mb-12 text-center'>
-            ¿Qué <span className='text-orange-500'>Incluye</span>?
+            ¿Qué <span className='text-orange-500'>incluye</span>?
           </h2>
           <div className='grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto'>
             {servicio.detalles.map((detalle, index) => (
@@ -621,7 +621,7 @@ const ServicioDetalle = () => {
       <section className='bg-linear-to-b from-gray-900 to-black py-20'>
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
           <h2 className='text-3xl font-bold text-white mb-4 text-center'>
-            Planes y <span className='text-orange-500'>Precios</span>
+            Planes y <span className='text-orange-500'>precios</span>
           </h2>
           <p className='text-gray-400 text-center mb-12 max-w-2xl mx-auto'>
             Elige el plan que mejor se adapte a tus necesidades. Todos incluyen
@@ -646,7 +646,7 @@ const ServicioDetalle = () => {
                 {paquete.destacado && (
                   <div className='absolute -top-4 left-1/2 transform -translate-x-1/2'>
                     <span className='bg-orange-500 text-white px-4 py-1 rounded-full text-sm font-semibold'>
-                      Más Popular
+                      Más popular
                     </span>
                   </div>
                 )}
@@ -689,7 +689,7 @@ const ServicioDetalle = () => {
       <section className='bg-black py-20'>
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
           <h2 className='text-3xl font-bold text-white mb-8 text-center'>
-            Tecnologías que <span className='text-orange-500'>Utilizamos</span>
+            Tecnologías que <span className='text-orange-500'>utilizamos</span>
           </h2>
           <div className='flex flex-wrap justify-center gap-4'>
             {servicio.tecnologias.map((tech, index) => (
