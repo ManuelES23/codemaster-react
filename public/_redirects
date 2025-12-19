@@ -1,1 +1,6 @@
+# Servir archivos estáticos primero (sitemap, robots, imágenes)
+/sitemap.xml  /sitemap.xml  200
+/robots.txt   /robots.txt   200
+
+# Redirigir todo lo demás al index.html para React Router
 /*    /index.html   200

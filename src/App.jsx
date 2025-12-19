@@ -16,6 +16,9 @@ import ServicioDetalle from "./pages/ServicioDetalle";
 import Portfolio from "./pages/Portfolio";
 import About from "./pages/About";
 import Contacto from "./pages/Contacto";
+import Privacidad from "./pages/Privacidad";
+import Terminos from "./pages/Terminos";
+import Cookies from "./pages/Cookies";
 
 function AppContent() {
   const [loading, setLoading] = useState(false);
@@ -48,6 +51,9 @@ function AppContent() {
                 <Route path='/portfolio' element={<Portfolio />} />
                 <Route path='/nosotros' element={<About />} />
                 <Route path='/contacto' element={<Contacto />} />
+                <Route path='/privacidad' element={<Privacidad />} />
+                <Route path='/terminos' element={<Terminos />} />
+                <Route path='/cookies' element={<Cookies />} />
               </Routes>
             </main>
             <Footer />
