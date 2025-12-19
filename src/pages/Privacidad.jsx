@@ -3,7 +3,7 @@ import { Shield, Lock, Eye, FileText } from "lucide-react";
 
 const Privacidad = () => {
   return (
-    <div className='min-h-screen bg-gradient-to-b from-black from-30% via-gray-900 via-70% to-black text-white'>
+    <div className='min-h-screen bg-linear-to-b from-black from-30% via-gray-900 via-70% to-black text-white'>
       {/* Hero Section */}
       <motion.section
         initial={{ opacity: 0 }}
@@ -11,7 +11,7 @@ const Privacidad = () => {
         transition={{ duration: 0.8 }}
         className='relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden'
       >
-        <div className='absolute inset-0 bg-gradient-to-r from-orange-600/20 to-transparent'></div>
+        <div className='absolute inset-0 bg-linear-to-r from-orange-600/20 to-transparent'></div>
         <div className='max-w-7xl mx-auto relative z-10'>
           <motion.div
             initial={{ y: 30, opacity: 0 }}
@@ -25,7 +25,7 @@ const Privacidad = () => {
                 Última actualización: 18 de diciembre de 2025
               </span>
             </div>
-            <h1 className='text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent'>
+            <h1 className='text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 bg-linear-to-r from-white to-gray-400 bg-clip-text text-transparent'>
               Política de privacidad
             </h1>
             <p className='text-xl text-gray-400 max-w-3xl mx-auto'>
@@ -47,7 +47,7 @@ const Privacidad = () => {
             className='bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-8 mb-8'
           >
             <div className='flex items-start gap-4 mb-4'>
-              <FileText className='w-6 h-6 text-orange-500 flex-shrink-0 mt-1' />
+              <FileText className='w-6 h-6 text-orange-500 shrink-0 mt-1' />
               <div>
                 <h2 className='text-2xl font-bold mb-4'>
                   1. Información que recopilamos
@@ -88,7 +88,7 @@ const Privacidad = () => {
             className='bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-8 mb-8'
           >
             <div className='flex items-start gap-4 mb-4'>
-              <Eye className='w-6 h-6 text-orange-500 flex-shrink-0 mt-1' />
+              <Eye className='w-6 h-6 text-orange-500 shrink-0 mt-1' />
               <div>
                 <h2 className='text-2xl font-bold mb-4'>
                   2. Cómo utilizamos tu información
@@ -124,7 +124,7 @@ const Privacidad = () => {
             className='bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-8 mb-8'
           >
             <div className='flex items-start gap-4 mb-4'>
-              <Lock className='w-6 h-6 text-orange-500 flex-shrink-0 mt-1' />
+              <Lock className='w-6 h-6 text-orange-500 shrink-0 mt-1' />
               <div>
                 <h2 className='text-2xl font-bold mb-4'>
                   3. Protección de tus datos
@@ -340,7 +340,7 @@ const Privacidad = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.9 }}
-            className='bg-gradient-to-r from-orange-600/20 to-orange-600/10 border border-orange-600/30 rounded-2xl p-8'
+            className='bg-linear-to-r from-orange-600/20 to-orange-600/10 border border-orange-600/30 rounded-2xl p-8'
           >
             <h2 className='text-2xl font-bold mb-4'>10. Contacto</h2>
             <div className='space-y-4 text-gray-300'>
