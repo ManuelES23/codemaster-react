@@ -1,0 +1,35 @@
+{
+  "projectId": "2320e149-8c32-42c9-bf31-407615a1412d",
+  "pkg": "codemaster-react",
+  "globalName": "CodeMaster",
+  "shape": "package",
+  "buildCmd": "npm run build",
+  "srcDir": "src",
+  "cssEntry": ".design-sync/tailwind.compiled.css",
+  "docsDir": ".design-sync/docs",
+  "readmeHeader": ".design-sync/conventions.md",
+  "componentSrcMap": {
+    "Navbar": "src/components/Navbar.jsx",
+    "Hero": "src/components/Hero.jsx",
+    "Footer": "src/components/Footer.jsx",
+    "LoadingScreen": "src/components/LoadingScreen.jsx",
+    "ScrollToTop": "src/components/ScrollToTop.jsx",
+    "CourseCard": null
+  },
+  "provider": {
+    "component": "PreviewRouter"
+  },
+  "dtsPropsFor": {
+    "Navbar": "/** Navbar takes no props — its links and CTA are hardcoded. */",
+    "Hero": "/** Hero takes no props — its copy and CTAs are hardcoded. */",
+    "Footer": "/** Footer takes no props — its links are hardcoded. */",
+    "LoadingScreen": "/** LoadingScreen takes no props. */",
+    "ScrollToTop": "/** ScrollToTop takes no props and renders null. */"
+  },
+  "overrides": {
+    "Navbar": { "cardMode": "single", "primaryStory": "Default", "viewport": "1280x240" },
+    "Hero": { "cardMode": "single", "primaryStory": "Default", "viewport": "1280x1150" },
+    "Footer": { "cardMode": "column", "viewport": "1280x470" },
+    "LoadingScreen": { "cardMode": "single", "primaryStory": "Default", "viewport": "1280x720" }
+  }
+}
