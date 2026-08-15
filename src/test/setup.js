@@ -18,22 +18,45 @@ class IntersectionObserverStub {
 globalThis.IntersectionObserver = IntersectionObserverStub;
 
 let reducedMotion = false;
+const listeners = new Map();
+
+function matchesQuery(query) {
+  return query.includes("prefers-reduced-motion") ? reducedMotion : false;
+}
+
+function notifyListeners() {
+  listeners.forEach((callbacks, query) => {
+    const event = { matches: matchesQuery(query), media: query };
+    callbacks.forEach((callback) => callback(event));
+  });
+}
 
 export function setReducedMotion(enabled) {
   reducedMotion = enabled;
+  notifyListeners();
 }
 
-window.matchMedia = vi.fn().mockImplementation((query) => ({
-  matches: query.includes("prefers-reduced-motion") ? reducedMotion : false,
-  media: query,
-  onchange: null,
-  addEventListener: vi.fn(),
-  removeEventListener: vi.fn(),
-  addListener: vi.fn(),
-  removeListener: vi.fn(),
-  dispatchEvent: vi.fn(),
-}));
+window.matchMedia = vi.fn().mockImplementation((query) => {
+  const register = (callback) => {
+    if (!listeners.has(query)) listeners.set(query, new Set());
+    listeners.get(query).add(callback);
+  };
+  const unregister = (callback) => listeners.get(query)?.delete(callback);
+
+  return {
+    get matches() {
+      return matchesQuery(query);
+    },
+    media: query,
+    onchange: null,
+    addEventListener: (_type, callback) => register(callback),
+    removeEventListener: (_type, callback) => unregister(callback),
+    addListener: register,
+    removeListener: unregister,
+    dispatchEvent: vi.fn(),
+  };
+});
 
 beforeEach(() => {
-  reducedMotion = false;
+  setReducedMotion(false);
 });
