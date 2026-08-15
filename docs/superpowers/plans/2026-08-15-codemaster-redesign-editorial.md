@@ -3175,10 +3175,16 @@ Run `npm run dev` and check every route at 375px, 768px and 1280px:
 
 - [ ] **Step 11: Commit**
 
+Stage only this task's own files. The working tree carries two untracked
+directories from unrelated tooling (`.ds-sync/`, `ds-bundle/`) that `git add -A`
+would sweep into the commit.
+
 ```bash
-git add -A
+git add index.html README.md src/test/enlaces.test.jsx
 git commit -m "Remove dead course-platform pages, fix unverified claims and stale docs"
 ```
+
+The five deleted page files are already staged by the `git rm` in Step 2.
 
 ---
 
