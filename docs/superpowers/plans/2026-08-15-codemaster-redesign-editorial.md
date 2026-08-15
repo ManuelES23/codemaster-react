@@ -1547,8 +1547,8 @@ describe("Hero", () => {
 
   it("offers both primary calls to action", () => {
     renderHero();
-    expect(screen.getByRole("link", { name: /servicios/i })).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: /contact/i })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /ver servicios/i })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /cont[áa]ctanos/i })).toBeInTheDocument();
   });
 
   it("drops the unverifiable trust badges", () => {
@@ -1577,7 +1577,7 @@ const Hero = () => (
   <section className="relative flex min-h-screen items-center bg-ink-0 pt-20">
     <div className="mx-auto w-full max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
       <Reveal as="p" className="mb-8 font-mono text-xs tracking-[0.18em] text-brand uppercase">
-        01 — Software a medida
+        Software a medida
       </Reveal>
 
       <RevealText
@@ -1949,7 +1949,7 @@ const TrabajoSeleccionado = ({ limite = 3 }) => {
     <section className="bg-ink-0 py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <p className="mb-6 font-mono text-xs tracking-[0.18em] text-brand uppercase">
-          03 — Trabajo
+          Trabajo
         </p>
         <RevealText
           as="h2"
@@ -2133,7 +2133,7 @@ const ProcesoScroll = () => {
     <section ref={ref} className="bg-ink-1 py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <p className="mb-6 font-mono text-xs tracking-[0.18em] text-brand uppercase">
-          04 — Cómo trabajamos
+          Cómo trabajamos
         </p>
         <RevealText
           as="h2"
@@ -2301,7 +2301,7 @@ const Home = () => (
     <section className="bg-ink-0 py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <p className="mb-6 font-mono text-xs tracking-[0.18em] text-brand uppercase">
-          02 — Servicios
+          Servicios
         </p>
         <RevealText
           as="h2"
@@ -2319,7 +2319,7 @@ const Home = () => (
     <section className="bg-ink-0 py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <p className="mb-6 font-mono text-xs tracking-[0.18em] text-brand uppercase">
-          05 — Por qué nosotros
+          Por qué nosotros
         </p>
         <Stagger className="grid gap-px border-t border-line bg-line md:grid-cols-3">
           {diferenciadores.map((item) => (
