@@ -1,152 +1,96 @@
-import { Link } from "react-router-dom";
-import { useState } from "react";
-import { motion } from "framer-motion";
+import { Link, NavLink } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Menu, X } from "lucide-react";
+
+const enlaces = [
+  { to: "/", label: "Inicio", end: true },
+  { to: "/servicios", label: "Servicios" },
+  { to: "/portfolio", label: "Portfolio" },
+  { to: "/nosotros", label: "Nosotros" },
+];
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 16);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const linkClass = ({ isActive }) =>
+    `text-sm transition-colors ${isActive ? "text-fg" : "text-fg-muted hover:text-brand"}`;
 
   return (
-    <motion.nav
-      className='bg-black shadow-lg fixed w-full top-0 z-50'
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.5 }}
+    <nav
+      className={`fixed top-0 z-50 w-full transition-colors duration-300 ${
+        scrolled ? "border-b border-line bg-ink-0/90 backdrop-blur" : "bg-transparent"
+      }`}
     >
-      <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
-        <div className='flex justify-between items-center h-20'>
-          {/* Logo */}
-          <Link to='/' className='flex items-center group'>
-            <motion.img
-              src='/img/codemaster_logo_vertical.png'
-              alt='CodeMaster'
-              className='h-7 w-auto object-contain'
-              whileHover={{ scale: 1.05 }}
-              transition={{ type: "spring", stiffness: 400 }}
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="flex h-20 items-center justify-between">
+          <Link to="/" aria-label="CodeMaster, ir al inicio">
+            <img
+              src="/img/codemaster_logo_vertical.png"
+              alt="CodeMaster"
+              className="h-7 w-auto object-contain"
             />
           </Link>
 
-          {/* Desktop Menu */}
-          <div className='hidden md:flex items-center space-x-8'>
-            <Link
-              to='/'
-              className='text-gray-300 hover:text-orange-500 transition-colors duration-300 font-medium'
-            >
-              Inicio
-            </Link>
-            <Link
-              to='/servicios'
-              className='text-gray-300 hover:text-orange-500 transition-colors duration-300 font-medium'
-            >
-              Servicios
-            </Link>
-            <Link
-              to='/portfolio'
-              className='text-gray-300 hover:text-orange-500 transition-colors duration-300 font-medium'
-            >
-              Portfolio
-            </Link>
-            <Link
-              to='/nosotros'
-              className='text-gray-300 hover:text-orange-500 transition-colors duration-300 font-medium'
-            >
-              Nosotros
-            </Link>
+          <div className="hidden items-center gap-8 md:flex">
+            {enlaces.map((enlace) => (
+              <NavLink key={enlace.to} to={enlace.to} end={enlace.end} className={linkClass}>
+                {enlace.label}
+              </NavLink>
+            ))}
           </div>
 
-          {/* CTA Button */}
-          <div className='hidden md:block'>
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Link
-                to='/contacto'
-                className='bg-orange-500 text-white px-6 py-2 rounded-lg font-semibold hover:bg-orange-600 shadow-lg'
-              >
-                Contáctanos
-              </Link>
-            </motion.div>
-          </div>
-
-          {/* Mobile menu button */}
-          <button
-            onClick={toggleMenu}
-            className='md:hidden text-gray-300 hover:text-orange-500 focus:outline-none'
+          <Link
+            to="/contacto"
+            className="hidden rounded-xs bg-brand px-5 py-2.5 text-sm font-medium text-brand-ink transition-colors hover:bg-brand-hover md:block"
           >
-            <svg
-              className='h-6 w-6'
-              fill='none'
-              viewBox='0 0 24 24'
-              stroke='currentColor'
-            >
-              {isMenuOpen ? (
-                <path
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                  strokeWidth={2}
-                  d='M6 18L18 6M6 6l12 12'
-                />
-              ) : (
-                <path
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                  strokeWidth={2}
-                  d='M4 6h16M4 12h16M4 18h16'
-                />
-              )}
-            </svg>
+            Contáctanos
+          </Link>
+
+          <button
+            type="button"
+            onClick={() => setIsMenuOpen((open) => !open)}
+            aria-label={isMenuOpen ? "Cerrar menú" : "Abrir menú"}
+            aria-expanded={isMenuOpen}
+            className="text-fg-muted transition-colors hover:text-brand md:hidden"
+          >
+            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu */}
-      <div
-        className={`md:hidden transition-all duration-300 ease-in-out ${
-          isMenuOpen
-            ? "max-h-screen opacity-100"
-            : "max-h-0 opacity-0 overflow-hidden"
-        }`}
-      >
-        <div className='px-4 pt-2 pb-6 space-y-2 bg-gray-900'>
-          <Link
-            to='/'
-            onClick={() => setIsMenuOpen(false)}
-            className='block px-4 py-3 text-gray-300 hover:text-orange-500 hover:bg-gray-800 rounded-lg transition-colors duration-300'
-          >
-            Inicio
-          </Link>
-          <Link
-            to='/servicios'
-            onClick={() => setIsMenuOpen(false)}
-            className='block px-4 py-3 text-gray-300 hover:text-orange-500 hover:bg-gray-800 rounded-lg transition-colors duration-300'
-          >
-            Servicios
-          </Link>
-          <Link
-            to='/portfolio'
-            onClick={() => setIsMenuOpen(false)}
-            className='block px-4 py-3 text-gray-300 hover:text-orange-500 hover:bg-gray-800 rounded-lg transition-colors duration-300'
-          >
-            Portfolio
-          </Link>
-          <Link
-            to='/nosotros'
-            onClick={() => setIsMenuOpen(false)}
-            className='block px-4 py-3 text-gray-300 hover:text-orange-500 hover:bg-gray-800 rounded-lg transition-colors duration-300'
-          >
-            Nosotros
-          </Link>
-          <Link
-            to='/contacto'
-            onClick={() => setIsMenuOpen(false)}
-            className='block px-4 py-3 bg-orange-500 text-white text-center rounded-lg font-semibold hover:bg-orange-600 transition-colors duration-300'
-          >
-            Contacto
-          </Link>
+      {isMenuOpen && (
+        <div className="border-t border-line bg-ink-1 md:hidden">
+          <div className="space-y-1 px-4 py-4">
+            {enlaces.map((enlace) => (
+              <NavLink
+                key={enlace.to}
+                to={enlace.to}
+                end={enlace.end}
+                onClick={() => setIsMenuOpen(false)}
+                className="block px-2 py-3 text-fg-muted transition-colors hover:text-brand"
+              >
+                {enlace.label}
+              </NavLink>
+            ))}
+            <Link
+              to="/contacto"
+              onClick={() => setIsMenuOpen(false)}
+              className="mt-2 block rounded-xs bg-brand px-4 py-3 text-center font-medium text-brand-ink"
+            >
+              Contáctanos
+            </Link>
+          </div>
         </div>
-      </div>
-    </motion.nav>
+      )}
+    </nav>
   );
 };
 
