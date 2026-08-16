@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
-import { DURATION, EASE_OUT, VIEWPORT, useMotionDistance } from "./tokens";
+import { DISTANCE, DURATION, EASE_OUT, VIEWPORT, useMotionDistance } from "./tokens";
 
 const Reveal = ({
   as = "div",
   delay = 0,
-  distance = 24,
+  distance = DISTANCE.md,
   className = "",
   children,
   ...rest

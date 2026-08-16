@@ -4,7 +4,7 @@ import {
   Route,
   useLocation,
 } from "react-router-dom";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, MotionConfig } from "framer-motion";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
@@ -51,7 +51,9 @@ function AppContent() {
 function App() {
   return (
     <Router>
-      <AppContent />
+      <MotionConfig reducedMotion="user">
+        <AppContent />
+      </MotionConfig>
     </Router>
   );
 }

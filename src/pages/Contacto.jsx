@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Mail, Phone, MessageCircle, MapPin, Clock } from "lucide-react";
+import { Mail, Phone, MapPin, Clock } from "lucide-react";
 import RevealText from "../motion/RevealText";
 import Reveal from "../motion/Reveal";
 
@@ -24,13 +24,16 @@ const Contacto = () => {
     <div className="bg-ink-0 min-h-screen">
       {/* Hero Section */}
       <section className="border-b border-line bg-ink-0 pt-40 pb-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="mb-6 font-mono text-xs tracking-[0.18em] text-brand uppercase">
+            Contacto
+          </p>
           <RevealText
             as="h1"
             lines={["Contáctanos"]}
-            className="text-5xl md:text-6xl font-bold text-brand mb-6"
+            className="font-display text-5xl font-semibold tracking-[-0.03em] text-fg md:text-7xl"
           />
-          <Reveal as="p" delay={0.2} className="text-xl text-fg-muted max-w-2xl mx-auto">
+          <Reveal as="p" delay={0.2} className="mt-8 max-w-xl text-lg text-fg-muted">
             Estamos listos para hacer realidad tu proyecto digital
           </Reveal>
         </div>

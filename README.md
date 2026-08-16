@@ -18,6 +18,7 @@ CodeMaster es una empresa especializada en soluciones digitales integrales para 
 - **Vite 7.2** - Build tool y dev server
 - **Tailwind CSS 4** - Estilos personalizados
 - **framer-motion 12** - Animaciones
+- **Vitest + Testing Library** - Pruebas
 - **ESLint** - Linting
 
 ## 📁 Estructura del Proyecto
@@ -30,16 +31,35 @@ codemaster-react/
 │   ├── components/          # Componentes reutilizables
 │   │   ├── Navbar.jsx
 │   │   ├── Footer.jsx
-│   │   └── Hero.jsx
+│   │   ├── Hero.jsx
+│   │   ├── IndiceServicios.jsx
+│   │   ├── LogosClientes.jsx
+│   │   ├── PageTransition.jsx
+│   │   ├── ProcesoScroll.jsx
+│   │   ├── ScrollToTop.jsx
+│   │   └── TrabajoSeleccionado.jsx
 │   ├── pages/               # Páginas de la aplicación
 │   │   ├── Home.jsx         # Página principal
 │   │   ├── Servicios.jsx    # Listado de servicios
+│   │   ├── ServicioDetalle.jsx # Detalle de un servicio
 │   │   ├── Portfolio.jsx    # Proyectos realizados
 │   │   ├── About.jsx        # Sobre nosotros
-│   │   └── Contacto.jsx     # Formulario de contacto
-│   ├── App.jsx              # Componente principal
-│   ├── main.jsx             # Punto de entrada
-│   └── index.css            # Estilos globales
+│   │   ├── Contacto.jsx     # Formulario de contacto
+│   │   ├── Privacidad.jsx   # Política de privacidad
+│   │   ├── Terminos.jsx     # Términos y condiciones
+│   │   └── Cookies.jsx      # Política de cookies
+│   ├── motion/               # Primitivas de animación (framer-motion)
+│   │   ├── Reveal.jsx, RevealText.jsx, Rule.jsx
+│   │   ├── Stagger.jsx, Parallax.jsx
+│   │   └── tokens.js         # Duraciones, easing y distancias compartidas
+│   ├── data/                 # Fuente única de datos (servicios y proyectos)
+│   │   ├── servicios.js
+│   │   └── proyectos.js
+│   ├── test/                  # Setup y pruebas de integración
+│   │   └── setup.js
+│   ├── App.jsx               # Componente principal
+│   ├── main.jsx               # Punto de entrada
+│   └── index.css              # Estilos globales y tokens de diseño
 ├── index.html
 ├── vite.config.js
 └── package.json
@@ -85,6 +105,8 @@ http://localhost:5173
 - `npm run build` - Construye la aplicación para producción
 - `npm run preview` - Preview de la build de producción
 - `npm run lint` - Ejecuta el linter
+- `npm test` - Ejecuta la suite de pruebas una vez
+- `npm run test:watch` - Ejecuta las pruebas en modo watch
 
 ## 🎨 Páginas
 
@@ -132,18 +154,23 @@ Barra de navegación responsiva con menú móvil y botón de contacto.
 
 ### Footer
 
-Pie de página con enlaces de servicios, empresa y redes sociales.
+Pie de página con enlaces de servicios, empresa y páginas legales.
 
 ### Hero
 
-Sección hero principal con llamado a la acción y estadísticas.
+Sección hero principal con titular editorial y llamados a la acción.
 
 ## 🎨 Paleta de Colores
 
-- **Primario**: `#667eea` - `#764ba2` (gradiente)
-- **Secundario**: `#ffd700` (dorado)
-- **Texto**: `#333`
-- **Fondo**: `#f8f9fa`
+Definida como tokens en `src/index.css` (bloque `@theme`):
+
+- **Fondo (`ink`)**: `#000000` a `#1f1f1f` — superficies en negro, de más oscura a más clara
+- **Marca (`brand`)**: `#ff6600`, hover `#ff8533`
+- **Texto sobre marca (`brand-ink`)**: `#2a1509`
+- **Texto (`fg`)**: `#fafaf9` principal, `#a1a1a0` muted, `#6b6b69` subtle
+- **Líneas (`line`)**: blanco a 8% y 16% de opacidad
+
+Tipografía: Archivo Variable (`font-display`, titulares), Inter Variable (`font-sans`, cuerpo) y JetBrains Mono Variable (`font-mono`, eyebrows/etiquetas).
 
 ## 📱 Responsive Design
 
