@@ -16,7 +16,8 @@ CodeMaster es una empresa especializada en soluciones digitales integrales para 
 - **React 19.2** - Biblioteca de UI
 - **React Router DOM 7.10** - Navegación
 - **Vite 7.2** - Build tool y dev server
-- **CSS3** - Estilos personalizados
+- **Tailwind CSS 4** - Estilos personalizados
+- **framer-motion 12** - Animaciones
 - **ESLint** - Linting
 
 ## 📁 Estructura del Proyecto
@@ -95,6 +96,10 @@ Página principal con hero section, servicios destacados y razones para elegirno
 
 Listado completo de todos los servicios que ofrecemos con detalles y características.
 
+### Detalle de servicio (`/servicios/:slug`)
+
+Página individual de cada servicio.
+
 ### Portfolio (`/portfolio`)
 
 Galería de proyectos realizados con filtros por categoría.
@@ -106,6 +111,18 @@ Información sobre la empresa, misión, visión y valores.
 ### Contacto (`/contacto`)
 
 Formulario de contacto e información de contacto.
+
+### Privacidad (`/privacidad`)
+
+Política de privacidad.
+
+### Términos (`/terminos`)
+
+Términos y condiciones.
+
+### Cookies (`/cookies`)
+
+Política de cookies.
 
 ## 🎯 Componentes Principales
 
@@ -165,9 +182,9 @@ Este proyecto está bajo la Licencia MIT.
 
 **CodeMaster**
 
-- Email: contacto@codemaster.com
-- Teléfono: +1 (809) 123-4567
-- Web: www.codemaster.com
+- Email: manuel@codemaster.com.mx
+- Teléfono: +52 668 131 6931
+- Web: www.codemaster.com.mx
 
 ---
 
