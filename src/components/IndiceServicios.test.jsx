@@ -16,25 +16,18 @@ describe("IndiceServicios", () => {
     });
   });
 
-  it("links each row to its detail page", () => {
+  it("pairs every service with its own sequence number and detail link", () => {
     render(
       <MemoryRouter>
         <IndiceServicios />
       </MemoryRouter>
     );
-    expect(screen.getByRole("link", { name: /Desarrollo web/ })).toHaveAttribute(
-      "href",
-      "/servicios/desarrollo-web"
-    );
-  });
 
-  it("shows the sequence number for each row", () => {
-    render(
-      <MemoryRouter>
-        <IndiceServicios />
-      </MemoryRouter>
-    );
-    expect(screen.getByText("01")).toBeInTheDocument();
-    expect(screen.getByText("08")).toBeInTheDocument();
+    servicios.forEach((servicio) => {
+      const fila = screen.getByText(servicio.titulo).closest("a");
+      expect(fila, `no hay fila para ${servicio.titulo}`).not.toBeNull();
+      expect(fila).toHaveTextContent(servicio.numero);
+      expect(fila).toHaveAttribute("href", `/servicios/${servicio.slug}`);
+    });
   });
 });
