@@ -3,7 +3,7 @@ import { FileCheck, Scale, AlertCircle, Users } from "lucide-react";
 
 const Terminos = () => {
   return (
-    <div className='min-h-screen bg-linear-to-b from-black from-30% via-gray-900 via-70% to-black text-white'>
+    <div className='min-h-screen bg-linear-to-b from-ink-0 from-30% via-ink-1 via-70% to-ink-0 text-fg'>
       {/* Hero Section */}
       <motion.section
         initial={{ opacity: 0 }}
@@ -11,7 +11,7 @@ const Terminos = () => {
         transition={{ duration: 0.8 }}
         className='relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden'
       >
-        <div className='absolute inset-0 bg-linear-to-b from-orange-600/20 to-transparent'></div>
+        <div className='absolute inset-0 bg-linear-to-b from-brand/20 to-transparent'></div>
         <div className='max-w-7xl mx-auto relative z-10'>
           <motion.div
             initial={{ y: 30, opacity: 0 }}
@@ -19,16 +19,16 @@ const Terminos = () => {
             transition={{ delay: 0.2, duration: 0.8 }}
             className='text-center'
           >
-            <div className='inline-flex items-center gap-2 bg-orange-600/10 border border-orange-600/30 rounded-full px-4 py-2 mb-6'>
-              <Scale className='w-5 h-5 text-orange-500' />
-              <span className='text-sm font-medium text-orange-500'>
+            <div className='inline-flex items-center gap-2 bg-brand/10 border border-brand/30 rounded-full px-4 py-2 mb-6'>
+              <Scale className='w-5 h-5 text-brand' />
+              <span className='text-sm font-medium text-brand'>
                 Última actualización: 18 de diciembre de 2025
               </span>
             </div>
-            <h1 className='text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 bg-linear-to-r from-white to-gray-400 bg-clip-text text-transparent'>
+            <h1 className='font-display text-4xl font-semibold tracking-[-0.03em] md:text-5xl mb-6 bg-linear-to-r from-fg to-fg-muted bg-clip-text text-transparent'>
               Términos y condiciones
             </h1>
-            <p className='text-xl text-gray-400 max-w-3xl mx-auto'>
+            <p className='text-xl text-fg-muted max-w-3xl mx-auto'>
               Condiciones generales de uso y contratación de servicios de
               CodeMaster
             </p>
@@ -38,21 +38,21 @@ const Terminos = () => {
 
       {/* Content Section */}
       <section className='py-16 px-4 sm:px-6 lg:px-8'>
-        <div className='max-w-4xl mx-auto'>
+        <div className='max-w-3xl mx-auto'>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className='bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-8 mb-8'
+            className='bg-ink-1/50 backdrop-blur-sm border border-line rounded-2xl p-8 mb-8'
           >
             <div className='flex items-start gap-4 mb-4'>
-              <FileCheck className='w-6 h-6 text-orange-500 shrink-0 mt-1' />
+              <FileCheck className='w-6 h-6 text-brand shrink-0 mt-1' />
               <div>
-                <h2 className='text-2xl font-bold mb-4'>
+                <h2 className='font-display text-2xl font-medium mb-4'>
                   1. Aceptación de los términos
                 </h2>
-                <div className='space-y-4 text-gray-300'>
+                <div className='space-y-4 text-fg-muted leading-relaxed'>
                   <p>
                     Al acceder y utilizar el sitio web{" "}
                     <strong>codemaster.com.mx</strong> y contratar nuestros
@@ -74,15 +74,15 @@ const Terminos = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className='bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-8 mb-8'
+            className='bg-ink-1/50 backdrop-blur-sm border border-line rounded-2xl p-8 mb-8'
           >
             <div className='flex items-start gap-4 mb-4'>
-              <Users className='w-6 h-6 text-orange-500 shrink-0 mt-1' />
+              <Users className='w-6 h-6 text-brand shrink-0 mt-1' />
               <div>
-                <h2 className='text-2xl font-bold mb-4'>
+                <h2 className='font-display text-2xl font-medium mb-4'>
                   2. Servicios ofrecidos
                 </h2>
-                <div className='space-y-4 text-gray-300'>
+                <div className='space-y-4 text-fg-muted leading-relaxed'>
                   <p>CodeMaster ofrece los siguientes servicios:</p>
                   <ul className='list-disc list-inside space-y-2 ml-4'>
                     <li>
@@ -110,12 +110,12 @@ const Terminos = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className='bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-8 mb-8'
+            className='bg-ink-1/50 backdrop-blur-sm border border-line rounded-2xl p-8 mb-8'
           >
-            <h2 className='text-2xl font-bold mb-4'>
+            <h2 className='font-display text-2xl font-medium mb-4'>
               3. Proceso de contratación
             </h2>
-            <div className='space-y-4 text-gray-300'>
+            <div className='space-y-4 text-fg-muted leading-relaxed'>
               <p>
                 <strong>3.1 Cotización:</strong> El proceso inicia con una
                 solicitud de cotización donde el Cliente proporciona detalles
@@ -154,10 +154,10 @@ const Terminos = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className='bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-8 mb-8'
+            className='bg-ink-1/50 backdrop-blur-sm border border-line rounded-2xl p-8 mb-8'
           >
-            <h2 className='text-2xl font-bold mb-4'>4. Precios y pagos</h2>
-            <div className='space-y-4 text-gray-300'>
+            <h2 className='font-display text-2xl font-medium mb-4'>4. Precios y pagos</h2>
+            <div className='space-y-4 text-fg-muted leading-relaxed'>
               <p>
                 <strong>4.1 Precios:</strong> Todos los precios están expresados
                 en pesos mexicanos (MXN) y no incluyen IVA, salvo que se indique
@@ -190,12 +190,12 @@ const Terminos = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className='bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-8 mb-8'
+            className='bg-ink-1/50 backdrop-blur-sm border border-line rounded-2xl p-8 mb-8'
           >
-            <h2 className='text-2xl font-bold mb-4'>
+            <h2 className='font-display text-2xl font-medium mb-4'>
               5. Propiedad intelectual
             </h2>
-            <div className='space-y-4 text-gray-300'>
+            <div className='space-y-4 text-fg-muted leading-relaxed'>
               <p>
                 <strong>5.1 Derechos del Cliente:</strong> Una vez completado el
                 pago total, el Cliente adquiere los derechos de uso del producto
@@ -229,10 +229,10 @@ const Terminos = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className='bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-8 mb-8'
+            className='bg-ink-1/50 backdrop-blur-sm border border-line rounded-2xl p-8 mb-8'
           >
-            <h2 className='text-2xl font-bold mb-4'>6. Garantías y soporte</h2>
-            <div className='space-y-4 text-gray-300'>
+            <h2 className='font-display text-2xl font-medium mb-4'>6. Garantías y soporte</h2>
+            <div className='space-y-4 text-fg-muted leading-relaxed'>
               <p>
                 <strong>6.1 Período de garantía:</strong> CodeMaster ofrece 30
                 días de garantía para corrección de errores posteriores a la
@@ -261,12 +261,12 @@ const Terminos = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className='bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-8 mb-8'
+            className='bg-ink-1/50 backdrop-blur-sm border border-line rounded-2xl p-8 mb-8'
           >
-            <h2 className='text-2xl font-bold mb-4'>
+            <h2 className='font-display text-2xl font-medium mb-4'>
               7. Responsabilidades del cliente
             </h2>
-            <div className='space-y-4 text-gray-300'>
+            <div className='space-y-4 text-fg-muted leading-relaxed'>
               <p>El Cliente se compromete a:</p>
               <ul className='list-disc list-inside space-y-2 ml-4'>
                 <li>
@@ -299,15 +299,15 @@ const Terminos = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.7 }}
-            className='bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-8 mb-8'
+            className='bg-ink-1/50 backdrop-blur-sm border border-line rounded-2xl p-8 mb-8'
           >
             <div className='flex items-start gap-4 mb-4'>
-              <AlertCircle className='w-6 h-6 text-orange-500 shrink-0 mt-1' />
+              <AlertCircle className='w-6 h-6 text-brand shrink-0 mt-1' />
               <div>
-                <h2 className='text-2xl font-bold mb-4'>
+                <h2 className='font-display text-2xl font-medium mb-4'>
                   8. Limitación de responsabilidad
                 </h2>
-                <div className='space-y-4 text-gray-300'>
+                <div className='space-y-4 text-fg-muted leading-relaxed'>
                   <p>
                     <strong>8.1 Exclusión de garantías:</strong> Los servicios
                     se proporcionan "tal cual" sin garantías implícitas de
@@ -338,12 +338,12 @@ const Terminos = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.8 }}
-            className='bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-8 mb-8'
+            className='bg-ink-1/50 backdrop-blur-sm border border-line rounded-2xl p-8 mb-8'
           >
-            <h2 className='text-2xl font-bold mb-4'>
+            <h2 className='font-display text-2xl font-medium mb-4'>
               9. Cancelación y reembolsos
             </h2>
-            <div className='space-y-4 text-gray-300'>
+            <div className='space-y-4 text-fg-muted leading-relaxed'>
               <p>
                 <strong>9.1 Cancelación por el Cliente:</strong> El Cliente
                 puede cancelar el proyecto notificando por escrito. El anticipo
@@ -368,10 +368,10 @@ const Terminos = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.9 }}
-            className='bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-8 mb-8'
+            className='bg-ink-1/50 backdrop-blur-sm border border-line rounded-2xl p-8 mb-8'
           >
-            <h2 className='text-2xl font-bold mb-4'>10. Confidencialidad</h2>
-            <div className='space-y-4 text-gray-300'>
+            <h2 className='font-display text-2xl font-medium mb-4'>10. Confidencialidad</h2>
+            <div className='space-y-4 text-fg-muted leading-relaxed'>
               <p>
                 Ambas partes acuerdan mantener confidencial toda información
                 compartida durante el proyecto, excepto información que:
@@ -391,12 +391,12 @@ const Terminos = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 1.0 }}
-            className='bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-8 mb-8'
+            className='bg-ink-1/50 backdrop-blur-sm border border-line rounded-2xl p-8 mb-8'
           >
-            <h2 className='text-2xl font-bold mb-4'>
+            <h2 className='font-display text-2xl font-medium mb-4'>
               11. Jurisdicción y ley aplicable
             </h2>
-            <div className='space-y-4 text-gray-300'>
+            <div className='space-y-4 text-fg-muted leading-relaxed'>
               <p>
                 Estos Términos y Condiciones se rigen por las leyes de México.
                 Cualquier disputa será resuelta en los tribunales de Los Mochis,
@@ -411,10 +411,10 @@ const Terminos = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 1.1 }}
-            className='bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-8 mb-8'
+            className='bg-ink-1/50 backdrop-blur-sm border border-line rounded-2xl p-8 mb-8'
           >
-            <h2 className='text-2xl font-bold mb-4'>12. Modificaciones</h2>
-            <div className='space-y-4 text-gray-300'>
+            <h2 className='font-display text-2xl font-medium mb-4'>12. Modificaciones</h2>
+            <div className='space-y-4 text-fg-muted leading-relaxed'>
               <p>
                 CodeMaster se reserva el derecho de modificar estos Términos y
                 Condiciones en cualquier momento. Los cambios serán efectivos al
@@ -430,10 +430,10 @@ const Terminos = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 1.2 }}
-            className='bg-linear-to-b from-orange-600/20 to-orange-600/10 border border-orange-600/30 rounded-2xl p-8'
+            className='bg-linear-to-b from-brand/20 to-brand/10 border border-brand/30 rounded-2xl p-8'
           >
-            <h2 className='text-2xl font-bold mb-4'>13. Contacto</h2>
-            <div className='space-y-4 text-gray-300'>
+            <h2 className='font-display text-2xl font-medium mb-4'>13. Contacto</h2>
+            <div className='space-y-4 text-fg-muted leading-relaxed'>
               <p>
                 Para preguntas sobre estos Términos y Condiciones, contáctanos:
               </p>
@@ -445,7 +445,7 @@ const Terminos = () => {
                   Email:{" "}
                   <a
                     href='mailto:manuel@codemaster.com.mx'
-                    className='text-orange-500 hover:text-orange-400'
+                    className='text-brand hover:text-brand-hover'
                   >
                     manuel@codemaster.com.mx
                   </a>
@@ -454,7 +454,7 @@ const Terminos = () => {
                   Teléfono:{" "}
                   <a
                     href='tel:+526681316931'
-                    className='text-orange-500 hover:text-orange-400'
+                    className='text-brand hover:text-brand-hover'
                   >
                     +52 668 131 6931
                   </a>
@@ -464,7 +464,7 @@ const Terminos = () => {
                   Sitio web:{" "}
                   <a
                     href='https://www.codemaster.com.mx'
-                    className='text-orange-500 hover:text-orange-400'
+                    className='text-brand hover:text-brand-hover'
                   >
                     www.codemaster.com.mx
                   </a>

@@ -3,7 +3,7 @@ import { Cookie, Settings, BarChart3, Shield } from "lucide-react";
 
 const Cookies = () => {
   return (
-    <div className='min-h-screen bg-linear-to-b from-black from-30% via-gray-900 via-70% to-black text-white'>
+    <div className='min-h-screen bg-linear-to-b from-ink-0 from-30% via-ink-1 via-70% to-ink-0 text-fg'>
       {/* Hero Section */}
       <motion.section
         initial={{ opacity: 0 }}
@@ -11,7 +11,7 @@ const Cookies = () => {
         transition={{ duration: 0.8 }}
         className='relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden'
       >
-        <div className='absolute inset-0 bg-linear-to-b from-orange-600/20 to-transparent'></div>
+        <div className='absolute inset-0 bg-linear-to-b from-brand/20 to-transparent'></div>
         <div className='max-w-7xl mx-auto relative z-10'>
           <motion.div
             initial={{ y: 30, opacity: 0 }}
@@ -19,16 +19,16 @@ const Cookies = () => {
             transition={{ delay: 0.2, duration: 0.8 }}
             className='text-center'
           >
-            <div className='inline-flex items-center gap-2 bg-orange-600/10 border border-orange-600/30 rounded-full px-4 py-2 mb-6'>
-              <Cookie className='w-5 h-5 text-orange-500' />
-              <span className='text-sm font-medium text-orange-500'>
+            <div className='inline-flex items-center gap-2 bg-brand/10 border border-brand/30 rounded-full px-4 py-2 mb-6'>
+              <Cookie className='w-5 h-5 text-brand' />
+              <span className='text-sm font-medium text-brand'>
                 Última actualización: 18 de diciembre de 2025
               </span>
             </div>
-            <h1 className='text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 bg-linear-to-b from-white to-gray-400 bg-clip-text text-transparent'>
+            <h1 className='font-display text-4xl font-semibold tracking-[-0.03em] md:text-5xl mb-6 bg-linear-to-b from-fg to-fg-muted bg-clip-text text-transparent'>
               Política de cookies
             </h1>
-            <p className='text-xl text-gray-400 max-w-3xl mx-auto'>
+            <p className='text-xl text-fg-muted max-w-3xl mx-auto'>
               Información sobre el uso de cookies y tecnologías similares en
               nuestro sitio web
             </p>
@@ -38,21 +38,21 @@ const Cookies = () => {
 
       {/* Content Section */}
       <section className='py-16 px-4 sm:px-6 lg:px-8'>
-        <div className='max-w-4xl mx-auto'>
+        <div className='max-w-3xl mx-auto'>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className='bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-8 mb-8'
+            className='bg-ink-1/50 backdrop-blur-sm border border-line rounded-2xl p-8 mb-8'
           >
             <div className='flex items-start gap-4 mb-4'>
-              <Cookie className='w-6 h-6 text-orange-500 shrink-0 mt-1' />
+              <Cookie className='w-6 h-6 text-brand shrink-0 mt-1' />
               <div>
-                <h2 className='text-2xl font-bold mb-4'>
+                <h2 className='font-display text-2xl font-medium mb-4'>
                   1. ¿Qué son las cookies?
                 </h2>
-                <div className='space-y-4 text-gray-300'>
+                <div className='space-y-4 text-fg-muted leading-relaxed'>
                   <p>
                     Las cookies son pequeños archivos de texto que se almacenan
                     en tu dispositivo (ordenador, tablet o móvil) cuando visitas
@@ -88,15 +88,15 @@ const Cookies = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className='bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-8 mb-8'
+            className='bg-ink-1/50 backdrop-blur-sm border border-line rounded-2xl p-8 mb-8'
           >
             <div className='flex items-start gap-4 mb-4'>
-              <Settings className='w-6 h-6 text-orange-500 shrink-0 mt-1' />
+              <Settings className='w-6 h-6 text-brand shrink-0 mt-1' />
               <div>
-                <h2 className='text-2xl font-bold mb-4'>
+                <h2 className='font-display text-2xl font-medium mb-4'>
                   2. ¿Cómo utilizamos las cookies?
                 </h2>
-                <div className='space-y-4 text-gray-300'>
+                <div className='space-y-4 text-fg-muted leading-relaxed'>
                   <p>CodeMaster utiliza cookies para:</p>
                   <ul className='list-disc list-inside space-y-2 ml-4'>
                     <li>Permitir el funcionamiento básico del sitio web</li>
@@ -116,25 +116,25 @@ const Cookies = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className='bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-8 mb-8'
+            className='bg-ink-1/50 backdrop-blur-sm border border-line rounded-2xl p-8 mb-8'
           >
-            <h2 className='text-2xl font-bold mb-6'>
+            <h2 className='font-display text-2xl font-medium mb-6'>
               3. Tipos de cookies que utilizamos
             </h2>
 
             {/* Cookies Esenciales */}
-            <div className='mb-6 p-6 bg-black/30 rounded-xl border border-gray-700'>
+            <div className='mb-6 p-6 bg-ink-0/30 rounded-xl border border-line'>
               <div className='flex items-center gap-3 mb-3'>
                 <Shield className='w-5 h-5 text-green-500' />
                 <h3 className='text-xl font-semibold text-green-400'>
                   Cookies esenciales (obligatorias)
                 </h3>
               </div>
-              <p className='text-gray-300 mb-3'>
+              <p className='text-fg-muted mb-3 leading-relaxed'>
                 Estas cookies son necesarias para el funcionamiento básico del
                 sitio web y no pueden desactivarse.
               </p>
-              <div className='space-y-2 text-gray-400 text-sm'>
+              <div className='space-y-2 text-fg-muted text-sm leading-relaxed'>
                 <p>
                   <strong>Propósito:</strong> Seguridad, navegación básica,
                   preferencias de sesión
@@ -151,18 +151,18 @@ const Cookies = () => {
             </div>
 
             {/* Cookies de Rendimiento */}
-            <div className='mb-6 p-6 bg-black/30 rounded-xl border border-gray-700'>
+            <div className='mb-6 p-6 bg-ink-0/30 rounded-xl border border-line'>
               <div className='flex items-center gap-3 mb-3'>
                 <BarChart3 className='w-5 h-5 text-blue-500' />
                 <h3 className='text-xl font-semibold text-blue-400'>
                   Cookies de rendimiento y análisis
                 </h3>
               </div>
-              <p className='text-gray-300 mb-3'>
+              <p className='text-fg-muted mb-3 leading-relaxed'>
                 Nos ayudan a entender cómo los visitantes interactúan con
                 nuestro sitio web.
               </p>
-              <div className='space-y-2 text-gray-400 text-sm'>
+              <div className='space-y-2 text-fg-muted text-sm leading-relaxed'>
                 <p>
                   <strong>Propósito:</strong> Análisis de tráfico, métricas de
                   uso, optimización
@@ -183,17 +183,17 @@ const Cookies = () => {
             </div>
 
             {/* Cookies Funcionales */}
-            <div className='mb-6 p-6 bg-black/30 rounded-xl border border-gray-700'>
+            <div className='mb-6 p-6 bg-ink-0/30 rounded-xl border border-line'>
               <div className='flex items-center gap-3 mb-3'>
                 <Settings className='w-5 h-5 text-purple-500' />
                 <h3 className='text-xl font-semibold text-purple-400'>
                   Cookies funcionales
                 </h3>
               </div>
-              <p className='text-gray-300 mb-3'>
+              <p className='text-fg-muted mb-3 leading-relaxed'>
                 Permiten recordar tus preferencias para mejorar tu experiencia.
               </p>
-              <div className='space-y-2 text-gray-400 text-sm'>
+              <div className='space-y-2 text-fg-muted text-sm leading-relaxed'>
                 <p>
                   <strong>Propósito:</strong> Recordar preferencias,
                   configuraciones personalizadas
@@ -214,73 +214,73 @@ const Cookies = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className='bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-8 mb-8'
+            className='bg-ink-1/50 backdrop-blur-sm border border-line rounded-2xl p-8 mb-8'
           >
-            <h2 className='text-2xl font-bold mb-4'>4. Cookies de terceros</h2>
-            <div className='space-y-4 text-gray-300'>
+            <h2 className='font-display text-2xl font-medium mb-4'>4. Cookies de terceros</h2>
+            <div className='space-y-4 text-fg-muted leading-relaxed'>
               <p>
                 Algunos servicios de terceros pueden establecer cookies en tu
                 dispositivo cuando visitas nuestro sitio:
               </p>
 
               <div className='space-y-4 mt-4'>
-                <div className='p-4 bg-black/30 rounded-lg border border-gray-700'>
-                  <h4 className='font-semibold text-white mb-2'>
+                <div className='p-4 bg-ink-0/30 rounded-lg border border-line'>
+                  <h4 className='font-semibold text-fg mb-2'>
                     Google Analytics
                   </h4>
-                  <p className='text-sm text-gray-400'>
+                  <p className='text-sm text-fg-muted leading-relaxed'>
                     Utilizamos Google Analytics para analizar el uso de nuestro
                     sitio web.
                   </p>
-                  <p className='text-sm text-gray-400 mt-2'>
+                  <p className='text-sm text-fg-muted mt-2 leading-relaxed'>
                     Más información:{" "}
                     <a
                       href='https://policies.google.com/privacy'
                       target='_blank'
                       rel='noopener noreferrer'
-                      className='text-orange-500 hover:text-orange-400'
+                      className='text-brand hover:text-brand-hover'
                     >
                       Política de privacidad de Google
                     </a>
                   </p>
                 </div>
 
-                <div className='p-4 bg-black/30 rounded-lg border border-gray-700'>
-                  <h4 className='font-semibold text-white mb-2'>
+                <div className='p-4 bg-ink-0/30 rounded-lg border border-line'>
+                  <h4 className='font-semibold text-fg mb-2'>
                     Google Fonts
                   </h4>
-                  <p className='text-sm text-gray-400'>
+                  <p className='text-sm text-fg-muted leading-relaxed'>
                     Utilizamos Google Fonts para mejorar la tipografía del
                     sitio.
                   </p>
-                  <p className='text-sm text-gray-400 mt-2'>
+                  <p className='text-sm text-fg-muted mt-2 leading-relaxed'>
                     Más información:{" "}
                     <a
                       href='https://developers.google.com/fonts/faq'
                       target='_blank'
                       rel='noopener noreferrer'
-                      className='text-orange-500 hover:text-orange-400'
+                      className='text-brand hover:text-brand-hover'
                     >
                       FAQ de Google Fonts
                     </a>
                   </p>
                 </div>
 
-                <div className='p-4 bg-black/30 rounded-lg border border-gray-700'>
-                  <h4 className='font-semibold text-white mb-2'>
+                <div className='p-4 bg-ink-0/30 rounded-lg border border-line'>
+                  <h4 className='font-semibold text-fg mb-2'>
                     WhatsApp Business
                   </h4>
-                  <p className='text-sm text-gray-400'>
+                  <p className='text-sm text-fg-muted leading-relaxed'>
                     Integramos un botón de WhatsApp para facilitar el contacto
                     directo.
                   </p>
-                  <p className='text-sm text-gray-400 mt-2'>
+                  <p className='text-sm text-fg-muted mt-2 leading-relaxed'>
                     Más información:{" "}
                     <a
                       href='https://www.whatsapp.com/legal/privacy-policy'
                       target='_blank'
                       rel='noopener noreferrer'
-                      className='text-orange-500 hover:text-orange-400'
+                      className='text-brand hover:text-brand-hover'
                     >
                       Política de privacidad de WhatsApp
                     </a>
@@ -295,23 +295,23 @@ const Cookies = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className='bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-8 mb-8'
+            className='bg-ink-1/50 backdrop-blur-sm border border-line rounded-2xl p-8 mb-8'
           >
-            <h2 className='text-2xl font-bold mb-4'>
+            <h2 className='font-display text-2xl font-medium mb-4'>
               5. Cómo gestionar las cookies
             </h2>
-            <div className='space-y-4 text-gray-300'>
+            <div className='space-y-4 text-fg-muted leading-relaxed'>
               <p>
                 Tienes el control sobre las cookies que se almacenan en tu
                 dispositivo. Puedes:
               </p>
 
               <div className='mt-4 space-y-3'>
-                <div className='p-4 bg-orange-600/10 border border-orange-600/30 rounded-lg'>
-                  <h4 className='font-semibold text-white mb-2'>
+                <div className='p-4 bg-brand/10 border border-brand/30 rounded-lg'>
+                  <h4 className='font-semibold text-fg mb-2'>
                     Configuración del navegador
                   </h4>
-                  <p className='text-sm'>
+                  <p className='text-sm leading-relaxed'>
                     Todos los navegadores permiten gestionar las cookies a
                     través de su configuración:
                   </p>
@@ -335,25 +335,25 @@ const Cookies = () => {
                   </ul>
                 </div>
 
-                <div className='p-4 bg-orange-600/10 border border-orange-600/30 rounded-lg'>
-                  <h4 className='font-semibold text-white mb-2'>
+                <div className='p-4 bg-brand/10 border border-brand/30 rounded-lg'>
+                  <h4 className='font-semibold text-fg mb-2'>
                     Eliminar cookies
                   </h4>
-                  <p className='text-sm'>
+                  <p className='text-sm leading-relaxed'>
                     Puedes eliminar las cookies almacenadas en cualquier momento
                     desde la configuración de tu navegador.
                   </p>
                 </div>
 
-                <div className='p-4 bg-orange-600/10 border border-orange-600/30 rounded-lg'>
-                  <h4 className='font-semibold text-white mb-2'>
+                <div className='p-4 bg-brand/10 border border-brand/30 rounded-lg'>
+                  <h4 className='font-semibold text-fg mb-2'>
                     Bloquear cookies
                   </h4>
-                  <p className='text-sm'>
+                  <p className='text-sm leading-relaxed'>
                     Puedes configurar tu navegador para bloquear todas las
                     cookies o solo las de terceros.
                   </p>
-                  <p className='text-sm mt-2 text-orange-400'>
+                  <p className='text-sm mt-2 text-brand-hover leading-relaxed'>
                     <strong>Nota:</strong> Bloquear todas las cookies puede
                     afectar la funcionalidad del sitio web.
                   </p>
@@ -367,12 +367,12 @@ const Cookies = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className='bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-8 mb-8'
+            className='bg-ink-1/50 backdrop-blur-sm border border-line rounded-2xl p-8 mb-8'
           >
-            <h2 className='text-2xl font-bold mb-4'>
+            <h2 className='font-display text-2xl font-medium mb-4'>
               6. Cookies y dispositivos móviles
             </h2>
-            <div className='space-y-4 text-gray-300'>
+            <div className='space-y-4 text-fg-muted leading-relaxed'>
               <p>
                 Los dispositivos móviles también utilizan cookies. Puedes
                 gestionar las cookies en:
@@ -395,12 +395,12 @@ const Cookies = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className='bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-8 mb-8'
+            className='bg-ink-1/50 backdrop-blur-sm border border-line rounded-2xl p-8 mb-8'
           >
-            <h2 className='text-2xl font-bold mb-4'>
+            <h2 className='font-display text-2xl font-medium mb-4'>
               7. Actualizaciones de esta política
             </h2>
-            <div className='space-y-4 text-gray-300'>
+            <div className='space-y-4 text-fg-muted leading-relaxed'>
               <p>
                 Podemos actualizar esta Política de Cookies ocasionalmente para
                 reflejar cambios en las cookies que utilizamos o por otras
@@ -418,10 +418,10 @@ const Cookies = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.7 }}
-            className='bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-8 mb-8'
+            className='bg-ink-1/50 backdrop-blur-sm border border-line rounded-2xl p-8 mb-8'
           >
-            <h2 className='text-2xl font-bold mb-4'>8. Consentimiento</h2>
-            <div className='space-y-4 text-gray-300'>
+            <h2 className='font-display text-2xl font-medium mb-4'>8. Consentimiento</h2>
+            <div className='space-y-4 text-fg-muted leading-relaxed'>
               <p>
                 Al utilizar nuestro sitio web, consientes el uso de cookies de
                 acuerdo con esta Política de Cookies.
@@ -439,10 +439,10 @@ const Cookies = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.8 }}
-            className='bg-linear-to-b from-orange-600/20 to-orange-600/10 border border-orange-600/30 rounded-2xl p-8'
+            className='bg-linear-to-b from-brand/20 to-brand/10 border border-brand/30 rounded-2xl p-8'
           >
-            <h2 className='text-2xl font-bold mb-4'>9. Contacto</h2>
-            <div className='space-y-4 text-gray-300'>
+            <h2 className='font-display text-2xl font-medium mb-4'>9. Contacto</h2>
+            <div className='space-y-4 text-fg-muted leading-relaxed'>
               <p>
                 Si tienes preguntas sobre nuestra Política de Cookies,
                 contáctanos:
@@ -455,7 +455,7 @@ const Cookies = () => {
                   Email:{" "}
                   <a
                     href='mailto:manuel@codemaster.com.mx'
-                    className='text-orange-500 hover:text-orange-400'
+                    className='text-brand hover:text-brand-hover'
                   >
                     manuel@codemaster.com.mx
                   </a>
@@ -464,7 +464,7 @@ const Cookies = () => {
                   Teléfono:{" "}
                   <a
                     href='tel:+526681316931'
-                    className='text-orange-500 hover:text-orange-400'
+                    className='text-brand hover:text-brand-hover'
                   >
                     +52 668 131 6931
                   </a>
