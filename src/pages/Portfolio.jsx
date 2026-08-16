@@ -1,187 +1,151 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import RevealText from "../motion/RevealText";
+import Reveal from "../motion/Reveal";
+import Parallax from "../motion/Parallax";
+import { categorias, getProyectosPorCategoria } from "../data/proyectos";
 
 const Portfolio = () => {
   const [filtro, setFiltro] = useState("todos");
-
-  const proyectos = [
-    {
-      id: 1,
-      titulo: "E-Commerce Fashion Store",
-      categoria: "web",
-      descripcion:
-        "Tienda online completa con carrito de compras, pasarela de pago y panel administrativo.",
-      imagen:
-        "https://placehold.co/400x300/667eea/ffffff?text=E-Commerce&font=roboto",
-      tecnologias: ["React", "Node.js", "MongoDB"],
-    },
-    {
-      id: 2,
-      titulo: "App de Delivery",
-      categoria: "app",
-      descripcion:
-        "Aplicación móvil para pedidos de comida con tracking en tiempo real y múltiples métodos de pago.",
-      imagen:
-        "https://placehold.co/400x300/764ba2/ffffff?text=Delivery+App&font=roboto",
-      tecnologias: ["React Native", "Firebase", "Google Maps API"],
-    },
-    {
-      id: 3,
-      titulo: "Sistema de Gestión Hospitalaria",
-      categoria: "sistema",
-      descripcion:
-        "Sistema integral para administración de hospitales con gestión de pacientes, citas y facturación.",
-      imagen:
-        "https://placehold.co/400x300/667eea/ffffff?text=Hospital+System&font=roboto",
-      tecnologias: ["Vue.js", "Laravel", "MySQL"],
-    },
-    {
-      id: 4,
-      titulo: "Campaña Digital para Marca de Ropa",
-      categoria: "marketing",
-      descripcion:
-        "Estrategia completa de redes sociales con aumento del 300% en engagement y ventas online.",
-      imagen:
-        "https://placehold.co/400x300/ff6600/ffffff?text=Social+Media&font=roboto",
-      tecnologias: ["Facebook Ads", "Instagram", "Analytics"],
-    },
-    {
-      id: 5,
-      titulo: "Portal Corporativo",
-      categoria: "web",
-      descripcion:
-        "Sitio web corporativo multiidioma con blog integrado y sistema de contacto CRM.",
-      imagen:
-        "https://placehold.co/400x300/764ba2/ffffff?text=Corporate+Site&font=roboto",
-      tecnologias: ["WordPress", "PHP", "MySQL"],
-    },
-    {
-      id: 6,
-      titulo: "App Fitness & Wellness",
-      categoria: "app",
-      descripcion:
-        "Aplicación para seguimiento de ejercicios, nutrición y métricas de salud con planes personalizados.",
-      imagen:
-        "https://placehold.co/400x300/667eea/ffffff?text=Fitness+App&font=roboto",
-      tecnologias: ["Flutter", "Firebase", "HealthKit"],
-    },
-  ];
-
-  const categorias = [
-    { id: "todos", nombre: "Todos" },
-    { id: "web", nombre: "Desarrollo web" },
-    { id: "app", nombre: "Apps móviles" },
-    { id: "sistema", nombre: "Sistemas" },
-    { id: "marketing", nombre: "Marketing digital" },
-  ];
-
-  const proyectosFiltrados =
-    filtro === "todos"
-      ? proyectos
-      : proyectos.filter((p) => p.categoria === filtro);
+  const visibles = getProyectosPorCategoria(filtro);
 
   return (
-    <div className='bg-black min-h-screen'>
-      {/* Hero Section */}
-      <section className='bg-linear-to-r from-black from-30% via-gray-900 via-70% to-black py-24 border-b border-gray-800'>
-        <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center'>
-          <h1 className='text-5xl md:text-6xl font-bold text-white mb-6 animate-slideInLeft'>
-            Nuestro <span className='text-orange-500'>portfolio</span>
-          </h1>
-          <p className='text-xl text-gray-400 max-w-2xl mx-auto animate-fadeIn delay-200'>
-            Proyectos que transforman ideas en realidad digital
+    <div className="bg-ink-0">
+      <section className="border-b border-line pt-40 pb-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <p className="mb-6 font-mono text-xs tracking-[0.18em] text-brand uppercase">
+            Portfolio
           </p>
+          <RevealText
+            as="h1"
+            lines={["Trabajo entregado"]}
+            className="font-display text-5xl font-semibold tracking-[-0.03em] text-fg md:text-7xl"
+          />
         </div>
       </section>
 
-      {/* Portfolio Content */}
-      <section className='bg-linear-to-b from-black to-gray-900 py-20'>
-        <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
-          {/* Filters */}
-          <div className='flex flex-wrap justify-center gap-4 mb-12 animate-fadeIn'>
-            {categorias.map((cat) => (
+      <section className="py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mb-16 flex flex-wrap gap-2">
+            {categorias.map((categoria) => (
               <button
-                key={cat.id}
-                className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-110 ${
-                  filtro === cat.id
-                    ? "bg-orange-500 text-white shadow-lg shadow-orange-500/50 scale-105 animate-glow"
-                    : "bg-gray-800 text-gray-300 border border-gray-700 hover:border-orange-500 hover:text-white"
+                key={categoria.id}
+                type="button"
+                onClick={() => setFiltro(categoria.id)}
+                aria-pressed={filtro === categoria.id}
+                className={`rounded-xs px-4 py-2 font-mono text-xs tracking-[0.08em] uppercase transition-colors ${
+                  filtro === categoria.id
+                    ? "bg-brand text-brand-ink"
+                    : "border border-line text-fg-muted hover:border-brand hover:text-brand"
                 }`}
-                onClick={() => setFiltro(cat.id)}
               >
-                {cat.nombre}
+                {categoria.nombre}
               </button>
             ))}
           </div>
 
-          {/* Projects Grid */}
-          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
-            {proyectosFiltrados.map((proyecto, index) => (
-              <div
-                key={proyecto.id}
-                className={`group bg-gray-800/40 backdrop-blur-sm border border-gray-700 rounded-2xl overflow-hidden hover:border-orange-500 hover:shadow-2xl hover:shadow-orange-500/20 transition-all duration-500 hover:transform hover:scale-110 animate-scaleIn delay-${
-                  index * 100
-                }`}
-              >
-                <div className='relative overflow-hidden'>
-                  <img
-                    src={proyecto.imagen}
-                    alt={proyecto.titulo}
-                    className='w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500'
-                  />
-                  <div className='absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center'>
-                    <button className='bg-orange-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-600 transition-colors duration-300 transform scale-90 group-hover:scale-100'>
-                      Ver Proyecto
-                    </button>
-                  </div>
-                </div>
-                <div className='p-6'>
-                  <h3 className='text-xl font-bold text-white mb-3 group-hover:text-orange-500 transition-colors duration-300'>
-                    {proyecto.titulo}
-                  </h3>
-                  <p className='text-gray-400 text-sm leading-relaxed mb-4'>
-                    {proyecto.descripcion}
-                  </p>
-                  <div className='flex flex-wrap gap-2'>
-                    {proyecto.tecnologias.map((tech, index) => (
-                      <span
-                        key={index}
-                        className='px-3 py-1 bg-gray-700 text-orange-400 text-xs rounded-full border border-gray-600'
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+          {visibles.length === 0 ? (
+            <p className="py-16 text-center text-fg-muted">
+              Todavía no tenemos proyectos publicados en esta categoría.
+            </p>
+          ) : (
+            <div className="space-y-28">
+              {visibles.map((proyecto, index) => (
+                <article
+                  key={proyecto.slug}
+                  className={`grid items-center gap-10 lg:grid-cols-2 ${
+                    index % 2 === 1 ? "lg:[&>*:first-child]:order-2" : ""
+                  }`}
+                >
+                  <Parallax offset={40}>
+                    <div className="overflow-hidden rounded-panel border border-line bg-ink-2">
+                      <img
+                        src={proyecto.imagen}
+                        alt={proyecto.titulo}
+                        loading="lazy"
+                        className="aspect-[4/3] w-full object-cover"
+                      />
+                    </div>
+                  </Parallax>
 
-          {/* No Projects Message */}
-          {proyectosFiltrados.length === 0 && (
-            <div className='text-center py-12'>
-              <p className='text-gray-400 text-lg'>
-                No hay proyectos en esta categoría aún.
-              </p>
+                  <Reveal>
+                    {proyecto.esPlantilla && (
+                      <span className="mb-4 inline-block rounded-xs border border-line-strong px-2 py-1 font-mono text-[11px] tracking-[0.12em] text-fg-subtle uppercase">
+                        Plantilla — pendiente de sustituir
+                      </span>
+                    )}
+                    <p className="font-mono text-xs tracking-[0.12em] text-fg-subtle uppercase">
+                      {proyecto.cliente}
+                    </p>
+                    <h2 className="mt-3 font-display text-3xl font-medium tracking-[-0.02em] text-fg">
+                      {proyecto.titulo}
+                    </h2>
+
+                    <dl className="mt-6 space-y-4">
+                      <div>
+                        <dt className="font-mono text-xs tracking-[0.12em] text-brand uppercase">
+                          Reto
+                        </dt>
+                        <dd className="mt-1 leading-relaxed text-fg-muted">{proyecto.reto}</dd>
+                      </div>
+                      <div>
+                        <dt className="font-mono text-xs tracking-[0.12em] text-brand uppercase">
+                          Solución
+                        </dt>
+                        <dd className="mt-1 leading-relaxed text-fg-muted">{proyecto.solucion}</dd>
+                      </div>
+                      <div>
+                        <dt className="font-mono text-xs tracking-[0.12em] text-brand uppercase">
+                          Resultado
+                        </dt>
+                        <dd className="mt-1 leading-relaxed text-fg-muted">{proyecto.resultado}</dd>
+                      </div>
+                    </dl>
+
+                    <ul className="mt-6 flex flex-wrap gap-2">
+                      {proyecto.tecnologias.map((tecnologia) => (
+                        <li
+                          key={tecnologia}
+                          className="rounded-xs border border-line px-2.5 py-1 font-mono text-xs text-fg-subtle"
+                        >
+                          {tecnologia}
+                        </li>
+                      ))}
+                    </ul>
+
+                    {proyecto.url && (
+                      <a
+                        href={proyecto.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-6 inline-block font-mono text-sm text-brand transition-colors hover:text-brand-hover"
+                      >
+                        Visitar el sitio →
+                      </a>
+                    )}
+                  </Reveal>
+                </article>
+              ))}
             </div>
           )}
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className='bg-linear-to-r from-orange-600 to-orange-500 py-20'>
-        <div className='max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center'>
-          <h2 className='text-4xl md:text-5xl font-bold text-white mb-6'>
-            ¿Quieres ser parte de nuestro portfolio?
-          </h2>
-          <p className='text-xl text-white/90 mb-10'>
-            Trabaja con nosotros y hagamos algo increíble juntos
-          </p>
-          <a
-            href='/contacto'
-            className='inline-block bg-white text-orange-500 px-10 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-xl'
-          >
-            Iniciar un Proyecto
-          </a>
+      <section className="bg-brand py-24">
+        <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+          <RevealText
+            as="h2"
+            lines={["¿Quieres ser el siguiente?"]}
+            className="font-display text-4xl font-semibold tracking-[-0.03em] text-brand-ink md:text-5xl"
+          />
+          <Reveal delay={0.2} className="mt-10">
+            <Link
+              to="/contacto"
+              className="inline-block rounded-xs bg-brand-ink px-8 py-3.5 font-medium text-fg transition-opacity hover:opacity-90"
+            >
+              Iniciar un proyecto
+            </Link>
+          </Reveal>
         </div>
       </section>
     </div>
