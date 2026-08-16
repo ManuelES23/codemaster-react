@@ -72,7 +72,7 @@ const Home = () => (
           lines={["¿Tienes un proyecto", "en mente?"]}
           className="font-display text-4xl font-semibold tracking-[-0.03em] text-brand-ink md:text-6xl"
         />
-        <Reveal as="p" delay={0.2} className="mt-6 text-lg text-brand-ink/80">
+        <Reveal as="p" delay={0.2} className="mt-6 text-lg text-brand-ink">
           Conversemos y hagámoslo realidad.
         </Reveal>
         <Reveal delay={0.3} className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">

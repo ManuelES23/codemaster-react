@@ -69,4 +69,9 @@ describe("Home", () => {
     renderHome();
     expect(screen.getByText("Hosting y cloud")).toBeInTheDocument();
   });
+
+  it("never softens brand-ink with an opacity modifier", () => {
+    const { container } = renderHome();
+    expect(container.innerHTML).not.toMatch(/text-brand-ink\/\d+/);
+  });
 });
