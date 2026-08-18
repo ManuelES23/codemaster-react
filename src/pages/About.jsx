@@ -11,18 +11,19 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import Reveal from "../motion/Reveal";
+import CardLift from "../motion/CardLift";
 
 const About = () => {
   return (
     <div className='bg-ink-0 min-h-screen'>
       {/* Hero Section */}
-      <section className='border-b border-line bg-ink-0 pt-40 pb-20'>
+      <section className='border-b border-line bg-ink-0 pt-28 pb-14 md:pt-36 md:pb-20'>
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
           <p className='mb-6 text-xs font-semibold tracking-[0.14em] text-brand uppercase'>
             Nosotros
           </p>
           <Reveal>
-            <h1 className='font-display text-5xl font-bold tracking-[-0.02em] text-fg md:text-7xl'>
+            <h1 className='font-display text-4xl font-bold tracking-[-0.02em] text-fg md:text-6xl'>
               Sobre <span className='text-brand'>CodeMaster</span>
             </h1>
           </Reveal>
@@ -53,9 +54,8 @@ const About = () => {
           {/* Mission and Vision Grid */}
           <div className='grid grid-cols-1 md:grid-cols-2 gap-8 mb-16'>
             <Reveal
-              className='bg-ink-2 backdrop-blur-sm border border-line rounded-btn p-8 hover:border-brand transition-all duration-300'
-              whileHover={{ scale: 1.02, y: -5 }}
             >
+              <CardLift className='bg-card border border-card-border rounded-card p-8 transition-colors'>
               <h2 className='text-2xl font-bold text-fg mb-4'>
                 Nuestra <span className='text-brand'>misión</span>
               </h2>
@@ -66,13 +66,13 @@ const About = () => {
                 entregar productos de calidad superior que superen las
                 expectativas de nuestros clientes.
               </p>
+              </CardLift>
             </Reveal>
 
             <Reveal
               delay={0.15}
-              className='bg-ink-2 backdrop-blur-sm border border-line rounded-btn p-8 hover:border-brand transition-all duration-300'
-              whileHover={{ scale: 1.02, y: -5 }}
             >
+              <CardLift className='bg-card border border-card-border rounded-card p-8 transition-colors'>
               <h2 className='text-2xl font-bold text-fg mb-4'>
                 Nuestra <span className='text-brand'>visión</span>
               </h2>
@@ -83,6 +83,7 @@ const About = () => {
                 el socio tecnológico preferido de empresas que buscan
                 transformación digital.
               </p>
+              </CardLift>
             </Reveal>
           </div>
 
@@ -96,9 +97,8 @@ const About = () => {
             </Reveal>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'>
               <Reveal
-                className='bg-ink-0 border border-line rounded-btn p-6 hover:border-brand transition-all duration-300 group'
-                whileHover={{ scale: 1.05, y: -8 }}
               >
+                <CardLift className='bg-card border border-card-border rounded-card p-6 transition-colors group'>
                 <div className='text-brand text-4xl font-bold mb-4 group-hover:scale-110 transition-transform duration-300'>
                   01
                 </div>
@@ -109,13 +109,13 @@ const About = () => {
                   Nos comprometemos con la calidad en cada proyecto, utilizando
                   las mejores prácticas y tecnologías más actuales del mercado.
                 </p>
+                </CardLift>
               </Reveal>
 
               <Reveal
                 delay={0.1}
-                className='bg-ink-0 border border-line rounded-btn p-6 hover:border-brand transition-all duration-300 group'
-                whileHover={{ scale: 1.05, y: -8 }}
               >
+                <CardLift className='bg-card border border-card-border rounded-card p-6 transition-colors group'>
                 <div className='text-brand text-4xl font-bold mb-4 group-hover:scale-110 transition-transform duration-300'>
                   02
                 </div>
@@ -126,13 +126,13 @@ const About = () => {
                   Buscamos constantemente nuevas formas de resolver problemas y
                   crear soluciones que marquen la diferencia.
                 </p>
+                </CardLift>
               </Reveal>
 
               <Reveal
                 delay={0.2}
-                className='bg-ink-0 border border-line rounded-btn p-6 hover:border-brand transition-all duration-300 group'
-                whileHover={{ scale: 1.05, y: -8 }}
               >
+                <CardLift className='bg-card border border-card-border rounded-card p-6 transition-colors group'>
                 <div className='text-brand text-4xl font-bold mb-4 group-hover:scale-110 transition-transform duration-300'>
                   03
                 </div>
@@ -143,13 +143,13 @@ const About = () => {
                   El éxito de nuestros clientes es nuestro éxito. Nos
                   involucramos profundamente en cada proyecto.
                 </p>
+                </CardLift>
               </Reveal>
 
               <Reveal
                 delay={0.3}
-                className='bg-ink-0 border border-line rounded-btn p-6 hover:border-brand transition-all duration-300 group'
-                whileHover={{ scale: 1.05, y: -8 }}
               >
+                <CardLift className='bg-card border border-card-border rounded-card p-6 transition-colors group'>
                 <div className='text-brand text-4xl font-bold mb-4 group-hover:scale-110 transition-transform duration-300'>
                   04
                 </div>
@@ -160,6 +160,7 @@ const About = () => {
                   Mantenemos comunicación clara y honesta en cada etapa del
                   proyecto, sin sorpresas ni costos ocultos.
                 </p>
+                </CardLift>
               </Reveal>
             </div>
           </div>
@@ -176,9 +177,8 @@ const About = () => {
             {/* Services Grid with Images */}
             <div className='grid grid-cols-1 md:grid-cols-3 gap-8 mb-8'>
               <Reveal
-                className='bg-ink-2 backdrop-blur-sm border border-line rounded-btn overflow-hidden hover:border-brand transition-all duration-300'
-                whileHover={{ scale: 1.05, y: -8 }}
               >
+                <CardLift className='bg-card border border-card-border rounded-card overflow-hidden transition-colors'>
                 <img
                   src='/img/mk-redes.jpg'
                   alt='Gestión de Redes Sociales'
@@ -195,13 +195,13 @@ const About = () => {
                     Gestión profesional de tu presencia digital
                   </p>
                 </div>
+                </CardLift>
               </Reveal>
 
               <Reveal
                 delay={0.15}
-                className='bg-ink-2 backdrop-blur-sm border border-line rounded-btn overflow-hidden hover:border-brand transition-all duration-300'
-                whileHover={{ scale: 1.05, y: -8 }}
               >
+                <CardLift className='bg-card border border-card-border rounded-card overflow-hidden transition-colors'>
                 <img
                   src='/img/office.jpeg'
                   alt='Licencias Microsoft'
@@ -218,13 +218,13 @@ const About = () => {
                     Soluciones oficiales para tu empresa
                   </p>
                 </div>
+                </CardLift>
               </Reveal>
 
               <Reveal
                 delay={0.3}
-                className='bg-ink-2 backdrop-blur-sm border border-line rounded-btn overflow-hidden hover:border-brand transition-all duration-300'
-                whileHover={{ scale: 1.05, y: -8 }}
               >
+                <CardLift className='bg-card border border-card-border rounded-card overflow-hidden transition-colors'>
                 <img
                   src='/img/aseasoramientoti.jpeg'
                   alt='Consultoría IT'
@@ -241,52 +241,53 @@ const About = () => {
                     Asesoramiento experto en tecnología
                   </p>
                 </div>
+                </CardLift>
               </Reveal>
             </div>
 
             {/* Additional Services */}
             <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4'>
               <Reveal
-                className='bg-ink-2 backdrop-blur-sm border border-line rounded-btn p-6 text-center hover:border-brand transition-all duration-300'
-                whileHover={{ scale: 1.05, y: -5 }}
               >
+                <CardLift className='bg-card border border-card-border rounded-card p-6 text-center transition-colors'>
                 <div className='flex justify-center mb-3'>
                   <Globe className='w-10 h-10 text-brand' />
                 </div>
                 <h4 className='text-fg font-semibold text-sm'>
                   Desarrollo web
                 </h4>
+                </CardLift>
               </Reveal>
               <Reveal
                 delay={0.1}
-                className='bg-ink-2 backdrop-blur-sm border border-line rounded-btn p-6 text-center hover:border-brand transition-all duration-300'
-                whileHover={{ scale: 1.05, y: -5 }}
               >
+                <CardLift className='bg-card border border-card-border rounded-card p-6 text-center transition-colors'>
                 <div className='flex justify-center mb-3'>
                   <Smartphone className='w-10 h-10 text-brand' />
                 </div>
                 <h4 className='text-fg font-semibold text-sm'>
                   Apps móviles
                 </h4>
+                </CardLift>
               </Reveal>
               <Reveal
                 delay={0.2}
-                className='bg-ink-2 backdrop-blur-sm border border-line rounded-btn p-6 text-center hover:border-brand transition-all duration-300'
-                whileHover={{ scale: 1.05, y: -5 }}
               >
+                <CardLift className='bg-card border border-card-border rounded-card p-6 text-center transition-colors'>
                 <div className='flex justify-center mb-3'>
                   <Laptop className='w-10 h-10 text-brand' />
                 </div>
                 <h4 className='text-fg font-semibold text-sm'>
                   Sistemas a medida
                 </h4>
+                </CardLift>
               </Reveal>
             </div>
           </div>
 
           {/* Mensaje de Compromiso y Confianza */}
           <Reveal className='mt-16'>
-            <div className='bg-ink-0 border border-line rounded-btn p-12 md:p-16 text-center hover:border-brand transition-all duration-300'>
+            <div className='bg-card border border-card-border rounded-card p-12 md:p-16 text-center hover:border-brand transition-all duration-300'>
               <h2 className='text-3xl md:text-4xl font-bold text-fg mb-6'>
                 Tu confianza es nuestro mayor compromiso
               </h2>
@@ -298,9 +299,8 @@ const About = () => {
               </p>
               <div className='grid grid-cols-1 md:grid-cols-3 gap-8 mt-12'>
                 <Reveal
-                  className='bg-ink-0 border border-line rounded-btn p-8 text-center hover:border-brand transition-all duration-300 group'
-                  whileHover={{ scale: 1.05, y: -5 }}
                 >
+                  <CardLift className='bg-card border border-card-border rounded-card p-8 text-center transition-colors group'>
                   <div className='inline-flex items-center justify-center w-16 h-16 bg-brand rounded-btn mb-4 group-hover:scale-110 transition-transform duration-300'>
                     <Target className='w-8 h-8 text-brand-ink' />
                   </div>
@@ -310,12 +310,12 @@ const About = () => {
                   <p className='text-fg-muted leading-relaxed'>
                     Cada cliente es único, cada solución es diseñada a medida
                   </p>
+                  </CardLift>
                 </Reveal>
                 <Reveal
                   delay={0.15}
-                  className='bg-ink-0 border border-line rounded-btn p-8 text-center hover:border-brand transition-all duration-300 group'
-                  whileHover={{ scale: 1.05, y: -5 }}
                 >
+                  <CardLift className='bg-card border border-card-border rounded-card p-8 text-center transition-colors group'>
                   <div className='inline-flex items-center justify-center w-16 h-16 bg-brand rounded-btn mb-4 group-hover:scale-110 transition-transform duration-300'>
                     <Shield className='w-8 h-8 text-brand-ink' />
                   </div>
@@ -325,12 +325,12 @@ const About = () => {
                   <p className='text-fg-muted leading-relaxed'>
                     Comunicación clara en cada etapa de tu proyecto
                   </p>
+                  </CardLift>
                 </Reveal>
                 <Reveal
                   delay={0.3}
-                  className='bg-ink-0 border border-line rounded-btn p-8 text-center hover:border-brand transition-all duration-300 group'
-                  whileHover={{ scale: 1.05, y: -5 }}
                 >
+                  <CardLift className='bg-card border border-card-border rounded-card p-8 text-center transition-colors group'>
                   <div className='inline-flex items-center justify-center w-16 h-16 bg-brand rounded-btn mb-4 group-hover:scale-110 transition-transform duration-300'>
                     <Gem className='w-8 h-8 text-brand-ink' />
                   </div>
@@ -341,6 +341,7 @@ const About = () => {
                     Excelencia en cada línea de código, cada diseño, cada
                     detalle
                   </p>
+                  </CardLift>
                 </Reveal>
               </div>
               <Reveal delay={0.2} className='mt-12'>

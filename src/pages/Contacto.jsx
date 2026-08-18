@@ -22,13 +22,13 @@ const Contacto = () => {
   return (
     <div className="bg-ink-0 min-h-screen">
       {/* Hero Section */}
-      <section className="border-b border-line bg-ink-0 pt-40 pb-20">
+      <section className="border-b border-line bg-ink-0 pt-28 pb-14 md:pt-36 md:pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="mb-6 text-xs font-semibold tracking-[0.14em] text-brand uppercase">
             Contacto
           </p>
           <Reveal>
-            <h1 className="font-display text-5xl font-bold tracking-[-0.02em] text-fg md:text-7xl">
+            <h1 className="font-display text-4xl font-bold tracking-[-0.02em] text-fg md:text-6xl">
               Contáctanos
             </h1>
           </Reveal>
@@ -54,7 +54,7 @@ const Contacto = () => {
               </p>
 
               <div className="space-y-6 mb-8">
-                <div className="flex items-start space-x-4 p-4 bg-ink-2 rounded-btn border border-line hover:border-brand transition-colors duration-300">
+                <div className="flex items-start space-x-4 p-4 bg-card rounded-card border border-card-border hover:border-brand transition-colors duration-300">
                   <div>
                     <Mail className="w-8 h-8 text-brand" />
                   </div>
@@ -64,7 +64,7 @@ const Contacto = () => {
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-4 p-4 bg-ink-2 rounded-btn border border-line hover:border-brand transition-colors duration-300">
+                <div className="flex items-start space-x-4 p-4 bg-card rounded-card border border-card-border hover:border-brand transition-colors duration-300">
                   <div>
                     <Phone className="w-8 h-8 text-brand" />
                   </div>
@@ -97,7 +97,7 @@ const Contacto = () => {
                   </div>
                 </a>
 
-                <div className="flex items-start space-x-4 p-4 bg-ink-2 rounded-btn border border-line hover:border-brand transition-colors duration-300">
+                <div className="flex items-start space-x-4 p-4 bg-card rounded-card border border-card-border hover:border-brand transition-colors duration-300">
                   <div>
                     <MapPin className="w-8 h-8 text-brand" />
                   </div>
@@ -109,7 +109,7 @@ const Contacto = () => {
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-4 p-4 bg-ink-2 rounded-btn border border-line hover:border-brand transition-colors duration-300">
+                <div className="flex items-start space-x-4 p-4 bg-card rounded-card border border-card-border hover:border-brand transition-colors duration-300">
                   <div>
                     <Clock className="w-8 h-8 text-brand" />
                   </div>
@@ -130,7 +130,7 @@ const Contacto = () => {
                 method="POST"
                 data-netlify="true"
                 data-netlify-honeypot="bot-field"
-                className="bg-ink-2 backdrop-blur-sm border border-line rounded-btn p-8"
+                className="bg-card backdrop-blur-sm border border-card-border rounded-card p-8"
               >
                 {/* Campo oculto para Netlify Forms */}
                 <input type="hidden" name="form-name" value="contacto" />
