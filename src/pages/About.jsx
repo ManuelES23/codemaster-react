@@ -306,7 +306,7 @@ const About = () => {
                 >
                   <CardLift className='bg-card border border-card-border rounded-card p-8 text-center h-full group'>
                   <div className='inline-flex items-center justify-center w-16 h-16 bg-brand rounded-btn mb-4 motion-safe:group-hover:scale-110 transition-transform duration-300'>
-                    <Target className='w-8 h-8 text-brand-ink' />
+                    <Target className='w-8 h-8 text-fg' />
                   </div>
                   <h3 className='font-display text-xl font-semibold text-fg mb-3'>
                     Enfoque personalizado
@@ -321,7 +321,7 @@ const About = () => {
                 >
                   <CardLift className='bg-card border border-card-border rounded-card p-8 text-center h-full group'>
                   <div className='inline-flex items-center justify-center w-16 h-16 bg-brand rounded-btn mb-4 motion-safe:group-hover:scale-110 transition-transform duration-300'>
-                    <Shield className='w-8 h-8 text-brand-ink' />
+                    <Shield className='w-8 h-8 text-fg' />
                   </div>
                   <h3 className='font-display text-xl font-semibold text-fg mb-3'>
                     Transparencia total
@@ -336,7 +336,7 @@ const About = () => {
                 >
                   <CardLift className='bg-card border border-card-border rounded-card p-8 text-center h-full group'>
                   <div className='inline-flex items-center justify-center w-16 h-16 bg-brand rounded-btn mb-4 motion-safe:group-hover:scale-110 transition-transform duration-300'>
-                    <Gem className='w-8 h-8 text-brand-ink' />
+                    <Gem className='w-8 h-8 text-fg' />
                   </div>
                   <h3 className='font-display text-xl font-semibold text-fg mb-3'>
                     Calidad garantizada
@@ -351,7 +351,7 @@ const About = () => {
               <Reveal delay={0.2} className='mt-12'>
                 <Link
                   to='/contacto'
-                  className='inline-block bg-brand hover:bg-brand-hover text-brand-ink font-semibold px-10 py-4 rounded-btn transition-colors duration-300'
+                  className='inline-block bg-brand hover:bg-brand-hover text-fg font-semibold px-10 py-4 rounded-btn transition-colors duration-300'
                 >
                   Comienza tu proyecto hoy
                 </Link>

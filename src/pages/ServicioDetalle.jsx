@@ -16,7 +16,7 @@ const NoEncontrado = () => (
     </p>
     <Link
       to="/servicios"
-      className="mt-8 inline-block rounded-btn bg-brand px-7 py-3.5 font-medium text-brand-ink transition-colors hover:bg-brand-hover"
+      className="mt-8 inline-block rounded-btn bg-brand px-7 py-3.5 font-medium text-fg transition-colors hover:bg-brand-hover"
     >
       Ver todos los servicios
     </Link>
@@ -92,7 +92,7 @@ const ServicioDetalle = () => {
       <section className="bg-brand py-24">
         <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
           <Reveal>
-            <h2 className="font-display text-4xl font-bold tracking-[-0.02em] text-brand-ink md:text-5xl">
+            <h2 className="font-display text-4xl font-bold tracking-[-0.02em] text-fg md:text-5xl">
               Hablemos de tu proyecto
             </h2>
           </Reveal>

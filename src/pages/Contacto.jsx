@@ -264,7 +264,7 @@ const Contacto = () => {
 
                 <button
                   type="submit"
-                  className="w-full rounded-btn bg-brand py-4 font-semibold text-brand-ink transition-colors hover:bg-brand-hover"
+                  className="w-full rounded-btn bg-brand py-4 font-semibold text-fg transition-colors hover:bg-brand-hover"
                 >
                   Enviar mensaje
                 </button>

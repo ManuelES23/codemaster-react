@@ -35,7 +35,7 @@ const Portfolio = () => {
                 aria-pressed={filtro === categoria.id}
                 className={`rounded-btn px-4 py-2 text-xs font-semibold tracking-[0.08em] uppercase transition-colors ${
                   filtro === categoria.id
-                    ? "bg-brand text-brand-ink"
+                    ? "bg-brand text-fg"
                     : "border border-card-border bg-card text-fg-muted hover:border-brand hover:text-brand"
                 }`}
               >
@@ -136,7 +136,7 @@ const Portfolio = () => {
       <section className="bg-brand py-24">
         <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
           <Reveal>
-            <h2 className="font-display text-4xl font-bold tracking-[-0.02em] text-brand-ink md:text-5xl">
+            <h2 className="font-display text-4xl font-bold tracking-[-0.02em] text-fg md:text-5xl">
               ¿Quieres ser el siguiente?
             </h2>
           </Reveal>

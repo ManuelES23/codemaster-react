@@ -64,11 +64,11 @@ const Home = () => (
     <section className="bg-brand py-24">
       <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
         <Reveal>
-          <h2 className="font-display text-4xl font-bold tracking-[-0.02em] text-brand-ink md:text-6xl">
+          <h2 className="font-display text-4xl font-bold tracking-[-0.02em] text-fg md:text-6xl">
             ¿Tienes un proyecto<br />en mente?
           </h2>
         </Reveal>
-        <Reveal as="p" delay={0.2} className="mt-6 text-lg text-brand-ink">
+        <Reveal as="p" delay={0.2} className="mt-6 text-lg text-fg">
           Conversemos y hagámoslo realidad.
         </Reveal>
         <Reveal delay={0.3} className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
@@ -80,7 +80,7 @@ const Home = () => (
           </Link>
           <Link
             to="/portfolio"
-            className="rounded-btn border border-brand-ink/30 px-8 py-3.5 font-medium text-brand-ink transition-colors hover:border-brand-ink"
+            className="rounded-btn border border-fg/30 px-8 py-3.5 font-medium text-fg transition-colors hover:border-fg"
           >
             Ver portfolio
           </Link>
