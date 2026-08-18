@@ -55,7 +55,7 @@ const Contacto = () => {
               </p>
 
               <div className="space-y-6 mb-8">
-                <div className="flex items-start space-x-4 p-4 bg-ink-2 rounded-xs border border-line hover:border-brand transition-colors duration-300">
+                <div className="flex items-start space-x-4 p-4 bg-ink-2 rounded-btn border border-line hover:border-brand transition-colors duration-300">
                   <div>
                     <Mail className="w-8 h-8 text-brand" />
                   </div>
@@ -65,7 +65,7 @@ const Contacto = () => {
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-4 p-4 bg-ink-2 rounded-xs border border-line hover:border-brand transition-colors duration-300">
+                <div className="flex items-start space-x-4 p-4 bg-ink-2 rounded-btn border border-line hover:border-brand transition-colors duration-300">
                   <div>
                     <Phone className="w-8 h-8 text-brand" />
                   </div>
@@ -79,7 +79,7 @@ const Contacto = () => {
                   href="https://wa.me/526681316931"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-start space-x-4 p-4 bg-green-600/20 rounded-xs border border-green-500 hover:bg-green-600/30 hover:border-green-400 transition-all duration-300 group cursor-pointer"
+                  className="flex items-start space-x-4 p-4 bg-green-600/20 rounded-btn border border-green-500 hover:bg-green-600/30 hover:border-green-400 transition-all duration-300 group cursor-pointer"
                 >
                   <div className="group-hover:scale-110 transition-transform duration-300">
                     <svg
@@ -98,7 +98,7 @@ const Contacto = () => {
                   </div>
                 </a>
 
-                <div className="flex items-start space-x-4 p-4 bg-ink-2 rounded-xs border border-line hover:border-brand transition-colors duration-300">
+                <div className="flex items-start space-x-4 p-4 bg-ink-2 rounded-btn border border-line hover:border-brand transition-colors duration-300">
                   <div>
                     <MapPin className="w-8 h-8 text-brand" />
                   </div>
@@ -110,7 +110,7 @@ const Contacto = () => {
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-4 p-4 bg-ink-2 rounded-xs border border-line hover:border-brand transition-colors duration-300">
+                <div className="flex items-start space-x-4 p-4 bg-ink-2 rounded-btn border border-line hover:border-brand transition-colors duration-300">
                   <div>
                     <Clock className="w-8 h-8 text-brand" />
                   </div>
@@ -131,7 +131,7 @@ const Contacto = () => {
                 method="POST"
                 data-netlify="true"
                 data-netlify-honeypot="bot-field"
-                className="bg-ink-2 backdrop-blur-sm border border-line rounded-xs p-8"
+                className="bg-ink-2 backdrop-blur-sm border border-line rounded-btn p-8"
               >
                 {/* Campo oculto para Netlify Forms */}
                 <input type="hidden" name="form-name" value="contacto" />
@@ -157,7 +157,7 @@ const Contacto = () => {
                     onChange={handleChange}
                     required
                     placeholder="Juan Pérez"
-                    className="w-full rounded-xs border border-line bg-ink-1 px-4 py-3 text-fg transition-colors placeholder:text-fg-subtle focus:border-brand"
+                    className="w-full rounded-btn border border-line bg-ink-1 px-4 py-3 text-fg transition-colors placeholder:text-fg-subtle focus:border-brand"
                   />
                 </div>
 
@@ -177,7 +177,7 @@ const Contacto = () => {
                       onChange={handleChange}
                       required
                       placeholder="tu@email.com"
-                      className="w-full rounded-xs border border-line bg-ink-1 px-4 py-3 text-fg transition-colors placeholder:text-fg-subtle focus:border-brand"
+                      className="w-full rounded-btn border border-line bg-ink-1 px-4 py-3 text-fg transition-colors placeholder:text-fg-subtle focus:border-brand"
                     />
                   </div>
 
@@ -195,7 +195,7 @@ const Contacto = () => {
                       value={formData.telefono}
                       onChange={handleChange}
                       placeholder="+52 668 000 0000"
-                      className="w-full rounded-xs border border-line bg-ink-1 px-4 py-3 text-fg transition-colors placeholder:text-fg-subtle focus:border-brand"
+                      className="w-full rounded-btn border border-line bg-ink-1 px-4 py-3 text-fg transition-colors placeholder:text-fg-subtle focus:border-brand"
                     />
                   </div>
                 </div>
@@ -214,7 +214,7 @@ const Contacto = () => {
                     value={formData.empresa}
                     onChange={handleChange}
                     placeholder="Nombre de tu empresa"
-                    className="w-full rounded-xs border border-line bg-ink-1 px-4 py-3 text-fg transition-colors placeholder:text-fg-subtle focus:border-brand"
+                    className="w-full rounded-btn border border-line bg-ink-1 px-4 py-3 text-fg transition-colors placeholder:text-fg-subtle focus:border-brand"
                   />
                 </div>
 
@@ -231,7 +231,7 @@ const Contacto = () => {
                     value={formData.servicio}
                     onChange={handleChange}
                     required
-                    className="w-full rounded-xs border border-line bg-ink-1 px-4 py-3 text-fg transition-colors focus:border-brand"
+                    className="w-full rounded-btn border border-line bg-ink-1 px-4 py-3 text-fg transition-colors focus:border-brand"
                   >
                     <option value="">Selecciona un servicio</option>
                     <option value="web">Desarrollo web</option>
@@ -259,13 +259,13 @@ const Contacto = () => {
                     required
                     rows="5"
                     placeholder="Cuéntanos sobre tu proyecto..."
-                    className="w-full rounded-xs border border-line bg-ink-1 px-4 py-3 text-fg transition-colors placeholder:text-fg-subtle focus:border-brand resize-none"
+                    className="w-full rounded-btn border border-line bg-ink-1 px-4 py-3 text-fg transition-colors placeholder:text-fg-subtle focus:border-brand resize-none"
                   ></textarea>
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full rounded-xs bg-brand py-4 font-semibold text-brand-ink transition-colors hover:bg-brand-hover"
+                  className="w-full rounded-btn bg-brand py-4 font-semibold text-brand-ink transition-colors hover:bg-brand-hover"
                 >
                   Enviar mensaje
                 </button>

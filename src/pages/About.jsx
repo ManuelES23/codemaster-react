@@ -58,7 +58,7 @@ const About = () => {
           {/* Mission and Vision Grid */}
           <div className='grid grid-cols-1 md:grid-cols-2 gap-8 mb-16'>
             <Reveal
-              className='bg-ink-2 backdrop-blur-sm border border-line rounded-xs p-8 hover:border-brand transition-all duration-300'
+              className='bg-ink-2 backdrop-blur-sm border border-line rounded-btn p-8 hover:border-brand transition-all duration-300'
               whileHover={{ scale: 1.02, y: -5 }}
             >
               <h2 className='text-2xl font-bold text-fg mb-4'>
@@ -75,7 +75,7 @@ const About = () => {
 
             <Reveal
               delay={0.15}
-              className='bg-ink-2 backdrop-blur-sm border border-line rounded-xs p-8 hover:border-brand transition-all duration-300'
+              className='bg-ink-2 backdrop-blur-sm border border-line rounded-btn p-8 hover:border-brand transition-all duration-300'
               whileHover={{ scale: 1.02, y: -5 }}
             >
               <h2 className='text-2xl font-bold text-fg mb-4'>
@@ -101,7 +101,7 @@ const About = () => {
             </Reveal>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'>
               <Reveal
-                className='bg-ink-0 border border-line rounded-xs p-6 hover:border-brand transition-all duration-300 group'
+                className='bg-ink-0 border border-line rounded-btn p-6 hover:border-brand transition-all duration-300 group'
                 whileHover={{ scale: 1.05, y: -8 }}
               >
                 <div className='text-brand text-4xl font-bold mb-4 group-hover:scale-110 transition-transform duration-300'>
@@ -118,7 +118,7 @@ const About = () => {
 
               <Reveal
                 delay={0.1}
-                className='bg-ink-0 border border-line rounded-xs p-6 hover:border-brand transition-all duration-300 group'
+                className='bg-ink-0 border border-line rounded-btn p-6 hover:border-brand transition-all duration-300 group'
                 whileHover={{ scale: 1.05, y: -8 }}
               >
                 <div className='text-brand text-4xl font-bold mb-4 group-hover:scale-110 transition-transform duration-300'>
@@ -135,7 +135,7 @@ const About = () => {
 
               <Reveal
                 delay={0.2}
-                className='bg-ink-0 border border-line rounded-xs p-6 hover:border-brand transition-all duration-300 group'
+                className='bg-ink-0 border border-line rounded-btn p-6 hover:border-brand transition-all duration-300 group'
                 whileHover={{ scale: 1.05, y: -8 }}
               >
                 <div className='text-brand text-4xl font-bold mb-4 group-hover:scale-110 transition-transform duration-300'>
@@ -152,7 +152,7 @@ const About = () => {
 
               <Reveal
                 delay={0.3}
-                className='bg-ink-0 border border-line rounded-xs p-6 hover:border-brand transition-all duration-300 group'
+                className='bg-ink-0 border border-line rounded-btn p-6 hover:border-brand transition-all duration-300 group'
                 whileHover={{ scale: 1.05, y: -8 }}
               >
                 <div className='text-brand text-4xl font-bold mb-4 group-hover:scale-110 transition-transform duration-300'>
@@ -181,7 +181,7 @@ const About = () => {
             {/* Services Grid with Images */}
             <div className='grid grid-cols-1 md:grid-cols-3 gap-8 mb-8'>
               <Reveal
-                className='bg-ink-2 backdrop-blur-sm border border-line rounded-xs overflow-hidden hover:border-brand transition-all duration-300'
+                className='bg-ink-2 backdrop-blur-sm border border-line rounded-btn overflow-hidden hover:border-brand transition-all duration-300'
                 whileHover={{ scale: 1.05, y: -8 }}
               >
                 <img
@@ -204,7 +204,7 @@ const About = () => {
 
               <Reveal
                 delay={0.15}
-                className='bg-ink-2 backdrop-blur-sm border border-line rounded-xs overflow-hidden hover:border-brand transition-all duration-300'
+                className='bg-ink-2 backdrop-blur-sm border border-line rounded-btn overflow-hidden hover:border-brand transition-all duration-300'
                 whileHover={{ scale: 1.05, y: -8 }}
               >
                 <img
@@ -227,7 +227,7 @@ const About = () => {
 
               <Reveal
                 delay={0.3}
-                className='bg-ink-2 backdrop-blur-sm border border-line rounded-xs overflow-hidden hover:border-brand transition-all duration-300'
+                className='bg-ink-2 backdrop-blur-sm border border-line rounded-btn overflow-hidden hover:border-brand transition-all duration-300'
                 whileHover={{ scale: 1.05, y: -8 }}
               >
                 <img
@@ -252,7 +252,7 @@ const About = () => {
             {/* Additional Services */}
             <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4'>
               <Reveal
-                className='bg-ink-2 backdrop-blur-sm border border-line rounded-xs p-6 text-center hover:border-brand transition-all duration-300'
+                className='bg-ink-2 backdrop-blur-sm border border-line rounded-btn p-6 text-center hover:border-brand transition-all duration-300'
                 whileHover={{ scale: 1.05, y: -5 }}
               >
                 <div className='flex justify-center mb-3'>
@@ -264,7 +264,7 @@ const About = () => {
               </Reveal>
               <Reveal
                 delay={0.1}
-                className='bg-ink-2 backdrop-blur-sm border border-line rounded-xs p-6 text-center hover:border-brand transition-all duration-300'
+                className='bg-ink-2 backdrop-blur-sm border border-line rounded-btn p-6 text-center hover:border-brand transition-all duration-300'
                 whileHover={{ scale: 1.05, y: -5 }}
               >
                 <div className='flex justify-center mb-3'>
@@ -276,7 +276,7 @@ const About = () => {
               </Reveal>
               <Reveal
                 delay={0.2}
-                className='bg-ink-2 backdrop-blur-sm border border-line rounded-xs p-6 text-center hover:border-brand transition-all duration-300'
+                className='bg-ink-2 backdrop-blur-sm border border-line rounded-btn p-6 text-center hover:border-brand transition-all duration-300'
                 whileHover={{ scale: 1.05, y: -5 }}
               >
                 <div className='flex justify-center mb-3'>
@@ -291,7 +291,7 @@ const About = () => {
 
           {/* Mensaje de Compromiso y Confianza */}
           <Reveal className='mt-16'>
-            <div className='bg-ink-0 border border-line rounded-xs p-12 md:p-16 text-center hover:border-brand transition-all duration-300'>
+            <div className='bg-ink-0 border border-line rounded-btn p-12 md:p-16 text-center hover:border-brand transition-all duration-300'>
               <h2 className='text-3xl md:text-4xl font-bold text-fg mb-6'>
                 Tu confianza es nuestro mayor compromiso
               </h2>
@@ -303,10 +303,10 @@ const About = () => {
               </p>
               <div className='grid grid-cols-1 md:grid-cols-3 gap-8 mt-12'>
                 <Reveal
-                  className='bg-ink-0 border border-line rounded-xs p-8 text-center hover:border-brand transition-all duration-300 group'
+                  className='bg-ink-0 border border-line rounded-btn p-8 text-center hover:border-brand transition-all duration-300 group'
                   whileHover={{ scale: 1.05, y: -5 }}
                 >
-                  <div className='inline-flex items-center justify-center w-16 h-16 bg-brand rounded-xs mb-4 group-hover:scale-110 transition-transform duration-300'>
+                  <div className='inline-flex items-center justify-center w-16 h-16 bg-brand rounded-btn mb-4 group-hover:scale-110 transition-transform duration-300'>
                     <Target className='w-8 h-8 text-brand-ink' />
                   </div>
                   <h3 className='text-xl font-semibold text-fg mb-3'>
@@ -318,10 +318,10 @@ const About = () => {
                 </Reveal>
                 <Reveal
                   delay={0.15}
-                  className='bg-ink-0 border border-line rounded-xs p-8 text-center hover:border-brand transition-all duration-300 group'
+                  className='bg-ink-0 border border-line rounded-btn p-8 text-center hover:border-brand transition-all duration-300 group'
                   whileHover={{ scale: 1.05, y: -5 }}
                 >
-                  <div className='inline-flex items-center justify-center w-16 h-16 bg-brand rounded-xs mb-4 group-hover:scale-110 transition-transform duration-300'>
+                  <div className='inline-flex items-center justify-center w-16 h-16 bg-brand rounded-btn mb-4 group-hover:scale-110 transition-transform duration-300'>
                     <Shield className='w-8 h-8 text-brand-ink' />
                   </div>
                   <h3 className='text-xl font-semibold text-fg mb-3'>
@@ -333,10 +333,10 @@ const About = () => {
                 </Reveal>
                 <Reveal
                   delay={0.3}
-                  className='bg-ink-0 border border-line rounded-xs p-8 text-center hover:border-brand transition-all duration-300 group'
+                  className='bg-ink-0 border border-line rounded-btn p-8 text-center hover:border-brand transition-all duration-300 group'
                   whileHover={{ scale: 1.05, y: -5 }}
                 >
-                  <div className='inline-flex items-center justify-center w-16 h-16 bg-brand rounded-xs mb-4 group-hover:scale-110 transition-transform duration-300'>
+                  <div className='inline-flex items-center justify-center w-16 h-16 bg-brand rounded-btn mb-4 group-hover:scale-110 transition-transform duration-300'>
                     <Gem className='w-8 h-8 text-brand-ink' />
                   </div>
                   <h3 className='text-xl font-semibold text-fg mb-3'>
@@ -351,7 +351,7 @@ const About = () => {
               <Reveal delay={0.2} className='mt-12'>
                 <Link
                   to='/contacto'
-                  className='inline-block bg-brand hover:bg-brand-hover text-brand-ink font-semibold px-10 py-4 rounded-xs transition-colors duration-300'
+                  className='inline-block bg-brand hover:bg-brand-hover text-brand-ink font-semibold px-10 py-4 rounded-btn transition-colors duration-300'
                 >
                   Comienza tu proyecto hoy
                 </Link>

@@ -78,13 +78,13 @@ const Home = () => (
         <Reveal delay={0.3} className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
           <Link
             to="/contacto"
-            className="rounded-xs bg-brand-ink px-8 py-3.5 font-medium text-fg transition-opacity hover:opacity-90"
+            className="rounded-btn bg-brand-ink px-8 py-3.5 font-medium text-fg transition-opacity hover:opacity-90"
           >
             Contáctanos
           </Link>
           <Link
             to="/portfolio"
-            className="rounded-xs border border-brand-ink/30 px-8 py-3.5 font-medium text-brand-ink transition-colors hover:border-brand-ink"
+            className="rounded-btn border border-brand-ink/30 px-8 py-3.5 font-medium text-brand-ink transition-colors hover:border-brand-ink"
           >
             Ver portfolio
           </Link>

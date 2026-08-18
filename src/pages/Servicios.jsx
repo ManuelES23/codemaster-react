@@ -38,7 +38,7 @@ const Servicios = () => (
         <Reveal delay={0.2} className="mt-10">
           <Link
             to="/contacto"
-            className="inline-block rounded-xs bg-brand-ink px-8 py-3.5 font-medium text-fg transition-opacity hover:opacity-90"
+            className="inline-block rounded-btn bg-brand-ink px-8 py-3.5 font-medium text-fg transition-opacity hover:opacity-90"
           >
             Solicitar cotización
           </Link>

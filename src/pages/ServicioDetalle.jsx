@@ -15,7 +15,7 @@ const NoEncontrado = () => (
     </p>
     <Link
       to="/servicios"
-      className="mt-8 inline-block rounded-xs bg-brand px-7 py-3.5 font-medium text-brand-ink transition-colors hover:bg-brand-hover"
+      className="mt-8 inline-block rounded-btn bg-brand px-7 py-3.5 font-medium text-brand-ink transition-colors hover:bg-brand-hover"
     >
       Ver todos los servicios
     </Link>
@@ -101,7 +101,7 @@ const ServicioDetalle = () => {
           <Reveal delay={0.2} className="mt-10">
             <Link
               to="/contacto"
-              className="inline-block rounded-xs bg-brand-ink px-8 py-3.5 font-medium text-fg transition-opacity hover:opacity-90"
+              className="inline-block rounded-btn bg-brand-ink px-8 py-3.5 font-medium text-fg transition-opacity hover:opacity-90"
             >
               Contáctanos
             </Link>

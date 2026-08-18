@@ -28,13 +28,13 @@ const Hero = () => (
       <Reveal delay={0.3} className="mt-10 flex flex-col gap-3 sm:flex-row">
         <Link
           to="/servicios"
-          className="rounded-xs bg-brand px-7 py-3.5 text-center font-medium text-brand-ink transition-colors hover:bg-brand-hover"
+          className="rounded-btn bg-brand px-7 py-3.5 text-center font-medium text-brand-ink transition-colors hover:bg-brand-hover"
         >
           Ver servicios
         </Link>
         <Link
           to="/contacto"
-          className="rounded-xs border border-line-strong px-7 py-3.5 text-center font-medium text-fg transition-colors hover:border-brand hover:text-brand"
+          className="rounded-btn border border-line-strong px-7 py-3.5 text-center font-medium text-fg transition-colors hover:border-brand hover:text-brand"
         >
           Contáctanos
         </Link>

@@ -42,7 +42,7 @@ const TrabajoSeleccionado = ({ limite = 3 }) => {
 
               <Reveal>
                 {proyecto.esPlantilla && (
-                  <span className="mb-4 inline-block rounded-xs border border-line-strong px-2 py-1 font-mono text-[11px] tracking-[0.12em] text-fg-subtle uppercase">
+                  <span className="mb-4 inline-block rounded-btn border border-line-strong px-2 py-1 font-mono text-[11px] tracking-[0.12em] text-fg-subtle uppercase">
                     Plantilla — pendiente de sustituir
                   </span>
                 )}
@@ -57,7 +57,7 @@ const TrabajoSeleccionado = ({ limite = 3 }) => {
                   {proyecto.tecnologias.map((tecnologia) => (
                     <li
                       key={tecnologia}
-                      className="rounded-xs border border-line px-2.5 py-1 font-mono text-xs text-fg-subtle"
+                      className="rounded-btn border border-line px-2.5 py-1 font-mono text-xs text-fg-subtle"
                     >
                       {tecnologia}
                     </li>

@@ -49,7 +49,7 @@ const Navbar = () => {
 
           <Link
             to="/contacto"
-            className="hidden rounded-xs bg-brand px-5 py-2.5 text-sm font-medium text-brand-ink transition-colors hover:bg-brand-hover md:block"
+            className="hidden rounded-btn bg-brand px-5 py-2.5 text-sm font-medium text-brand-ink transition-colors hover:bg-brand-hover md:block"
           >
             Contáctanos
           </Link>
@@ -83,7 +83,7 @@ const Navbar = () => {
             <Link
               to="/contacto"
               onClick={() => setIsMenuOpen(false)}
-              className="mt-2 block rounded-xs bg-brand px-4 py-3 text-center font-medium text-brand-ink"
+              className="mt-2 block rounded-btn bg-brand px-4 py-3 text-center font-medium text-brand-ink"
             >
               Contáctanos
             </Link>

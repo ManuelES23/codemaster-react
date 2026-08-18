@@ -33,7 +33,7 @@ const Portfolio = () => {
                 type="button"
                 onClick={() => setFiltro(categoria.id)}
                 aria-pressed={filtro === categoria.id}
-                className={`rounded-xs px-4 py-2 font-mono text-xs tracking-[0.08em] uppercase transition-colors ${
+                className={`rounded-btn px-4 py-2 font-mono text-xs tracking-[0.08em] uppercase transition-colors ${
                   filtro === categoria.id
                     ? "bg-brand text-brand-ink"
                     : "border border-line text-fg-muted hover:border-brand hover:text-brand"
@@ -70,7 +70,7 @@ const Portfolio = () => {
 
                   <Reveal>
                     {proyecto.esPlantilla && (
-                      <span className="mb-4 inline-block rounded-xs border border-line-strong px-2 py-1 font-mono text-[11px] tracking-[0.12em] text-fg-subtle uppercase">
+                      <span className="mb-4 inline-block rounded-btn border border-line-strong px-2 py-1 font-mono text-[11px] tracking-[0.12em] text-fg-subtle uppercase">
                         Plantilla — pendiente de sustituir
                       </span>
                     )}
@@ -106,7 +106,7 @@ const Portfolio = () => {
                       {proyecto.tecnologias.map((tecnologia) => (
                         <li
                           key={tecnologia}
-                          className="rounded-xs border border-line px-2.5 py-1 font-mono text-xs text-fg-subtle"
+                          className="rounded-btn border border-line px-2.5 py-1 font-mono text-xs text-fg-subtle"
                         >
                           {tecnologia}
                         </li>
@@ -141,7 +141,7 @@ const Portfolio = () => {
           <Reveal delay={0.2} className="mt-10">
             <Link
               to="/contacto"
-              className="inline-block rounded-xs bg-brand-ink px-8 py-3.5 font-medium text-fg transition-opacity hover:opacity-90"
+              className="inline-block rounded-btn bg-brand-ink px-8 py-3.5 font-medium text-fg transition-opacity hover:opacity-90"
             >
               Iniciar un proyecto
             </Link>
