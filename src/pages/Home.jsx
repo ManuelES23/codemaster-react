@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { MessageCircle } from "lucide-react";
 import Hero from "../components/Hero";
 import LogosClientes from "../components/LogosClientes";
 import ServiciosBento from "../components/ServiciosBento";
@@ -8,7 +7,7 @@ import ProcesoScroll from "../components/ProcesoScroll";
 import BentoGrid from "../components/BentoGrid";
 import BentoCard from "../components/BentoCard";
 import Reveal from "../motion/Reveal";
-import Tilt3D from "../motion/Tilt3D";
+import Velaris from "../motion/Velaris";
 
 const diferenciadores = [
   { icono: "Zap", titulo: "Rapidez y eficiencia", texto: "Entregamos proyectos de calidad en tiempo récord sin comprometer la excelencia." },
@@ -65,23 +64,23 @@ const Home = () => (
 
     <section className="py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid items-center gap-10 rounded-panel bg-brand p-10 md:p-16 lg:grid-cols-2">
-          <div className="text-center lg:text-left">
+        <Velaris height="auto" className="rounded-panel">
+          <div className="flex flex-col items-center gap-4 px-6 py-20 text-center md:px-16">
             <Reveal>
               <h2 className="font-display text-4xl font-bold tracking-[-0.02em] text-fg md:text-5xl">
                 ¿Tienes un proyecto<br />en mente?
               </h2>
             </Reveal>
-            <Reveal as="p" delay={0.2} className="mt-6 text-lg text-fg">
+            <Reveal as="p" delay={0.2} className="text-lg text-fg">
               Conversemos y hagámoslo realidad.
             </Reveal>
             <Reveal
               delay={0.3}
-              className="mt-10 flex flex-col justify-center gap-3 sm:flex-row lg:justify-start"
+              className="mt-6 flex flex-col justify-center gap-3 sm:flex-row"
             >
               <Link
                 to="/contacto"
-                className="rounded-btn bg-brand-ink px-8 py-3.5 font-medium text-fg transition-opacity hover:opacity-90"
+                className="rounded-btn bg-brand px-8 py-3.5 font-medium text-fg transition-colors hover:bg-brand-hover"
               >
                 Contáctanos
               </Link>
@@ -93,15 +92,7 @@ const Home = () => (
               </Link>
             </Reveal>
           </div>
-
-          <Reveal delay={0.15} className="hidden lg:block">
-            <Tilt3D max={10}>
-              <div className="flex items-center justify-center rounded-panel border border-fg/15 bg-brand-ink/10 p-10">
-                <MessageCircle className="h-24 w-24 text-fg" aria-hidden="true" />
-              </div>
-            </Tilt3D>
-          </Reveal>
-        </div>
+        </Velaris>
       </div>
     </section>
   </div>

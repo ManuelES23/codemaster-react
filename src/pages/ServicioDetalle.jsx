@@ -1,7 +1,7 @@
 import { Link, useParams } from "react-router-dom";
 import ICONOS from "../components/iconos";
 import Reveal from "../motion/Reveal";
-import Tilt3D from "../motion/Tilt3D";
+import Velaris from "../motion/Velaris";
 import Stagger, { StaggerItem } from "../motion/Stagger";
 import BentoGrid from "../components/BentoGrid";
 import BentoCard from "../components/BentoCard";
@@ -92,31 +92,23 @@ const ServicioDetalle = () => {
 
       <section className="py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid items-center gap-10 rounded-panel bg-brand p-10 md:p-16 lg:grid-cols-2">
-            <div className="text-center lg:text-left">
+          <Velaris height="auto" className="rounded-panel">
+            <div className="flex flex-col items-center gap-4 px-6 py-20 text-center md:px-16">
               <Reveal>
                 <h2 className="font-display text-4xl font-bold tracking-[-0.02em] text-fg md:text-5xl">
                   Hablemos de tu proyecto
                 </h2>
               </Reveal>
-              <Reveal delay={0.2} className="mt-10 flex justify-center lg:justify-start">
+              <Reveal delay={0.2} className="mt-2 flex justify-center">
                 <Link
                   to="/contacto"
-                  className="inline-block rounded-btn bg-brand-ink px-8 py-3.5 font-medium text-fg transition-opacity hover:opacity-90"
+                  className="inline-block rounded-btn bg-brand px-8 py-3.5 font-medium text-fg transition-colors hover:bg-brand-hover"
                 >
                   Contáctanos
                 </Link>
               </Reveal>
             </div>
-
-            <Reveal delay={0.15} className="hidden lg:block">
-              <Tilt3D max={10}>
-                <div className="flex items-center justify-center rounded-panel border border-fg/15 bg-brand-ink/10 p-10">
-                  <Icono className="h-24 w-24 text-fg" aria-hidden="true" />
-                </div>
-              </Tilt3D>
-            </Reveal>
-          </div>
+          </Velaris>
         </div>
       </section>
     </div>
