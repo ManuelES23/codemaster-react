@@ -30,7 +30,7 @@ const Footer = () => (
         </div>
 
         <div>
-          <h2 className="mb-4 font-mono text-xs tracking-[0.14em] text-fg-subtle uppercase">
+          <h2 className="mb-4 text-xs font-semibold tracking-[0.14em] text-fg-subtle uppercase">
             Servicios
           </h2>
           <ul className="space-y-3">
@@ -48,7 +48,7 @@ const Footer = () => (
         </div>
 
         <div>
-          <h2 className="mb-4 font-mono text-xs tracking-[0.14em] text-fg-subtle uppercase">
+          <h2 className="mb-4 text-xs font-semibold tracking-[0.14em] text-fg-subtle uppercase">
             Empresa
           </h2>
           <ul className="space-y-3">
@@ -66,7 +66,7 @@ const Footer = () => (
         </div>
 
         <div>
-          <h2 className="mb-4 font-mono text-xs tracking-[0.14em] text-fg-subtle uppercase">
+          <h2 className="mb-4 text-xs font-semibold tracking-[0.14em] text-fg-subtle uppercase">
             Contacto
           </h2>
           <ul className="space-y-3 text-sm text-fg-muted">

@@ -8,7 +8,7 @@ const LogosClientes = () => {
   return (
     <section className="bg-ink-0 py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <p className="mb-8 font-mono text-xs tracking-[0.18em] text-fg-subtle uppercase">
+        <p className="mb-8 text-xs font-semibold tracking-[0.14em] text-fg-subtle uppercase">
           Confían en nosotros
         </p>
         <Rule />

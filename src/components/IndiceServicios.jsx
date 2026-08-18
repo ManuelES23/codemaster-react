@@ -14,7 +14,7 @@ const IndiceServicios = () => (
             to={`/servicios/${servicio.slug}`}
             className="group flex items-baseline gap-6 py-8 transition-colors hover:bg-ink-1 md:gap-10 md:px-4"
           >
-            <span className="font-mono text-xs text-fg-subtle transition-colors group-hover:text-brand">
+            <span className="text-xs font-semibold text-fg-subtle transition-colors group-hover:text-brand">
               {servicio.numero}
             </span>
 

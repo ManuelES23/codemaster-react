@@ -31,7 +31,7 @@ const Home = () => (
 
     <section className="bg-ink-0 py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <p className="mb-6 font-mono text-xs tracking-[0.18em] text-brand uppercase">
+        <p className="mb-6 text-xs font-semibold tracking-[0.14em] text-brand uppercase">
           Servicios
         </p>
         <RevealText
@@ -49,7 +49,7 @@ const Home = () => (
 
     <section className="bg-ink-0 py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <p className="mb-6 font-mono text-xs tracking-[0.18em] text-brand uppercase">
+        <p className="mb-6 text-xs font-semibold tracking-[0.14em] text-brand uppercase">
           Por qué nosotros
         </p>
         <Stagger className="grid gap-px border-t border-line bg-line md:grid-cols-3">

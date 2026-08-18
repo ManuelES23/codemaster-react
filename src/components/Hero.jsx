@@ -6,7 +6,7 @@ import Rule from "../motion/Rule";
 const Hero = () => (
   <section className="relative flex min-h-screen items-center bg-ink-0 pt-20">
     <div className="mx-auto w-full max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
-      <Reveal as="p" className="mb-8 font-mono text-xs tracking-[0.18em] text-brand uppercase">
+      <Reveal as="p" className="mb-8 text-xs font-semibold tracking-[0.14em] text-brand uppercase">
         Software a medida
       </Reveal>
 

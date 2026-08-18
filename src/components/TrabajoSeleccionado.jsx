@@ -12,7 +12,7 @@ const TrabajoSeleccionado = ({ limite = 3 }) => {
   return (
     <section className="bg-ink-0 py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <p className="mb-6 font-mono text-xs tracking-[0.18em] text-brand uppercase">
+        <p className="mb-6 text-xs font-semibold tracking-[0.14em] text-brand uppercase">
           Trabajo
         </p>
         <RevealText
@@ -42,11 +42,11 @@ const TrabajoSeleccionado = ({ limite = 3 }) => {
 
               <Reveal>
                 {proyecto.esPlantilla && (
-                  <span className="mb-4 inline-block rounded-btn border border-line-strong px-2 py-1 font-mono text-[11px] tracking-[0.12em] text-fg-subtle uppercase">
+                  <span className="mb-4 inline-block rounded-btn border border-line-strong px-2 py-1 text-[11px] font-semibold tracking-[0.12em] text-fg-subtle uppercase">
                     Plantilla — pendiente de sustituir
                   </span>
                 )}
-                <p className="font-mono text-xs tracking-[0.12em] text-fg-subtle uppercase">
+                <p className="text-xs font-semibold tracking-[0.12em] text-fg-subtle uppercase">
                   {proyecto.cliente}
                 </p>
                 <h3 className="mt-3 font-display text-3xl font-medium tracking-[-0.02em] text-fg">
@@ -57,7 +57,7 @@ const TrabajoSeleccionado = ({ limite = 3 }) => {
                   {proyecto.tecnologias.map((tecnologia) => (
                     <li
                       key={tecnologia}
-                      className="rounded-btn border border-line px-2.5 py-1 font-mono text-xs text-fg-subtle"
+                      className="rounded-btn border border-line px-2.5 py-1 text-xs font-semibold text-fg-subtle"
                     >
                       {tecnologia}
                     </li>
@@ -71,7 +71,7 @@ const TrabajoSeleccionado = ({ limite = 3 }) => {
         <Reveal className="mt-20">
           <Link
             to="/portfolio"
-            className="font-mono text-sm text-brand transition-colors hover:text-brand-hover"
+            className="text-sm font-semibold text-brand transition-colors hover:text-brand-hover"
           >
             Ver todo el portfolio →
           </Link>

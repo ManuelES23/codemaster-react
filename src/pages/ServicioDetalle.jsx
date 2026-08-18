@@ -36,7 +36,7 @@ const ServicioDetalle = () => {
       <section className="border-b border-line pt-40 pb-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-6 flex items-center gap-4">
-            <span className="font-mono text-xs tracking-[0.18em] text-brand">
+            <span className="text-xs font-semibold tracking-[0.14em] text-brand">
               {servicio.numero}
             </span>
             <Icono className="h-5 w-5 text-brand" aria-hidden="true" />
@@ -54,7 +54,7 @@ const ServicioDetalle = () => {
 
       <section className="py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <p className="mb-8 font-mono text-xs tracking-[0.18em] text-fg-subtle uppercase">
+          <p className="mb-8 text-xs font-semibold tracking-[0.14em] text-fg-subtle uppercase">
             Qué incluye
           </p>
           <Stagger as="ul" className="grid gap-px border-t border-line bg-line sm:grid-cols-2">
@@ -70,7 +70,7 @@ const ServicioDetalle = () => {
 
       <section className="border-t border-line py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <p className="mb-8 font-mono text-xs tracking-[0.18em] text-fg-subtle uppercase">
+          <p className="mb-8 text-xs font-semibold tracking-[0.14em] text-fg-subtle uppercase">
             Otros servicios
           </p>
           <Stagger as="ul" className="border-t border-line">
@@ -80,7 +80,7 @@ const ServicioDetalle = () => {
                   to={`/servicios/${otro.slug}`}
                   className="group flex items-baseline gap-6 py-6 transition-colors hover:bg-ink-1"
                 >
-                  <span className="font-mono text-xs text-fg-subtle">{otro.numero}</span>
+                  <span className="text-xs font-semibold text-fg-subtle">{otro.numero}</span>
                   <span className="font-display text-xl text-fg transition-colors group-hover:text-brand">
                     {otro.titulo}
                   </span>

@@ -7,7 +7,7 @@ const Servicios = () => (
   <div className="bg-ink-0">
     <section className="border-b border-line bg-ink-0 pt-40 pb-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <p className="mb-6 font-mono text-xs tracking-[0.18em] text-brand uppercase">
+        <p className="mb-6 text-xs font-semibold tracking-[0.14em] text-brand uppercase">
           Servicios
         </p>
         <RevealText

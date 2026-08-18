@@ -19,7 +19,7 @@ const About = () => {
       {/* Hero Section */}
       <section className='border-b border-line bg-ink-0 pt-40 pb-20'>
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
-          <p className='mb-6 font-mono text-xs tracking-[0.18em] text-brand uppercase'>
+          <p className='mb-6 text-xs font-semibold tracking-[0.14em] text-brand uppercase'>
             Nosotros
           </p>
           <RevealText

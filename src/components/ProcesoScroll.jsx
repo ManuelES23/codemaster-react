@@ -38,7 +38,7 @@ const ProcesoScroll = () => {
   return (
     <section ref={ref} className="bg-ink-1 py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <p className="mb-6 font-mono text-xs tracking-[0.18em] text-brand uppercase">
+        <p className="mb-6 text-xs font-semibold tracking-[0.14em] text-brand uppercase">
           Cómo trabajamos
         </p>
         <RevealText
@@ -58,7 +58,7 @@ const ProcesoScroll = () => {
           <ol className="flex-1 space-y-20">
             {etapas.map((etapa) => (
               <li key={etapa.numero}>
-                <span className="font-mono text-xs text-brand">{etapa.numero}</span>
+                <span className="text-xs font-semibold text-brand">{etapa.numero}</span>
                 <h3 className="mt-3 font-display text-2xl font-medium tracking-[-0.02em] text-fg md:text-3xl">
                   {etapa.titulo}
                 </h3>
