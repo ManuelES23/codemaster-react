@@ -177,13 +177,13 @@ grande:
 | Desarrollo web | `"2x2"` | 4 |
 | Aplicaciones móviles | `"2x1"` | 2 |
 | Sistemas a medida | `"2x1"` | 2 |
-| Gestión de redes sociales | `"1x1"` | 1 |
-| Diseño gráfico | `"1x1"` | 1 |
-| Licencias Microsoft | `"1x1"` | 1 |
+| Gestión de redes sociales | `"2x1"` | 2 |
+| Diseño gráfico | `"2x1"` | 2 |
+| Licencias Microsoft | `"2x1"` | 2 |
 | Consultoría IT | `"1x1"` | 1 |
 | Hosting y cloud | `"1x1"` | 1 |
 
-Total 13 celdas sobre una rejilla de 4 columnas: 4 filas llenas sin huecos. En
+Total 16 celdas sobre una rejilla de 4 columnas: 4 filas llenas sin huecos. En
 tablet (2 columnas) los `2x2` y `2x1` pasan a ancho completo; en móvil todo es
 `1x1` apilado.
 

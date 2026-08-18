@@ -31,6 +31,23 @@ describe("servicios", () => {
   it("returns undefined for an unknown slug", () => {
     expect(getServicioBySlug("no-existe")).toBeUndefined();
   });
+
+  it("gives every service a bento span the grid understands", () => {
+    const permitidos = ["2x2", "2x1", "1x1"];
+    servicios.forEach((servicio) => {
+      expect(permitidos, `${servicio.slug} tiene span "${servicio.span}"`).toContain(servicio.span);
+    });
+  });
+
+  it("fills whole rows on a four-column grid", () => {
+    const celdas = { "2x2": 4, "2x1": 2, "1x1": 1 };
+    const total = servicios.reduce((suma, s) => suma + celdas[s.span], 0);
+    expect(total % 4).toBe(0);
+  });
+
+  it("promotes exactly one service to the large tile", () => {
+    expect(servicios.filter((s) => s.span === "2x2")).toHaveLength(1);
+  });
 });
 
 describe("proyectos", () => {
