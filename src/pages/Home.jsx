@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Hero from "../components/Hero";
 import LogosClientes from "../components/LogosClientes";
-import IndiceServicios from "../components/IndiceServicios";
+import ServiciosBento from "../components/ServiciosBento";
 import TrabajoSeleccionado from "../components/TrabajoSeleccionado";
 import ProcesoScroll from "../components/ProcesoScroll";
 import Reveal from "../motion/Reveal";
@@ -38,7 +38,7 @@ const Home = () => (
             Qué hacemos
           </h2>
         </Reveal>
-        <IndiceServicios />
+        <ServiciosBento />
       </div>
     </section>
 

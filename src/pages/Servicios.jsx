@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Reveal from "../motion/Reveal";
-import IndiceServicios from "../components/IndiceServicios";
+import ServiciosBento from "../components/ServiciosBento";
 
 const Servicios = () => (
   <div className="bg-ink-0">
@@ -23,7 +23,7 @@ const Servicios = () => (
 
     <section className="py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <IndiceServicios />
+        <ServiciosBento />
       </div>
     </section>
 
