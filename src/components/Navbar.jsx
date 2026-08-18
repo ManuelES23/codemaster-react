@@ -1,6 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import LogoMarca from "./LogoMarca";
 
 const enlaces = [
   { to: "/", label: "Inicio", end: true },
@@ -32,11 +33,7 @@ const Navbar = () => {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
           <Link to="/" aria-label="CodeMaster, ir al inicio">
-            <img
-              src="/img/codemaster_logo_vertical.png"
-              alt="CodeMaster"
-              className="h-7 w-auto object-contain"
-            />
+            <LogoMarca className="h-7" />
           </Link>
 
           <div className="hidden items-center gap-8 md:flex">
