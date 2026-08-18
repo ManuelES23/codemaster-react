@@ -45,18 +45,10 @@ describe("Tilt3D", () => {
     await waitFor(() => expect(node.outerHTML).toMatch(/rotate[XY]\(/));
   });
 
-  // This assertion is reinforced by two independent mechanisms, not one:
-  // Tilt3D's own `disabled` branch (which omits rotateX/rotateY from `style`
-  // entirely, and short-circuits `onMove` before it ever touches px/py), AND
-  // framer-motion's own built-in handling of "positional" style keys — x, y,
-  // scale, rotateX, rotateY — for any component that has called
-  // useReducedMotion(), verified directly against framer-motion's source
-  // (the `positionalKeys` check gating `animateMotionValue`). A mutation that
-  // removes only Tilt3D's own guard will not make this test fail, because
-  // framer's mechanism still applies underneath it — confirmed by mutation
-  // testing during development. That is a stronger real-world guarantee
-  // (belt and suspenders), not a weaker test: the property under test —
-  // nothing visibly rotates under reduced motion — holds either way.
+  // Mutation-tested during development: removing both of Tilt3D's own
+  // guards — the `onMove` early return and the `style` ternary — makes
+  // this assertion fail, confirming it depends on Tilt3D's own logic and
+  // not on some other mechanism.
   it("does not tilt when reduced motion is requested", async () => {
     setReducedMotion(true);
     render(<Tilt3D max={8}>contenido</Tilt3D>);
