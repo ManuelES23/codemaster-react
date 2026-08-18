@@ -286,6 +286,14 @@ import Tilt3D from "./Tilt3D";
 
 const inner = (node) => node.parentElement;
 
+// jsdom reports every element as 0x0, and Tilt3D guards against a zero-size
+// rect to keep NaN out of the transform. Without a stubbed rect the tilt can
+// never activate and the assertion below would pass against any implementation.
+const conRect = (node) =>
+  (node.getBoundingClientRect = () => ({
+    left: 0, top: 0, width: 320, height: 200, right: 320, bottom: 200, x: 0, y: 0,
+  }));
+
 describe("Tilt3D", () => {
   it("renders its children", () => {
     render(<Tilt3D>contenido</Tilt3D>);
@@ -300,7 +308,8 @@ describe("Tilt3D", () => {
   it("tilts when the pointer moves across it", () => {
     render(<Tilt3D max={8}>contenido</Tilt3D>);
     const node = inner(screen.getByText("contenido"));
-    fireEvent.mouseMove(node, { clientX: 10, clientY: 10 });
+    conRect(node);
+    fireEvent.pointerMove(node, { clientX: 160, clientY: 40 });
     expect(node.outerHTML).toMatch(/rotate[XY]\(/);
   });
 
@@ -308,7 +317,8 @@ describe("Tilt3D", () => {
     setReducedMotion(true);
     render(<Tilt3D max={8}>contenido</Tilt3D>);
     const node = inner(screen.getByText("contenido"));
-    fireEvent.mouseMove(node, { clientX: 10, clientY: 10 });
+    conRect(node);
+    fireEvent.pointerMove(node, { clientX: 160, clientY: 40 });
     expect(node.outerHTML).not.toMatch(/rotate[XY]\((?!0deg\))/);
   });
 });
@@ -318,6 +328,8 @@ describe("Tilt3D", () => {
 
 Run: `npm test -- Tilt3D`
 Expected: FAIL — cannot resolve `./Tilt3D`.
+
+`pointerMove` rather than `mouseMove`: framer-motion listens on pointer events, and the branch's existing `src/test/movimiento-reducido.test.jsx` already uses `fireEvent.pointerEnter` for the same reason.
 
 - [ ] **Step 3: Create `src/motion/Tilt3D.jsx`**
 
@@ -365,8 +377,8 @@ const Tilt3D = ({ max = 8, className = "", children }) => {
     <div className={className} style={{ perspective: 900 }}>
       <motion.div
         ref={ref}
-        onMouseMove={onMove}
-        onMouseLeave={onLeave}
+        onPointerMove={onMove}
+        onPointerLeave={onLeave}
         style={
           disabled
             ? { transformStyle: "preserve-3d" }
@@ -431,7 +443,7 @@ describe("CardLift", () => {
   it("raises the card on hover", () => {
     render(<CardLift lift={6}>tarjeta</CardLift>);
     const node = screen.getByText("tarjeta").parentElement;
-    fireEvent.mouseEnter(node);
+    fireEvent.pointerEnter(node);
     expect(node.outerHTML).toMatch(/translateY\(-[1-9]/);
   });
 
@@ -439,7 +451,7 @@ describe("CardLift", () => {
     setReducedMotion(true);
     render(<CardLift lift={6}>tarjeta</CardLift>);
     const node = screen.getByText("tarjeta").parentElement;
-    fireEvent.mouseEnter(node);
+    fireEvent.pointerEnter(node);
     expect(node.outerHTML).not.toMatch(/translateY\(-[1-9]/);
   });
 });
@@ -1243,11 +1255,17 @@ const DIFERENCIADORES = [
 
 it("restores all six differentiators", () => {
   renderHome();
+  const seccion = screen.getByRole("heading", { name: /por qu[ée]/i }).closest("section");
+  expect(seccion, "la sección de diferenciadores necesita un encabezado").not.toBeNull();
   DIFERENCIADORES.forEach((titulo) => {
-    expect(screen.getByText(titulo)).toBeInTheDocument();
+    expect(within(seccion).getByText(titulo)).toBeInTheDocument();
   });
 });
 ```
+
+Import `within` from `@testing-library/react` for this, and make sure the differentiators section carries a real `<h2>` (for example "¿Por qué elegirnos?") inside a `<section>` so the scoping has something to anchor to.
+
+Scoping is not cosmetic here. Task 11 restores a Hero badge that also reads "Soporte continuo", and Home renders Hero, so a document-scope `getByText` would match two elements and throw — the test would fail against correct code. Scoping also keeps the assertion strong: a global `getAllByText` would still pass if the card disappeared and only the badge survived.
 
 Keep the existing test that walks every internal link and validates it against a real route, and keep the guard asserting no `text-brand-ink/<n>` opacity modifier survives — both were earned on the previous branch and still apply.
 
@@ -1542,7 +1560,7 @@ it("does not displace a card on hover under reduced motion", () => {
   );
   const tarjeta = screen.getByText("Desarrollo web").closest("div");
   fireEvent.mouseEnter(tarjeta);
-  fireEvent.mouseMove(tarjeta, { clientX: 50, clientY: 50 });
+  fireEvent.pointerMove(tarjeta, { clientX: 50, clientY: 50 });
   expect(tarjeta.outerHTML).not.toMatch(/translateY\(-[1-9]|rotate[XY]\((?!0deg\))/);
 });
 ```
