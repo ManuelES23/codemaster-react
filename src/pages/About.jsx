@@ -10,7 +10,6 @@ import {
   Gem,
 } from "lucide-react";
 import { Link } from "react-router-dom";
-import RevealText from "../motion/RevealText";
 import Reveal from "../motion/Reveal";
 
 const About = () => {
@@ -22,15 +21,11 @@ const About = () => {
           <p className='mb-6 text-xs font-semibold tracking-[0.14em] text-brand uppercase'>
             Nosotros
           </p>
-          <RevealText
-            as='h1'
-            lines={[
-              <>
-                Sobre <span className='text-brand'>CodeMaster</span>
-              </>,
-            ]}
-            className='font-display text-5xl font-semibold tracking-[-0.03em] text-fg md:text-7xl'
-          />
+          <Reveal>
+            <h1 className='font-display text-5xl font-bold tracking-[-0.02em] text-fg md:text-7xl'>
+              Sobre <span className='text-brand'>CodeMaster</span>
+            </h1>
+          </Reveal>
           <Reveal as='p' delay={0.2} className='mt-8 max-w-xl text-lg text-fg-muted'>
             Tu socio estratégico en soluciones digitales
           </Reveal>

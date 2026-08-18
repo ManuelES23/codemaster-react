@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import RevealText from "../motion/RevealText";
 import Reveal from "../motion/Reveal";
 import Parallax from "../motion/Parallax";
 import { categorias, getProyectosPorCategoria } from "../data/proyectos";
@@ -16,11 +15,11 @@ const Portfolio = () => {
           <p className="mb-6 text-xs font-semibold tracking-[0.14em] text-brand uppercase">
             Portfolio
           </p>
-          <RevealText
-            as="h1"
-            lines={["Trabajo entregado"]}
-            className="font-display text-5xl font-semibold tracking-[-0.03em] text-fg md:text-7xl"
-          />
+          <Reveal>
+            <h1 className="font-display text-5xl font-bold tracking-[-0.02em] text-fg md:text-7xl">
+              Trabajo entregado
+            </h1>
+          </Reveal>
         </div>
       </section>
 
@@ -133,11 +132,11 @@ const Portfolio = () => {
 
       <section className="bg-brand py-24">
         <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-          <RevealText
-            as="h2"
-            lines={["¿Quieres ser el siguiente?"]}
-            className="font-display text-4xl font-semibold tracking-[-0.03em] text-brand-ink md:text-5xl"
-          />
+          <Reveal>
+            <h2 className="font-display text-4xl font-bold tracking-[-0.02em] text-brand-ink md:text-5xl">
+              ¿Quieres ser el siguiente?
+            </h2>
+          </Reveal>
           <Reveal delay={0.2} className="mt-10">
             <Link
               to="/contacto"

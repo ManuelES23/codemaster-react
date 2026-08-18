@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
-import RevealText from "../motion/RevealText";
+import Reveal from "../motion/Reveal";
 
 const etapas = [
   {
@@ -41,11 +41,11 @@ const ProcesoScroll = () => {
         <p className="mb-6 text-xs font-semibold tracking-[0.14em] text-brand uppercase">
           Cómo trabajamos
         </p>
-        <RevealText
-          as="h2"
-          lines={["Sin sorpresas", "en el camino"]}
-          className="font-display text-4xl font-semibold tracking-[-0.03em] text-fg md:text-6xl"
-        />
+        <Reveal>
+          <h2 className="font-display text-4xl font-bold tracking-[-0.02em] text-fg md:text-6xl">
+            Sin sorpresas<br />en el camino
+          </h2>
+        </Reveal>
 
         <div className="mt-20 flex gap-8 md:gap-16">
           <div className="relative w-px shrink-0 bg-line" aria-hidden="true">

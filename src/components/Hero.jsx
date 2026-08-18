@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
-import RevealText from "../motion/RevealText";
 import Reveal from "../motion/Reveal";
-import Rule from "../motion/Rule";
 
 const Hero = () => (
   <section className="relative flex min-h-screen items-center bg-ink-0 pt-20">
@@ -10,11 +8,11 @@ const Hero = () => (
         Software a medida
       </Reveal>
 
-      <RevealText
-        as="h1"
-        lines={["Construimos el software", "que tu negocio necesita"]}
-        className="font-display text-5xl leading-[1.02] font-semibold tracking-[-0.03em] text-fg md:text-7xl lg:text-8xl"
-      />
+      <Reveal>
+        <h1 className="font-display text-5xl leading-[1.02] font-bold tracking-[-0.02em] text-fg md:text-7xl lg:text-8xl">
+          Construimos el software<br />que tu negocio necesita
+        </h1>
+      </Reveal>
 
       <Reveal
         as="p"
@@ -40,7 +38,7 @@ const Hero = () => (
         </Link>
       </Reveal>
 
-      <Rule className="mt-20" delay={0.4} />
+      <div className="mt-20 h-px w-full bg-line" />
     </div>
   </section>
 );

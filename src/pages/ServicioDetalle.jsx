@@ -1,6 +1,5 @@
 import { Link, useParams } from "react-router-dom";
 import * as Icons from "lucide-react";
-import RevealText from "../motion/RevealText";
 import Reveal from "../motion/Reveal";
 import Stagger, { StaggerItem } from "../motion/Stagger";
 import { getServicioBySlug, servicios } from "../data/servicios";
@@ -41,11 +40,11 @@ const ServicioDetalle = () => {
             </span>
             <Icono className="h-5 w-5 text-brand" aria-hidden="true" />
           </div>
-          <RevealText
-            as="h1"
-            lines={[servicio.titulo]}
-            className="font-display text-5xl font-semibold tracking-[-0.03em] text-fg md:text-7xl"
-          />
+          <Reveal>
+            <h1 className="font-display text-5xl font-bold tracking-[-0.02em] text-fg md:text-7xl">
+              {servicio.titulo}
+            </h1>
+          </Reveal>
           <Reveal as="p" delay={0.2} className="mt-8 max-w-2xl text-lg leading-relaxed text-fg-muted">
             {servicio.descripcion}
           </Reveal>
@@ -93,11 +92,11 @@ const ServicioDetalle = () => {
 
       <section className="bg-brand py-24">
         <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-          <RevealText
-            as="h2"
-            lines={["Hablemos de tu proyecto"]}
-            className="font-display text-4xl font-semibold tracking-[-0.03em] text-brand-ink md:text-5xl"
-          />
+          <Reveal>
+            <h2 className="font-display text-4xl font-bold tracking-[-0.02em] text-brand-ink md:text-5xl">
+              Hablemos de tu proyecto
+            </h2>
+          </Reveal>
           <Reveal delay={0.2} className="mt-10">
             <Link
               to="/contacto"

@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import RevealText from "../motion/RevealText";
 import Reveal from "../motion/Reveal";
 import Parallax from "../motion/Parallax";
 import { proyectos } from "../data/proyectos";
@@ -15,11 +14,11 @@ const TrabajoSeleccionado = ({ limite = 3 }) => {
         <p className="mb-6 text-xs font-semibold tracking-[0.14em] text-brand uppercase">
           Trabajo
         </p>
-        <RevealText
-          as="h2"
-          lines={["Proyectos recientes"]}
-          className="font-display text-4xl font-semibold tracking-[-0.03em] text-fg md:text-6xl"
-        />
+        <Reveal>
+          <h2 className="font-display text-4xl font-bold tracking-[-0.02em] text-fg md:text-6xl">
+            Proyectos recientes
+          </h2>
+        </Reveal>
 
         <div className="mt-20 space-y-28">
           {seleccion.map((proyecto, index) => (

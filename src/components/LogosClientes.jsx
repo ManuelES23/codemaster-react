@@ -1,6 +1,5 @@
 import { clientes } from "../data/clientes";
 import Stagger, { StaggerItem } from "../motion/Stagger";
-import Rule from "../motion/Rule";
 
 const LogosClientes = () => {
   if (clientes.length === 0) return null;
@@ -11,7 +10,7 @@ const LogosClientes = () => {
         <p className="mb-8 text-xs font-semibold tracking-[0.14em] text-fg-subtle uppercase">
           Confían en nosotros
         </p>
-        <Rule />
+        <div className="h-px w-full bg-line" />
         <Stagger className="grid grid-cols-2 items-center gap-px bg-line sm:grid-cols-3 lg:grid-cols-5">
           {clientes.map((cliente) => (
             <StaggerItem

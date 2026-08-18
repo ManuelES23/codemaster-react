@@ -5,7 +5,6 @@ import IndiceServicios from "../components/IndiceServicios";
 import TrabajoSeleccionado from "../components/TrabajoSeleccionado";
 import ProcesoScroll from "../components/ProcesoScroll";
 import Reveal from "../motion/Reveal";
-import RevealText from "../motion/RevealText";
 import Stagger, { StaggerItem } from "../motion/Stagger";
 
 const diferenciadores = [
@@ -34,11 +33,11 @@ const Home = () => (
         <p className="mb-6 text-xs font-semibold tracking-[0.14em] text-brand uppercase">
           Servicios
         </p>
-        <RevealText
-          as="h2"
-          lines={["Qué hacemos"]}
-          className="mb-16 font-display text-4xl font-semibold tracking-[-0.03em] text-fg md:text-6xl"
-        />
+        <Reveal className="mb-16">
+          <h2 className="font-display text-4xl font-bold tracking-[-0.02em] text-fg md:text-6xl">
+            Qué hacemos
+          </h2>
+        </Reveal>
         <IndiceServicios />
       </div>
     </section>
@@ -67,11 +66,11 @@ const Home = () => (
 
     <section className="bg-brand py-24">
       <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-        <RevealText
-          as="h2"
-          lines={["¿Tienes un proyecto", "en mente?"]}
-          className="font-display text-4xl font-semibold tracking-[-0.03em] text-brand-ink md:text-6xl"
-        />
+        <Reveal>
+          <h2 className="font-display text-4xl font-bold tracking-[-0.02em] text-brand-ink md:text-6xl">
+            ¿Tienes un proyecto<br />en mente?
+          </h2>
+        </Reveal>
         <Reveal as="p" delay={0.2} className="mt-6 text-lg text-brand-ink">
           Conversemos y hagámoslo realidad.
         </Reveal>

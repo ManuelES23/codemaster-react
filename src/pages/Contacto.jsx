@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
-import RevealText from "../motion/RevealText";
 import Reveal from "../motion/Reveal";
 
 const Contacto = () => {
@@ -28,11 +27,11 @@ const Contacto = () => {
           <p className="mb-6 text-xs font-semibold tracking-[0.14em] text-brand uppercase">
             Contacto
           </p>
-          <RevealText
-            as="h1"
-            lines={["Contáctanos"]}
-            className="font-display text-5xl font-semibold tracking-[-0.03em] text-fg md:text-7xl"
-          />
+          <Reveal>
+            <h1 className="font-display text-5xl font-bold tracking-[-0.02em] text-fg md:text-7xl">
+              Contáctanos
+            </h1>
+          </Reveal>
           <Reveal as="p" delay={0.2} className="mt-8 max-w-xl text-lg text-fg-muted">
             Estamos listos para hacer realidad tu proyecto digital
           </Reveal>
