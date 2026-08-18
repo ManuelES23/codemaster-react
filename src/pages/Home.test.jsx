@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, within } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import { describe, it, expect } from "vitest";
 import Home from "./Home";
@@ -23,6 +23,15 @@ const RUTAS_VALIDAS = [
 ];
 
 const SLUGS_VALIDOS = new Set(servicios.map((servicio) => servicio.slug));
+
+const DIFERENCIADORES = [
+  "Rapidez y eficiencia",
+  "Enfoque personalizado",
+  "Innovación constante",
+  "Soporte continuo",
+  "Precios competitivos",
+  "Resultados medibles",
+];
 
 describe("Home", () => {
   it("points every internal link at a route the router actually serves, via react-router's Link", () => {
@@ -55,14 +64,13 @@ describe("Home", () => {
     });
   });
 
-  it("keeps only the three concrete differentiators", () => {
+  it("restores all six differentiators", () => {
     renderHome();
-    expect(screen.getByText("Enfoque personalizado")).toBeInTheDocument();
-    expect(screen.getByText("Soporte continuo")).toBeInTheDocument();
-    expect(screen.getByText("Precios competitivos")).toBeInTheDocument();
-    expect(screen.queryByText("Innovación constante")).not.toBeInTheDocument();
-    expect(screen.queryByText("Resultados medibles")).not.toBeInTheDocument();
-    expect(screen.queryByText("Rapidez y eficiencia")).not.toBeInTheDocument();
+    const seccion = screen.getByRole("heading", { name: /por qu[ée]/i }).closest("section");
+    expect(seccion, "la sección de diferenciadores necesita un encabezado").not.toBeNull();
+    DIFERENCIADORES.forEach((titulo) => {
+      expect(within(seccion).getByText(titulo)).toBeInTheDocument();
+    });
   });
 
   it("renders the services index", () => {

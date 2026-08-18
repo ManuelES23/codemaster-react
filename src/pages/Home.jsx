@@ -4,22 +4,17 @@ import LogosClientes from "../components/LogosClientes";
 import ServiciosBento from "../components/ServiciosBento";
 import TrabajoSeleccionado from "../components/TrabajoSeleccionado";
 import ProcesoScroll from "../components/ProcesoScroll";
+import BentoGrid from "../components/BentoGrid";
+import BentoCard from "../components/BentoCard";
 import Reveal from "../motion/Reveal";
-import Stagger, { StaggerItem } from "../motion/Stagger";
 
 const diferenciadores = [
-  {
-    titulo: "Enfoque personalizado",
-    texto: "Cada proyecto parte de tu operación real, no de una plantilla que adaptamos.",
-  },
-  {
-    titulo: "Soporte continuo",
-    texto: "Seguimos disponibles después del lanzamiento, con mantenimiento y actualizaciones.",
-  },
-  {
-    titulo: "Precios competitivos",
-    texto: "Presupuesto por escrito antes de empezar. Sin costos que aparecen a medio camino.",
-  },
+  { icono: "Zap", titulo: "Rapidez y eficiencia", texto: "Entregamos proyectos de calidad en tiempo récord sin comprometer la excelencia." },
+  { icono: "Target", titulo: "Enfoque personalizado", texto: "Cada proyecto parte de tu operación real, no de una plantilla que adaptamos." },
+  { icono: "Lightbulb", titulo: "Innovación constante", texto: "Utilizamos las últimas tecnologías para mantenerte a la vanguardia." },
+  { icono: "LifeBuoy", titulo: "Soporte continuo", texto: "Seguimos disponibles después del lanzamiento, con mantenimiento y actualizaciones." },
+  { icono: "Wallet", titulo: "Precios competitivos", texto: "Presupuesto por escrito antes de empezar. Sin costos que aparecen a medio camino." },
+  { icono: "TrendingUp", titulo: "Resultados medibles", texto: "Enfocados en generar resultados tangibles para tu negocio." },
 ];
 
 const Home = () => (
@@ -48,19 +43,21 @@ const Home = () => (
 
     <section className="bg-ink-0 py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <p className="mb-6 text-xs font-semibold tracking-[0.14em] text-brand uppercase">
-          Por qué nosotros
-        </p>
-        <Stagger className="grid gap-px border-t border-line bg-line md:grid-cols-3">
+        <Reveal className="mb-16">
+          <h2 className="font-display text-4xl font-bold tracking-[-0.02em] text-fg md:text-6xl">
+            Por qué nosotros
+          </h2>
+        </Reveal>
+        <BentoGrid columnas={3}>
           {diferenciadores.map((item) => (
-            <StaggerItem key={item.titulo} className="bg-ink-0 px-6 py-12">
-              <h3 className="font-display text-xl font-medium tracking-[-0.01em] text-fg">
-                {item.titulo}
-              </h3>
-              <p className="mt-3 leading-relaxed text-fg-muted">{item.texto}</p>
-            </StaggerItem>
+            <BentoCard
+              key={item.titulo}
+              icono={item.icono}
+              titulo={item.titulo}
+              descripcion={item.texto}
+            />
           ))}
-        </Stagger>
+        </BentoGrid>
       </div>
     </section>
 
