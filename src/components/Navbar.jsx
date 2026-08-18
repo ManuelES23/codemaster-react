@@ -33,7 +33,7 @@ const Navbar = () => {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
           <Link to="/" aria-label="CodeMaster, ir al inicio">
-            <LogoMarca className="h-7" />
+            <LogoMarca variante="vertical" className="h-7" />
           </Link>
 
           <div className="hidden items-center gap-8 md:flex">

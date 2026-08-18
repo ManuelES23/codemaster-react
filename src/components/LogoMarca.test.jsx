@@ -19,10 +19,26 @@ describe("LogoMarca", () => {
     );
   });
 
-  it("declares intrinsic dimensions so the layout does not shift", () => {
-    render(<LogoMarca />);
-    const img = screen.getByAltText("CodeMaster");
-    expect(img).toHaveAttribute("width");
-    expect(img).toHaveAttribute("height");
+  it("renders the vertical wordmark when asked", () => {
+    render(<LogoMarca variante="vertical" />);
+    expect(screen.getByAltText("CodeMaster")).toHaveAttribute(
+      "src",
+      "/img/codemaster_logo_vertical.png"
+    );
+  });
+
+  it("declares each variant's real intrinsic dimensions, not just any value", () => {
+    const casos = [
+      ["horizontal", undefined, "1516", "392"],
+      ["isotipo", "isotipo", "572", "250"],
+      ["vertical", "vertical", "577", "79"],
+    ];
+    casos.forEach(([nombre, variante, width, height]) => {
+      const { unmount } = render(<LogoMarca variante={variante} />);
+      const img = screen.getByAltText("CodeMaster");
+      expect(img, `${nombre} width`).toHaveAttribute("width", width);
+      expect(img, `${nombre} height`).toHaveAttribute("height", height);
+      unmount();
+    });
   });
 });
