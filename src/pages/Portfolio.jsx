@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import Reveal from "../motion/Reveal";
 import Parallax from "../motion/Parallax";
+import Tilt3D from "../motion/Tilt3D";
 import { categorias, getProyectosPorCategoria } from "../data/proyectos";
 
 const Portfolio = () => {
@@ -10,13 +11,13 @@ const Portfolio = () => {
 
   return (
     <div className="bg-ink-0">
-      <section className="border-b border-line pt-40 pb-20">
+      <section className="border-b border-line pt-28 pb-14 md:pt-36 md:pb-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <p className="mb-6 text-xs font-semibold tracking-[0.14em] text-brand uppercase">
             Portfolio
           </p>
           <Reveal>
-            <h1 className="font-display text-5xl font-bold tracking-[-0.02em] text-fg md:text-7xl">
+            <h1 className="font-display text-4xl font-bold tracking-[-0.02em] text-fg md:text-6xl">
               Trabajo entregado
             </h1>
           </Reveal>
@@ -35,7 +36,7 @@ const Portfolio = () => {
                 className={`rounded-btn px-4 py-2 text-xs font-semibold tracking-[0.08em] uppercase transition-colors ${
                   filtro === categoria.id
                     ? "bg-brand text-brand-ink"
-                    : "border border-line text-fg-muted hover:border-brand hover:text-brand"
+                    : "border border-card-border bg-card text-fg-muted hover:border-brand hover:text-brand"
                 }`}
               >
                 {categoria.nombre}
@@ -56,16 +57,18 @@ const Portfolio = () => {
                     index % 2 === 1 ? "lg:[&>*:first-child]:order-2" : ""
                   }`}
                 >
-                  <Parallax offset={40}>
-                    <div className="overflow-hidden rounded-panel border border-line bg-ink-2">
-                      <img
-                        src={proyecto.imagen}
-                        alt={proyecto.titulo}
-                        loading="lazy"
-                        className="aspect-[4/3] w-full object-cover"
-                      />
-                    </div>
-                  </Parallax>
+                  <Tilt3D max={5}>
+                    <Parallax offset={40}>
+                      <div className="overflow-hidden rounded-panel border border-card-border bg-card">
+                        <img
+                          src={proyecto.imagen}
+                          alt={proyecto.titulo}
+                          loading="lazy"
+                          className="aspect-[4/3] w-full object-cover"
+                        />
+                      </div>
+                    </Parallax>
+                  </Tilt3D>
 
                   <Reveal>
                     {proyecto.esPlantilla && (
