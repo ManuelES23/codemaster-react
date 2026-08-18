@@ -5,7 +5,6 @@ import Tilt3D from "../motion/Tilt3D";
 import Stagger, { StaggerItem } from "../motion/Stagger";
 import BentoGrid from "../components/BentoGrid";
 import BentoCard from "../components/BentoCard";
-import LogoMarca from "../components/LogoMarca";
 import { getServicioBySlug, servicios } from "../data/servicios";
 
 const NoEncontrado = () => (
@@ -112,8 +111,8 @@ const ServicioDetalle = () => {
 
             <Reveal delay={0.15} className="hidden lg:block">
               <Tilt3D max={10}>
-                <div className="rounded-panel border border-fg/15 bg-brand-ink/10 p-10">
-                  <LogoMarca variante="isotipo" className="mx-auto h-28" />
+                <div className="flex items-center justify-center rounded-panel border border-fg/15 bg-brand-ink/10 p-10">
+                  <Icono className="h-24 w-24 text-fg" aria-hidden="true" />
                 </div>
               </Tilt3D>
             </Reveal>

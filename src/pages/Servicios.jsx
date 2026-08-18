@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
+import { LayoutGrid } from "lucide-react";
 import Reveal from "../motion/Reveal";
 import Tilt3D from "../motion/Tilt3D";
 import ServiciosBento from "../components/ServiciosBento";
-import LogoMarca from "../components/LogoMarca";
 
 const Servicios = () => (
   <div className="bg-ink-0">
@@ -50,8 +50,8 @@ const Servicios = () => (
 
           <Reveal delay={0.15} className="hidden lg:block">
             <Tilt3D max={10}>
-              <div className="rounded-panel border border-fg/15 bg-brand-ink/10 p-10">
-                <LogoMarca variante="isotipo" className="mx-auto h-28" />
+              <div className="flex items-center justify-center rounded-panel border border-fg/15 bg-brand-ink/10 p-10">
+                <LayoutGrid className="h-24 w-24 text-fg" aria-hidden="true" />
               </div>
             </Tilt3D>
           </Reveal>
