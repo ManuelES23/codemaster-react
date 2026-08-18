@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Reveal from "../motion/Reveal";
 import Parallax from "../motion/Parallax";
 import Tilt3D from "../motion/Tilt3D";
+import LogoMarca from "../components/LogoMarca";
 import { categorias, getProyectosPorCategoria } from "../data/proyectos";
 
 const Portfolio = () => {
@@ -133,21 +134,33 @@ const Portfolio = () => {
         </div>
       </section>
 
-      <section className="bg-brand py-24">
-        <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-          <Reveal>
-            <h2 className="font-display text-4xl font-bold tracking-[-0.02em] text-fg md:text-5xl">
-              ¿Quieres ser el siguiente?
-            </h2>
-          </Reveal>
-          <Reveal delay={0.2} className="mt-10">
-            <Link
-              to="/contacto"
-              className="inline-block rounded-btn bg-brand-ink px-8 py-3.5 font-medium text-fg transition-opacity hover:opacity-90"
-            >
-              Iniciar un proyecto
-            </Link>
-          </Reveal>
+      <section className="py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid items-center gap-10 rounded-panel bg-brand p-10 md:p-16 lg:grid-cols-2">
+            <div className="text-center lg:text-left">
+              <Reveal>
+                <h2 className="font-display text-4xl font-bold tracking-[-0.02em] text-fg md:text-5xl">
+                  ¿Quieres ser el siguiente?
+                </h2>
+              </Reveal>
+              <Reveal delay={0.2} className="mt-10 flex justify-center lg:justify-start">
+                <Link
+                  to="/contacto"
+                  className="inline-block rounded-btn bg-brand-ink px-8 py-3.5 font-medium text-fg transition-opacity hover:opacity-90"
+                >
+                  Iniciar un proyecto
+                </Link>
+              </Reveal>
+            </div>
+
+            <Reveal delay={0.15} className="hidden lg:block">
+              <Tilt3D max={10}>
+                <div className="rounded-panel border border-fg/15 bg-brand-ink/10 p-10">
+                  <LogoMarca variante="isotipo" className="mx-auto h-28" />
+                </div>
+              </Tilt3D>
+            </Reveal>
+          </div>
         </div>
       </section>
     </div>
