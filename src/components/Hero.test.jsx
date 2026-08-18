@@ -18,14 +18,27 @@ describe("Hero", () => {
 
   it("offers both primary calls to action", () => {
     renderHero();
-    expect(screen.getByRole("link", { name: /ver servicios/i })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /nuestros servicios/i })).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /cont[áa]ctanos/i })).toBeInTheDocument();
   });
 
-  it("drops the unverifiable trust badges", () => {
+  it("shows the three restored trust badges", () => {
     renderHero();
-    expect(screen.queryByText(/Soporte 24\/7/i)).not.toBeInTheDocument();
-    expect(screen.queryByText(/Calidad premium/i)).not.toBeInTheDocument();
-    expect(screen.queryByText(/Entrega rápida/i)).not.toBeInTheDocument();
+    expect(screen.getByText("Entrega rápida")).toBeInTheDocument();
+    expect(screen.getByText("Calidad premium")).toBeInTheDocument();
+    expect(screen.getByText("Soporte continuo")).toBeInTheDocument();
+  });
+
+  it("does not claim round-the-clock support", () => {
+    renderHero();
+    expect(screen.queryByText(/24\/7/)).not.toBeInTheDocument();
+  });
+
+  it("shows the brand isotipo", () => {
+    renderHero();
+    expect(screen.getByAltText("CodeMaster")).toHaveAttribute(
+      "src",
+      "/img/codemaster_logo_isotipo.png"
+    );
   });
 });
