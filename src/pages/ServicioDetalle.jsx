@@ -2,6 +2,8 @@ import { Link, useParams } from "react-router-dom";
 import * as Icons from "lucide-react";
 import Reveal from "../motion/Reveal";
 import Stagger, { StaggerItem } from "../motion/Stagger";
+import BentoGrid from "../components/BentoGrid";
+import BentoCard from "../components/BentoCard";
 import { getServicioBySlug, servicios } from "../data/servicios";
 
 const NoEncontrado = () => (
@@ -32,7 +34,7 @@ const ServicioDetalle = () => {
 
   return (
     <div className="bg-ink-0">
-      <section className="border-b border-line pt-40 pb-20">
+      <section className="border-b border-line pt-28 pb-14 md:pt-36 md:pb-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-6 flex items-center gap-4">
             <span className="text-xs font-semibold tracking-[0.14em] text-brand">
@@ -41,7 +43,7 @@ const ServicioDetalle = () => {
             <Icono className="h-5 w-5 text-brand" aria-hidden="true" />
           </div>
           <Reveal>
-            <h1 className="font-display text-5xl font-bold tracking-[-0.02em] text-fg md:text-7xl">
+            <h1 className="font-display text-4xl font-bold tracking-[-0.02em] text-fg md:text-6xl">
               {servicio.titulo}
             </h1>
           </Reveal>
@@ -56,14 +58,11 @@ const ServicioDetalle = () => {
           <p className="mb-8 text-xs font-semibold tracking-[0.14em] text-fg-subtle uppercase">
             Qué incluye
           </p>
-          <Stagger as="ul" className="grid gap-px border-t border-line bg-line sm:grid-cols-2">
+          <BentoGrid columnas={4}>
             {servicio.features.map((feature) => (
-              <StaggerItem as="li" key={feature} className="flex items-center gap-3 bg-ink-0 px-6 py-6">
-                <Icons.Check className="h-4 w-4 shrink-0 text-brand" aria-hidden="true" />
-                <span className="text-fg">{feature}</span>
-              </StaggerItem>
+              <BentoCard key={feature} icono="Check" titulo={feature} />
             ))}
-          </Stagger>
+          </BentoGrid>
         </div>
       </section>
 

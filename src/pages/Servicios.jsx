@@ -4,13 +4,13 @@ import ServiciosBento from "../components/ServiciosBento";
 
 const Servicios = () => (
   <div className="bg-ink-0">
-    <section className="border-b border-line bg-ink-0 pt-40 pb-20">
+    <section className="border-b border-line bg-ink-0 pt-28 pb-14 md:pt-36 md:pb-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <p className="mb-6 text-xs font-semibold tracking-[0.14em] text-brand uppercase">
           Servicios
         </p>
         <Reveal>
-          <h1 className="font-display text-5xl font-bold tracking-[-0.02em] text-fg md:text-7xl">
+          <h1 className="font-display text-4xl font-bold tracking-[-0.02em] text-fg md:text-6xl">
             Todo lo que<br />podemos construir
           </h1>
         </Reveal>
