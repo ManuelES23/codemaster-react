@@ -41,6 +41,7 @@ const Tilt3D = ({ max = 8, className = "", children }) => {
     <div className={className} style={{ perspective: 900 }}>
       <motion.div
         ref={ref}
+        className="h-full"
         onPointerMove={onMove}
         onPointerLeave={onLeave}
         style={

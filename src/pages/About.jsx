@@ -38,7 +38,7 @@ const About = () => {
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
           {/* Who We Are */}
           <Reveal className='mb-16'>
-            <h2 className='text-3xl md:text-4xl font-bold text-fg mb-6'>
+            <h2 className='font-display text-3xl md:text-4xl font-bold text-fg mb-6'>
               ¿Quiénes <span className='text-brand'>somos</span>?
             </h2>
             <p className='text-fg-muted text-lg leading-relaxed'>
@@ -56,7 +56,7 @@ const About = () => {
             <Reveal
             >
               <CardLift className='bg-card border border-card-border rounded-card p-8 h-full'>
-              <h2 className='text-2xl font-bold text-fg mb-4'>
+              <h2 className='font-display text-2xl font-bold text-fg mb-4'>
                 Nuestra <span className='text-brand'>misión</span>
               </h2>
               <p className='text-fg-muted leading-relaxed'>
@@ -73,7 +73,7 @@ const About = () => {
               delay={0.15}
             >
               <CardLift className='bg-card border border-card-border rounded-card p-8 h-full'>
-              <h2 className='text-2xl font-bold text-fg mb-4'>
+              <h2 className='font-display text-2xl font-bold text-fg mb-4'>
                 Nuestra <span className='text-brand'>visión</span>
               </h2>
               <p className='text-fg-muted leading-relaxed'>
@@ -91,7 +91,7 @@ const About = () => {
           <div className='mb-16'>
             <Reveal
               as='h2'
-              className='text-3xl md:text-4xl font-bold text-fg mb-12 text-center'
+              className='font-display text-3xl md:text-4xl font-bold text-fg mb-12 text-center'
             >
               Nuestros <span className='text-brand'>valores</span>
             </Reveal>
@@ -99,10 +99,10 @@ const About = () => {
               <Reveal
               >
                 <CardLift className='bg-card border border-card-border rounded-card p-6 h-full group'>
-                <div className='text-brand text-4xl font-bold mb-4 group-hover:scale-110 transition-transform duration-300'>
+                <div className='text-brand text-4xl font-bold mb-4 motion-safe:group-hover:scale-110 transition-transform duration-300'>
                   01
                 </div>
-                <h3 className='text-xl font-bold text-fg mb-3'>
+                <h3 className='font-display text-xl font-bold text-fg mb-3'>
                   Excelencia
                 </h3>
                 <p className='text-fg-muted text-sm leading-relaxed'>
@@ -116,10 +116,10 @@ const About = () => {
                 delay={0.1}
               >
                 <CardLift className='bg-card border border-card-border rounded-card p-6 h-full group'>
-                <div className='text-brand text-4xl font-bold mb-4 group-hover:scale-110 transition-transform duration-300'>
+                <div className='text-brand text-4xl font-bold mb-4 motion-safe:group-hover:scale-110 transition-transform duration-300'>
                   02
                 </div>
-                <h3 className='text-xl font-bold text-fg mb-3'>
+                <h3 className='font-display text-xl font-bold text-fg mb-3'>
                   Innovación
                 </h3>
                 <p className='text-fg-muted text-sm leading-relaxed'>
@@ -133,10 +133,10 @@ const About = () => {
                 delay={0.2}
               >
                 <CardLift className='bg-card border border-card-border rounded-card p-6 h-full group'>
-                <div className='text-brand text-4xl font-bold mb-4 group-hover:scale-110 transition-transform duration-300'>
+                <div className='text-brand text-4xl font-bold mb-4 motion-safe:group-hover:scale-110 transition-transform duration-300'>
                   03
                 </div>
-                <h3 className='text-xl font-bold text-fg mb-3'>
+                <h3 className='font-display text-xl font-bold text-fg mb-3'>
                   Compromiso
                 </h3>
                 <p className='text-fg-muted text-sm leading-relaxed'>
@@ -150,10 +150,10 @@ const About = () => {
                 delay={0.3}
               >
                 <CardLift className='bg-card border border-card-border rounded-card p-6 h-full group'>
-                <div className='text-brand text-4xl font-bold mb-4 group-hover:scale-110 transition-transform duration-300'>
+                <div className='text-brand text-4xl font-bold mb-4 motion-safe:group-hover:scale-110 transition-transform duration-300'>
                   04
                 </div>
-                <h3 className='text-xl font-bold text-fg mb-3'>
+                <h3 className='font-display text-xl font-bold text-fg mb-3'>
                   Transparencia
                 </h3>
                 <p className='text-fg-muted text-sm leading-relaxed'>
@@ -169,7 +169,7 @@ const About = () => {
           <div className='mb-16'>
             <Reveal
               as='h2'
-              className='text-3xl md:text-4xl font-bold text-fg mb-12 text-center'
+              className='font-display text-3xl md:text-4xl font-bold text-fg mb-12 text-center'
             >
               ¿Qué <span className='text-brand'>ofrecemos</span>?
             </Reveal>
@@ -192,7 +192,7 @@ const About = () => {
                   <div className='mb-3'>
                     <Share2 className='w-10 h-10 text-brand' />
                   </div>
-                  <h4 className='text-fg font-semibold text-lg'>
+                  <h4 className='font-display text-fg font-semibold text-lg'>
                     Redes sociales
                   </h4>
                   <p className='text-fg-muted text-sm mt-2'>
@@ -215,7 +215,7 @@ const About = () => {
                   <div className='mb-3'>
                     <Key className='w-10 h-10 text-brand' />
                   </div>
-                  <h4 className='text-fg font-semibold text-lg'>
+                  <h4 className='font-display text-fg font-semibold text-lg'>
                     Licencias Microsoft
                   </h4>
                   <p className='text-fg-muted text-sm mt-2'>
@@ -238,7 +238,7 @@ const About = () => {
                   <div className='mb-3'>
                     <Search className='w-10 h-10 text-brand' />
                   </div>
-                  <h4 className='text-fg font-semibold text-lg'>
+                  <h4 className='font-display text-fg font-semibold text-lg'>
                     Consultoría IT
                   </h4>
                   <p className='text-fg-muted text-sm mt-2'>
@@ -257,7 +257,7 @@ const About = () => {
                 <div className='flex justify-center mb-3'>
                   <Globe className='w-10 h-10 text-brand' />
                 </div>
-                <h4 className='text-fg font-semibold text-sm'>
+                <h4 className='font-display text-fg font-semibold text-sm'>
                   Desarrollo web
                 </h4>
                 </CardLift>
@@ -269,7 +269,7 @@ const About = () => {
                 <div className='flex justify-center mb-3'>
                   <Smartphone className='w-10 h-10 text-brand' />
                 </div>
-                <h4 className='text-fg font-semibold text-sm'>
+                <h4 className='font-display text-fg font-semibold text-sm'>
                   Apps móviles
                 </h4>
                 </CardLift>
@@ -281,7 +281,7 @@ const About = () => {
                 <div className='flex justify-center mb-3'>
                   <Laptop className='w-10 h-10 text-brand' />
                 </div>
-                <h4 className='text-fg font-semibold text-sm'>
+                <h4 className='font-display text-fg font-semibold text-sm'>
                   Sistemas a medida
                 </h4>
                 </CardLift>
@@ -292,7 +292,7 @@ const About = () => {
           {/* Mensaje de Compromiso y Confianza */}
           <Reveal className='mt-16'>
             <div className='bg-card border border-card-border rounded-card p-12 md:p-16 text-center hover:border-brand transition-all duration-300'>
-              <h2 className='text-3xl md:text-4xl font-bold text-fg mb-6'>
+              <h2 className='font-display text-3xl md:text-4xl font-bold text-fg mb-6'>
                 Tu confianza es nuestro mayor compromiso
               </h2>
               <p className='text-xl text-fg-muted mb-8 max-w-4xl mx-auto leading-relaxed'>
@@ -305,10 +305,10 @@ const About = () => {
                 <Reveal
                 >
                   <CardLift className='bg-card border border-card-border rounded-card p-8 text-center h-full group'>
-                  <div className='inline-flex items-center justify-center w-16 h-16 bg-brand rounded-btn mb-4 group-hover:scale-110 transition-transform duration-300'>
+                  <div className='inline-flex items-center justify-center w-16 h-16 bg-brand rounded-btn mb-4 motion-safe:group-hover:scale-110 transition-transform duration-300'>
                     <Target className='w-8 h-8 text-brand-ink' />
                   </div>
-                  <h3 className='text-xl font-semibold text-fg mb-3'>
+                  <h3 className='font-display text-xl font-semibold text-fg mb-3'>
                     Enfoque personalizado
                   </h3>
                   <p className='text-fg-muted leading-relaxed'>
@@ -320,10 +320,10 @@ const About = () => {
                   delay={0.15}
                 >
                   <CardLift className='bg-card border border-card-border rounded-card p-8 text-center h-full group'>
-                  <div className='inline-flex items-center justify-center w-16 h-16 bg-brand rounded-btn mb-4 group-hover:scale-110 transition-transform duration-300'>
+                  <div className='inline-flex items-center justify-center w-16 h-16 bg-brand rounded-btn mb-4 motion-safe:group-hover:scale-110 transition-transform duration-300'>
                     <Shield className='w-8 h-8 text-brand-ink' />
                   </div>
-                  <h3 className='text-xl font-semibold text-fg mb-3'>
+                  <h3 className='font-display text-xl font-semibold text-fg mb-3'>
                     Transparencia total
                   </h3>
                   <p className='text-fg-muted leading-relaxed'>
@@ -335,10 +335,10 @@ const About = () => {
                   delay={0.3}
                 >
                   <CardLift className='bg-card border border-card-border rounded-card p-8 text-center h-full group'>
-                  <div className='inline-flex items-center justify-center w-16 h-16 bg-brand rounded-btn mb-4 group-hover:scale-110 transition-transform duration-300'>
+                  <div className='inline-flex items-center justify-center w-16 h-16 bg-brand rounded-btn mb-4 motion-safe:group-hover:scale-110 transition-transform duration-300'>
                     <Gem className='w-8 h-8 text-brand-ink' />
                   </div>
-                  <h3 className='text-xl font-semibold text-fg mb-3'>
+                  <h3 className='font-display text-xl font-semibold text-fg mb-3'>
                     Calidad garantizada
                   </h3>
                   <p className='text-fg-muted leading-relaxed'>

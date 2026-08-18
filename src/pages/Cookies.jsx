@@ -25,7 +25,7 @@ const Cookies = () => {
                 Última actualización: 18 de diciembre de 2025
               </span>
             </div>
-            <h1 className='font-display text-4xl font-bold tracking-[-0.02em] md:text-5xl mb-6 bg-linear-to-b from-fg to-fg-muted bg-clip-text text-transparent'>
+            <h1 className='font-display text-4xl font-bold tracking-[-0.02em] md:text-5xl mb-6 text-fg'>
               Política de cookies
             </h1>
             <p className='text-xl text-fg-muted max-w-3xl mx-auto'>
@@ -123,7 +123,7 @@ const Cookies = () => {
             </h2>
 
             {/* Cookies Esenciales */}
-            <div className='mb-6 p-6 bg-ink-0/30 rounded-xl border border-line'>
+            <div className='mb-6 p-6 bg-ink-0/30 rounded-btn border border-line'>
               <div className='flex items-center gap-3 mb-3'>
                 <Shield className='w-5 h-5 text-green-500' />
                 <h3 className='text-xl font-semibold text-green-400'>
@@ -151,7 +151,7 @@ const Cookies = () => {
             </div>
 
             {/* Cookies de Rendimiento */}
-            <div className='mb-6 p-6 bg-ink-0/30 rounded-xl border border-line'>
+            <div className='mb-6 p-6 bg-ink-0/30 rounded-btn border border-line'>
               <div className='flex items-center gap-3 mb-3'>
                 <BarChart3 className='w-5 h-5 text-blue-500' />
                 <h3 className='text-xl font-semibold text-blue-400'>
@@ -183,7 +183,7 @@ const Cookies = () => {
             </div>
 
             {/* Cookies Funcionales */}
-            <div className='mb-6 p-6 bg-ink-0/30 rounded-xl border border-line'>
+            <div className='mb-6 p-6 bg-ink-0/30 rounded-btn border border-line'>
               <div className='flex items-center gap-3 mb-3'>
                 <Settings className='w-5 h-5 text-purple-500' />
                 <h3 className='text-xl font-semibold text-purple-400'>
@@ -224,7 +224,7 @@ const Cookies = () => {
               </p>
 
               <div className='space-y-4 mt-4'>
-                <div className='p-4 bg-ink-0/30 rounded-lg border border-line'>
+                <div className='p-4 bg-ink-0/30 rounded-btn border border-line'>
                   <h4 className='font-semibold text-fg mb-2'>
                     Google Analytics
                   </h4>
@@ -245,7 +245,7 @@ const Cookies = () => {
                   </p>
                 </div>
 
-                <div className='p-4 bg-ink-0/30 rounded-lg border border-line'>
+                <div className='p-4 bg-ink-0/30 rounded-btn border border-line'>
                   <h4 className='font-semibold text-fg mb-2'>
                     Google Fonts
                   </h4>
@@ -266,7 +266,7 @@ const Cookies = () => {
                   </p>
                 </div>
 
-                <div className='p-4 bg-ink-0/30 rounded-lg border border-line'>
+                <div className='p-4 bg-ink-0/30 rounded-btn border border-line'>
                   <h4 className='font-semibold text-fg mb-2'>
                     WhatsApp Business
                   </h4>
@@ -307,7 +307,7 @@ const Cookies = () => {
               </p>
 
               <div className='mt-4 space-y-3'>
-                <div className='p-4 bg-brand/10 border border-brand/30 rounded-lg'>
+                <div className='p-4 bg-brand/10 border border-brand/30 rounded-btn'>
                   <h4 className='font-semibold text-fg mb-2'>
                     Configuración del navegador
                   </h4>
@@ -335,7 +335,7 @@ const Cookies = () => {
                   </ul>
                 </div>
 
-                <div className='p-4 bg-brand/10 border border-brand/30 rounded-lg'>
+                <div className='p-4 bg-brand/10 border border-brand/30 rounded-btn'>
                   <h4 className='font-semibold text-fg mb-2'>
                     Eliminar cookies
                   </h4>
@@ -345,7 +345,7 @@ const Cookies = () => {
                   </p>
                 </div>
 
-                <div className='p-4 bg-brand/10 border border-brand/30 rounded-lg'>
+                <div className='p-4 bg-brand/10 border border-brand/30 rounded-btn'>
                   <h4 className='font-semibold text-fg mb-2'>
                     Bloquear cookies
                   </h4>
@@ -439,7 +439,7 @@ const Cookies = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.8 }}
-            className='bg-linear-to-b from-brand/20 to-brand/10 border border-brand/30 rounded-2xl p-8'
+            className='bg-linear-to-b from-brand/20 to-brand/10 border border-brand/30 rounded-card p-8'
           >
             <h2 className='font-display text-2xl font-medium mb-4'>9. Contacto</h2>
             <div className='space-y-4 text-fg-muted leading-relaxed'>

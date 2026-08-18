@@ -44,7 +44,7 @@ const Contacto = () => {
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
             {/* Contact Info */}
             <Reveal className="lg:col-span-2">
-              <h2 className="text-3xl font-bold text-fg mb-4">
+              <h2 className="font-display text-3xl font-bold text-fg mb-4">
                 Hablemos de tu <span className="text-brand">proyecto</span>
               </h2>
               <p className="text-fg-muted leading-relaxed mb-8">
@@ -59,7 +59,7 @@ const Contacto = () => {
                     <Mail className="w-8 h-8 text-brand" />
                   </div>
                   <div>
-                    <h4 className="text-fg font-semibold mb-1">Email</h4>
+                    <h4 className="font-display text-fg font-semibold mb-1">Email</h4>
                     <p className="text-fg-muted">manuel@codemaster.com.mx</p>
                   </div>
                 </div>
@@ -69,7 +69,7 @@ const Contacto = () => {
                     <Phone className="w-8 h-8 text-brand" />
                   </div>
                   <div>
-                    <h4 className="text-fg font-semibold mb-1">Teléfono</h4>
+                    <h4 className="font-display text-fg font-semibold mb-1">Teléfono</h4>
                     <p className="text-fg-muted">+52 668 131 6931</p>
                   </div>
                 </div>
@@ -78,9 +78,9 @@ const Contacto = () => {
                   href="https://wa.me/526681316931"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-start space-x-4 p-4 bg-green-600/20 rounded-btn border border-green-500 hover:bg-green-600/30 hover:border-green-400 transition-all duration-300 group cursor-pointer"
+                  className="flex items-start space-x-4 p-4 bg-green-600/20 rounded-card border border-green-500 hover:bg-green-600/30 hover:border-green-400 transition-all duration-300 group cursor-pointer"
                 >
-                  <div className="group-hover:scale-110 transition-transform duration-300">
+                  <div className="motion-safe:group-hover:scale-110 transition-transform duration-300">
                     <svg
                       className="w-8 h-8 text-green-400"
                       fill="currentColor"
@@ -90,7 +90,7 @@ const Contacto = () => {
                     </svg>
                   </div>
                   <div>
-                    <h4 className="text-fg font-semibold mb-1">WhatsApp</h4>
+                    <h4 className="font-display text-fg font-semibold mb-1">WhatsApp</h4>
                     <p className="text-fg-muted group-hover:text-fg transition-colors">
                       Chatea con nosotros
                     </p>
@@ -102,7 +102,7 @@ const Contacto = () => {
                     <MapPin className="w-8 h-8 text-brand" />
                   </div>
                   <div>
-                    <h4 className="text-fg font-semibold mb-1">Ubicación</h4>
+                    <h4 className="font-display text-fg font-semibold mb-1">Ubicación</h4>
                     <p className="text-fg-muted">
                       Los Mochis, Ahome, Sinaloa, México
                     </p>
@@ -114,7 +114,7 @@ const Contacto = () => {
                     <Clock className="w-8 h-8 text-brand" />
                   </div>
                   <div>
-                    <h4 className="text-fg font-semibold mb-1">Horario</h4>
+                    <h4 className="font-display text-fg font-semibold mb-1">Horario</h4>
                     <p className="text-fg-muted">
                       Lun - Vie: 9:00 AM - 6:00 PM
                     </p>

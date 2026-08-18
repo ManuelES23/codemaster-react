@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import * as Icons from "lucide-react";
+import ICONOS from "./iconos";
 import Tilt3D from "../motion/Tilt3D";
 import CardLift from "../motion/CardLift";
 import { StaggerItem } from "../motion/Stagger";
@@ -19,7 +19,7 @@ const BentoCard = ({
   destacada = false,
   children,
 }) => {
-  const Icono = Icons[icono] ?? Icons.Circle;
+  const Icono = ICONOS[icono] ?? ICONOS.Circle;
   const grande = span === "2x2";
 
   const cuerpo = (

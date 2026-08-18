@@ -25,7 +25,7 @@ const Terminos = () => {
                 Última actualización: 18 de diciembre de 2025
               </span>
             </div>
-            <h1 className='font-display text-4xl font-bold tracking-[-0.02em] md:text-5xl mb-6 bg-linear-to-r from-fg to-fg-muted bg-clip-text text-transparent'>
+            <h1 className='font-display text-4xl font-bold tracking-[-0.02em] md:text-5xl mb-6 text-fg'>
               Términos y condiciones
             </h1>
             <p className='text-xl text-fg-muted max-w-3xl mx-auto'>
@@ -430,7 +430,7 @@ const Terminos = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 1.2 }}
-            className='bg-linear-to-b from-brand/20 to-brand/10 border border-brand/30 rounded-2xl p-8'
+            className='bg-linear-to-b from-brand/20 to-brand/10 border border-brand/30 rounded-card p-8'
           >
             <h2 className='font-display text-2xl font-medium mb-4'>13. Contacto</h2>
             <div className='space-y-4 text-fg-muted leading-relaxed'>

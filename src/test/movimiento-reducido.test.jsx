@@ -74,6 +74,7 @@ const paginasLegales = [
   ["Home", "/"],
   ["Servicios", "/servicios"],
   ["Portfolio", "/portfolio"],
+  ["ServicioDetalle", "/servicios/desarrollo-web"],
 ];
 
 describe("prefers-reduced-motion: cero elementos desplazados", () => {

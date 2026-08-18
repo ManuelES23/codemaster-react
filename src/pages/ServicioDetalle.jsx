@@ -1,5 +1,5 @@
 import { Link, useParams } from "react-router-dom";
-import * as Icons from "lucide-react";
+import ICONOS from "../components/iconos";
 import Reveal from "../motion/Reveal";
 import Stagger, { StaggerItem } from "../motion/Stagger";
 import BentoGrid from "../components/BentoGrid";
@@ -29,7 +29,7 @@ const ServicioDetalle = () => {
 
   if (!servicio) return <NoEncontrado />;
 
-  const Icono = Icons[servicio.icono] ?? Icons.Circle;
+  const Icono = ICONOS[servicio.icono] ?? ICONOS.Circle;
   const otros = servicios.filter((s) => s.slug !== servicio.slug).slice(0, 3);
 
   return (
