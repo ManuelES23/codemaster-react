@@ -51,8 +51,11 @@ consultoría IT a empresas.
 ## Restricciones y decisiones tomadas
 
 - Identidad negro + naranja `#ff6600` fija. Texto sobre naranja usa
-  `#2a1509` (5.91:1), nunca blanco (2.94:1, reprueba WCAG AA) y nunca con
-  modificador de opacidad.
+  `#fafaf9` (blanco casi puro, el token `text-fg`), por decisión explícita
+  del dueño del sitio tras conocer el contraste (2.94:1, reprueba WCAG AA
+  4.5:1 normal y 3:1 texto grande). Antes se usaba `#2a1509` (5.91:1,
+  cumple AA); esa era la opción accesible pero el dueño prefirió el blanco.
+  Nunca con modificador de opacidad.
 - **Sin contenido inventado.** No hay clientes, testimonios, estadísticas ni
   resultados de proyecto fabricados. Los proyectos siguen marcados como plantilla
   hasta que CodeMaster aporte los reales.
@@ -244,8 +247,10 @@ Decisiones del dueño, registradas:
   de 4 a 2 a 1 columnas.
 - Con `prefers-reduced-motion: reduce`: ningún elemento se desplaza, ni animado
   ni instantáneamente. Esto incluye el hover de tarjeta y el tilt.
-- Contraste verificado por medición en navegador, no por lectura de clases: todo
-  texto sobre `#ff6600` a 5.91:1.
+- Contraste verificado por medición en navegador, no por lectura de clases.
+  Excepción conocida y aceptada por el dueño: el texto blanco (`text-fg`,
+  `#fafaf9`) sobre `#ff6600` mide 2.94:1, por debajo de WCAG AA — ver
+  "Restricciones y decisiones tomadas".
 - `mk-redes.jpg` por debajo de 100 KB tras la conversión.
 - Ninguna URL de `placehold.co`, ninguna cifra no verificada.
 
