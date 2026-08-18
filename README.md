@@ -32,7 +32,10 @@ codemaster-react/
 │   │   ├── Navbar.jsx
 │   │   ├── Footer.jsx
 │   │   ├── Hero.jsx
-│   │   ├── IndiceServicios.jsx
+│   │   ├── LogoMarca.jsx        # Wordmark/logo animado de la marca
+│   │   ├── BentoGrid.jsx        # Grid responsivo (3/4 columnas) para el bento layout
+│   │   ├── BentoCard.jsx        # Tarjeta individual del bento (usa Tilt3D + CardLift)
+│   │   ├── ServiciosBento.jsx   # Índice de servicios en formato bento
 │   │   ├── LogosClientes.jsx
 │   │   ├── PageTransition.jsx
 │   │   ├── ProcesoScroll.jsx
@@ -49,12 +52,14 @@ codemaster-react/
 │   │   ├── Terminos.jsx     # Términos y condiciones
 │   │   └── Cookies.jsx      # Política de cookies
 │   ├── motion/               # Primitivas de animación (framer-motion)
-│   │   ├── Reveal.jsx, RevealText.jsx, Rule.jsx
-│   │   ├── Stagger.jsx, Parallax.jsx
+│   │   ├── Reveal.jsx, Stagger.jsx, Parallax.jsx
+│   │   ├── Tilt3D.jsx        # Inclinación 3D al hover (tarjetas del bento)
+│   │   ├── CardLift.jsx      # Elevación + borde al hover (tarjetas del bento)
 │   │   └── tokens.js         # Duraciones, easing y distancias compartidas
 │   ├── data/                 # Fuente única de datos (servicios y proyectos)
 │   │   ├── servicios.js
-│   │   └── proyectos.js
+│   │   ├── proyectos.js
+│   │   └── clientes.js
 │   ├── test/                  # Setup y pruebas de integración
 │   │   └── setup.js
 │   ├── App.jsx               # Componente principal
@@ -160,7 +165,15 @@ Pie de página con enlaces de servicios, empresa y páginas legales.
 
 Sección hero principal con titular editorial y llamados a la acción.
 
-## 🎨 Paleta de Colores
+### BentoGrid / BentoCard / ServiciosBento
+
+`ServiciosBento` renderiza el índice de servicios como una grilla tipo "bento" (`BentoGrid`, 3 o 4 columnas responsivas) de tarjetas `BentoCard`. Cada tarjeta combina `Tilt3D` (inclinación 3D al hover) y `CardLift` (elevación + cambio de borde al hover) de `src/motion/`, ambas respetando `prefers-reduced-motion`.
+
+### LogoMarca
+
+Wordmark/logo animado de la marca, usado en el Navbar y el Footer.
+
+## 🎨 Paleta de Colores y Tokens de Diseño
 
 Definida como tokens en `src/index.css` (bloque `@theme`):
 
@@ -169,8 +182,11 @@ Definida como tokens en `src/index.css` (bloque `@theme`):
 - **Texto sobre marca (`brand-ink`)**: `#2a1509`
 - **Texto (`fg`)**: `#fafaf9` principal, `#a1a1a0` muted, `#6b6b69` subtle
 - **Líneas (`line`)**: blanco a 8% y 16% de opacidad
+- **Tarjetas (`card`)**: fondo `#141414` (`hover` `#1a1a1a`), borde `#262626` (`hover` `#ff6600`)
 
-Tipografía: Archivo Variable (`font-display`, titulares), Inter Variable (`font-sans`, cuerpo) y JetBrains Mono Variable (`font-mono`, eyebrows/etiquetas).
+Escala de radios (`--radius-*`): `btn` 8px, `card` 14px, `panel` 20px, `pill` 9999px.
+
+Tipografía: Poppins (`font-display`, titulares) y Open Sans (`font-sans`, cuerpo).
 
 ## 📱 Responsive Design
 

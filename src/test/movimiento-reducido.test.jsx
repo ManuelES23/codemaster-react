@@ -1,7 +1,9 @@
-import { render, waitFor, fireEvent } from "@testing-library/react";
+import { render, waitFor, fireEvent, screen } from "@testing-library/react";
+import { MemoryRouter } from "react-router-dom";
 import { describe, it, expect } from "vitest";
 import { setReducedMotion } from "./setup";
 import App from "../App";
+import ServiciosBento from "../components/ServiciosBento";
 
 // Renders through the real App tree (routing + whatever global providers
 // App.jsx sets up) rather than mounting each page in isolation, so this test
@@ -65,6 +67,13 @@ const paginasLegales = [
   ["Privacidad", "/privacidad"],
   ["Terminos", "/terminos"],
   ["Cookies", "/cookies"],
+  ["About", "/nosotros"],
+  // Home, Servicios and Portfolio now render Tilt3D and CardLift (the
+  // bento-grid primitives), so they need the same initial-render guard as
+  // the legal pages and About.
+  ["Home", "/"],
+  ["Servicios", "/servicios"],
+  ["Portfolio", "/portfolio"],
 ];
 
 describe("prefers-reduced-motion: cero elementos desplazados", () => {
@@ -74,12 +83,6 @@ describe("prefers-reduced-motion: cero elementos desplazados", () => {
       const { container } = renderRuta(ruta);
       await esperarSinTraslado(container);
     });
-  });
-
-  it("About no traslada ningún elemento en su render inicial bajo movimiento reducido", async () => {
-    setReducedMotion(true);
-    const { container } = renderRuta("/nosotros");
-    await esperarSinTraslado(container);
   });
 
   // FIX 2: About's hover cards pass whileHover={{ scale, y }} straight through
@@ -118,5 +121,30 @@ describe("prefers-reduced-motion: cero elementos desplazados", () => {
       muestraTemprana,
       `hover transform was still animating between samples: "${muestraTemprana}" -> "${muestraTardia}"`
     ).toBe(muestraTardia);
+  });
+
+  // BentoCard's JSX nests an unstyled wrapper <div> (icon + h3 + p) between
+  // the h3 and CardLift's own motion.div — the actual hoverable node with
+  // framer's whileHover listener attached. getByText(...).closest("div")
+  // alone lands one level short, on that plain wrapper; .parentElement
+  // climbs the extra hop onto CardLift's div. This matters because
+  // pointerenter does not bubble, so firing it anywhere but the exact
+  // listener node would never be observed.
+  it("does not displace a card on hover under reduced motion", async () => {
+    setReducedMotion(true);
+    render(
+      <MemoryRouter>
+        <ServiciosBento />
+      </MemoryRouter>
+    );
+    const tarjeta = screen.getByText("Desarrollo web").closest("div").parentElement;
+    fireEvent.pointerEnter(tarjeta);
+    fireEvent.pointerMove(tarjeta, { clientX: 50, clientY: 50 });
+    // CardLift's whileHover style writes flush through framer-motion's own
+    // render scheduler, not synchronously with the firing event (same
+    // reasoning as CardLift.test.jsx's own "does not move" assertion) — wait
+    // comfortably past DURATION.base (500ms) before reading the settled DOM.
+    await new Promise((resolve) => setTimeout(resolve, 600));
+    expect(tarjeta.outerHTML).not.toMatch(/translateY\(-[1-9]|rotate[XY]\((?!0deg\))/);
   });
 });
