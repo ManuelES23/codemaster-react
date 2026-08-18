@@ -183,6 +183,10 @@ const About = () => {
                   src='/img/mk-redes.jpg'
                   alt='Gestión de Redes Sociales'
                   className='w-full h-48 object-cover'
+                  loading='lazy'
+                  decoding='async'
+                  width='3000'
+                  height='3000'
                 />
                 <div className='p-6'>
                   <div className='mb-3'>

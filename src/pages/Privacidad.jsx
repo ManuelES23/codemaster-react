@@ -10,7 +10,7 @@ const Privacidad = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
-        className='relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden'
+        className='relative pt-28 pb-14 md:pt-36 md:pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden'
       >
         <div className='absolute inset-0 bg-linear-to-r from-brand/20 to-transparent'></div>
         <div className='max-w-7xl mx-auto relative z-10'>
@@ -26,7 +26,7 @@ const Privacidad = () => {
                 Última actualización: 18 de diciembre de 2025
               </span>
             </div>
-            <h1 className='font-display text-4xl font-semibold tracking-[-0.03em] md:text-5xl mb-6 bg-linear-to-r from-fg to-fg-muted bg-clip-text text-transparent'>
+            <h1 className='font-display text-4xl font-bold tracking-[-0.02em] md:text-5xl mb-6 bg-linear-to-r from-fg to-fg-muted bg-clip-text text-transparent'>
               Política de privacidad
             </h1>
             <p className='text-xl text-fg-muted max-w-3xl mx-auto'>
@@ -45,7 +45,7 @@ const Privacidad = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className='bg-ink-1/50 backdrop-blur-sm border border-line rounded-2xl p-8 mb-8'
+            className='bg-card backdrop-blur-sm border border-card-border rounded-card p-8 mb-8'
           >
             <div className='flex items-start gap-4 mb-4'>
               <FileText className='w-6 h-6 text-brand shrink-0 mt-1' />
@@ -86,7 +86,7 @@ const Privacidad = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className='bg-ink-1/50 backdrop-blur-sm border border-line rounded-2xl p-8 mb-8'
+            className='bg-card backdrop-blur-sm border border-card-border rounded-card p-8 mb-8'
           >
             <div className='flex items-start gap-4 mb-4'>
               <Eye className='w-6 h-6 text-brand shrink-0 mt-1' />
@@ -122,7 +122,7 @@ const Privacidad = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className='bg-ink-1/50 backdrop-blur-sm border border-line rounded-2xl p-8 mb-8'
+            className='bg-card backdrop-blur-sm border border-card-border rounded-card p-8 mb-8'
           >
             <div className='flex items-start gap-4 mb-4'>
               <Lock className='w-6 h-6 text-brand shrink-0 mt-1' />
@@ -162,7 +162,7 @@ const Privacidad = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className='bg-ink-1/50 backdrop-blur-sm border border-line rounded-2xl p-8 mb-8'
+            className='bg-card backdrop-blur-sm border border-card-border rounded-card p-8 mb-8'
           >
             <h2 className='font-display text-2xl font-medium mb-4'>
               4. Compartir información
@@ -197,7 +197,7 @@ const Privacidad = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className='bg-ink-1/50 backdrop-blur-sm border border-line rounded-2xl p-8 mb-8'
+            className='bg-card backdrop-blur-sm border border-card-border rounded-card p-8 mb-8'
           >
             <h2 className='font-display text-2xl font-medium mb-4'>
               5. Tus derechos (LFPDPPP - México)
@@ -250,7 +250,7 @@ const Privacidad = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className='bg-ink-1/50 backdrop-blur-sm border border-line rounded-2xl p-8 mb-8'
+            className='bg-card backdrop-blur-sm border border-card-border rounded-card p-8 mb-8'
           >
             <h2 className='font-display text-2xl font-medium mb-4'>
               6. Cookies y tecnologías similares
@@ -275,7 +275,7 @@ const Privacidad = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className='bg-ink-1/50 backdrop-blur-sm border border-line rounded-2xl p-8 mb-8'
+            className='bg-card backdrop-blur-sm border border-card-border rounded-card p-8 mb-8'
           >
             <h2 className='font-display text-2xl font-medium mb-4'>7. Retención de datos</h2>
             <div className='space-y-4 text-fg-muted leading-relaxed'>
@@ -303,7 +303,7 @@ const Privacidad = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.7 }}
-            className='bg-ink-1/50 backdrop-blur-sm border border-line rounded-2xl p-8 mb-8'
+            className='bg-card backdrop-blur-sm border border-card-border rounded-card p-8 mb-8'
           >
             <h2 className='font-display text-2xl font-medium mb-4'>8. Menores de edad</h2>
             <div className='space-y-4 text-fg-muted leading-relaxed'>
@@ -321,7 +321,7 @@ const Privacidad = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.8 }}
-            className='bg-ink-1/50 backdrop-blur-sm border border-line rounded-2xl p-8 mb-8'
+            className='bg-card backdrop-blur-sm border border-card-border rounded-card p-8 mb-8'
           >
             <h2 className='font-display text-2xl font-medium mb-4'>
               9. Cambios a esta política
