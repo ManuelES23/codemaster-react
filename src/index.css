@@ -17,12 +17,18 @@
   --color-brand-hover: #ff8533;
   --color-brand-ink: #2a1509;
 
-  --font-display: "Archivo Variable", ui-sans-serif, system-ui, sans-serif;
-  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "JetBrains Mono Variable", ui-monospace, monospace;
+  --color-card: #141414;
+  --color-card-hover: #1a1a1a;
+  --color-card-border: #262626;
+  --color-card-border-hover: #ff6600;
 
-  --radius-xs: 2px;
-  --radius-panel: 12px;
+  --font-display: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Open Sans", ui-sans-serif, system-ui, sans-serif;
+
+  --radius-btn: 8px;
+  --radius-card: 14px;
+  --radius-panel: 20px;
+  --radius-pill: 9999px;
 }
 
 :root {
