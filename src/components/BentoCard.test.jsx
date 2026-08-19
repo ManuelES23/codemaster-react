@@ -40,4 +40,12 @@ describe("BentoCard", () => {
     const { container } = renderCard();
     expect(container.querySelector("svg")).toHaveAttribute("aria-hidden", "true");
   });
+
+  it("shows the corner arrow only when the card actually links somewhere", () => {
+    const { container: sinEnlace } = renderCard();
+    expect(sinEnlace.querySelectorAll("svg")).toHaveLength(1); // just the topic icon
+
+    const { container: conEnlace } = renderCard({ to: "/servicios/desarrollo-web" });
+    expect(conEnlace.querySelectorAll("svg")).toHaveLength(2); // topic icon + arrow
+  });
 });
