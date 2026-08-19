@@ -1,9 +1,12 @@
+import { useRef } from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import ICONOS from "./iconos";
 import Tilt3D from "../motion/Tilt3D";
 import CardLift from "../motion/CardLift";
 import { StaggerItem } from "../motion/Stagger";
+import { useCursorGlow } from "../motion/useCursorGlow";
 
 const SPANS = {
   "2x2": "sm:col-span-2 sm:row-span-2",
@@ -23,44 +26,50 @@ const BentoCard = ({
   const Icono = ICONOS[icono] ?? ICONOS.Circle;
   const grande = span === "2x2";
 
+  const contenidoRef = useRef(null);
+  const { x, y } = useCursorGlow(contenidoRef);
+
   const cuerpo = (
     <CardLift
-      className={`group relative flex h-full flex-col justify-between overflow-hidden rounded-card border bg-card/60 p-5 backdrop-blur-sm ${
+      className={`group relative h-full overflow-hidden rounded-card border bg-card/60 backdrop-blur-sm ${
         destacada ? "border-brand" : "border-card-border"
       }`}
     >
-      {/* Ambient light: a blurred brand-orange glow bleeding in from the
-          top-right corner, diffused by the card's own translucency —
-          not a hard-edged badge or strip. */}
-      <div
-        className="pointer-events-none absolute -top-16 -right-16 h-40 w-40 rounded-full bg-brand/50 blur-3xl transition-opacity duration-300 group-hover:opacity-80"
-        aria-hidden="true"
-      />
+      <div ref={contenidoRef} className="relative flex h-full flex-col justify-between p-5">
+        {/* Ambient light: a blurred brand-orange glow that follows the
+            cursor within the card, diffused by the card's own
+            translucency — settles in the top-right corner at rest. */}
+        <motion.div
+          className="pointer-events-none absolute h-40 w-40 rounded-full bg-brand/50 blur-3xl"
+          style={{ left: 0, top: 0, marginLeft: -80, marginTop: -80, x, y }}
+          aria-hidden="true"
+        />
 
-      <div className="relative">
-        <div className="mb-4 flex items-start justify-between gap-2">
-          <span className="inline-flex h-10 w-10 items-center justify-center rounded-btn bg-brand/12 text-brand">
-            <Icono className="h-5 w-5" aria-hidden="true" />
-          </span>
-          {to && (
-            <ArrowUpRight
-              className="h-4 w-4 shrink-0 text-fg-subtle transition-colors group-hover:text-brand"
-              aria-hidden="true"
-            />
+        <div className="relative">
+          <div className="mb-4 flex items-start justify-between gap-2">
+            <span className="inline-flex h-10 w-10 items-center justify-center rounded-btn bg-brand/12 text-brand">
+              <Icono className="h-5 w-5" aria-hidden="true" />
+            </span>
+            {to && (
+              <ArrowUpRight
+                className="h-4 w-4 shrink-0 text-fg-subtle transition-colors group-hover:text-brand"
+                aria-hidden="true"
+              />
+            )}
+          </div>
+          <h3
+            className={`font-display font-semibold tracking-[-0.01em] text-fg ${
+              grande ? "text-2xl" : "text-lg"
+            }`}
+          >
+            {titulo}
+          </h3>
+          {descripcion && (
+            <p className="mt-2 text-sm leading-relaxed text-fg-muted">{descripcion}</p>
           )}
         </div>
-        <h3
-          className={`font-display font-semibold tracking-[-0.01em] text-fg ${
-            grande ? "text-2xl" : "text-lg"
-          }`}
-        >
-          {titulo}
-        </h3>
-        {descripcion && (
-          <p className="mt-2 text-sm leading-relaxed text-fg-muted">{descripcion}</p>
-        )}
+        <div className="relative">{children}</div>
       </div>
-      <div className="relative">{children}</div>
     </CardLift>
   );
 
