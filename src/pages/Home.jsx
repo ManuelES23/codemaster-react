@@ -8,6 +8,7 @@ import BentoGrid from "../components/BentoGrid";
 import BentoCard from "../components/BentoCard";
 import Reveal from "../motion/Reveal";
 import Velaris from "../motion/Velaris";
+import ScrollExit from "../motion/ScrollExit";
 
 const diferenciadores = [
   { icono: "Zap", titulo: "Rapidez y eficiencia", texto: "Entregamos proyectos de calidad en tiempo récord sin comprometer la excelencia." },
@@ -22,79 +23,91 @@ const Home = () => (
   <div className="bg-ink-0">
     <Hero />
 
-    <LogosClientes />
+    <ScrollExit>
+      <LogosClientes />
+    </ScrollExit>
 
-    <section className="bg-ink-0 py-24">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <p className="mb-6 text-xs font-semibold tracking-[0.14em] text-brand uppercase">
-          Servicios
-        </p>
-        <Reveal className="mb-16">
-          <h2 className="font-display text-4xl font-bold tracking-[-0.02em] text-fg md:text-6xl">
-            Qué hacemos
-          </h2>
-        </Reveal>
-        <ServiciosBento />
-      </div>
-    </section>
+    <ScrollExit>
+      <section className="bg-ink-0 py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <p className="mb-6 text-xs font-semibold tracking-[0.14em] text-brand uppercase">
+            Servicios
+          </p>
+          <Reveal className="mb-16">
+            <h2 className="font-display text-4xl font-bold tracking-[-0.02em] text-fg md:text-6xl">
+              Qué hacemos
+            </h2>
+          </Reveal>
+          <ServiciosBento />
+        </div>
+      </section>
+    </ScrollExit>
 
-    <TrabajoSeleccionado limite={3} />
+    <ScrollExit>
+      <TrabajoSeleccionado limite={3} />
+    </ScrollExit>
 
-    <ProcesoScroll />
+    <ScrollExit>
+      <ProcesoScroll />
+    </ScrollExit>
 
-    <section className="bg-ink-0 py-24">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <Reveal className="mb-16">
-          <h2 className="font-display text-4xl font-bold tracking-[-0.02em] text-fg md:text-6xl">
-            Por qué nosotros
-          </h2>
-        </Reveal>
-        <BentoGrid columnas={3}>
-          {diferenciadores.map((item) => (
-            <BentoCard
-              key={item.titulo}
-              icono={item.icono}
-              titulo={item.titulo}
-              descripcion={item.texto}
-            />
-          ))}
-        </BentoGrid>
-      </div>
-    </section>
+    <ScrollExit>
+      <section className="bg-ink-0 py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <Reveal className="mb-16">
+            <h2 className="font-display text-4xl font-bold tracking-[-0.02em] text-fg md:text-6xl">
+              Por qué nosotros
+            </h2>
+          </Reveal>
+          <BentoGrid columnas={3}>
+            {diferenciadores.map((item) => (
+              <BentoCard
+                key={item.titulo}
+                icono={item.icono}
+                titulo={item.titulo}
+                descripcion={item.texto}
+              />
+            ))}
+          </BentoGrid>
+        </div>
+      </section>
+    </ScrollExit>
 
-    <section className="py-24">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <Velaris height="auto" className="rounded-panel">
-          <div className="flex flex-col items-center gap-4 px-6 py-20 text-center md:px-16">
-            <Reveal>
-              <h2 className="font-display text-4xl font-bold tracking-[-0.02em] text-fg md:text-5xl">
-                ¿Tienes un proyecto<br />en mente?
-              </h2>
-            </Reveal>
-            <Reveal as="p" delay={0.2} className="text-lg text-fg">
-              Conversemos y hagámoslo realidad.
-            </Reveal>
-            <Reveal
-              delay={0.3}
-              className="mt-6 flex flex-col justify-center gap-3 sm:flex-row"
-            >
-              <Link
-                to="/contacto"
-                className="rounded-btn bg-brand px-8 py-3.5 font-medium text-fg transition-colors hover:bg-brand-hover"
+    <ScrollExit>
+      <section className="py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <Velaris height="auto" className="rounded-panel">
+            <div className="flex flex-col items-center gap-4 px-6 py-20 text-center md:px-16">
+              <Reveal>
+                <h2 className="font-display text-4xl font-bold tracking-[-0.02em] text-fg md:text-5xl">
+                  ¿Tienes un proyecto<br />en mente?
+                </h2>
+              </Reveal>
+              <Reveal as="p" delay={0.2} className="text-lg text-fg">
+                Conversemos y hagámoslo realidad.
+              </Reveal>
+              <Reveal
+                delay={0.3}
+                className="mt-6 flex flex-col justify-center gap-3 sm:flex-row"
               >
-                Contáctanos
-              </Link>
-              <Link
-                to="/portfolio"
-                className="rounded-btn border border-fg/30 px-8 py-3.5 font-medium text-fg transition-colors hover:border-fg"
-              >
-                Ver portfolio
-              </Link>
-            </Reveal>
-          </div>
-        </Velaris>
-      </div>
-    </section>
+                <Link
+                  to="/contacto"
+                  className="rounded-btn bg-brand px-8 py-3.5 font-medium text-fg transition-colors hover:bg-brand-hover"
+                >
+                  Contáctanos
+                </Link>
+                <Link
+                  to="/portfolio"
+                  className="rounded-btn border border-fg/30 px-8 py-3.5 font-medium text-fg transition-colors hover:border-fg"
+                >
+                  Ver portfolio
+                </Link>
+              </Reveal>
+            </div>
+          </Velaris>
+        </div>
+      </section>
+    </ScrollExit>
   </div>
 );
 
