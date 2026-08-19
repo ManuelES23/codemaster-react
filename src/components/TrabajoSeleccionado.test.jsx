@@ -1,7 +1,8 @@
-import { render, screen, within } from "@testing-library/react";
+import { act, fireEvent, render, screen, within } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
 import userEvent from "@testing-library/user-event";
+import { setReducedMotion } from "../test/setup";
 import TrabajoSeleccionado from "./TrabajoSeleccionado";
 
 const renderSection = (props = {}) =>
@@ -85,29 +86,27 @@ describe("TrabajoSeleccionado", () => {
     expect(screen.getByRole("button", { name: /siguiente proyecto/i })).toBeInTheDocument();
   });
 
-  it("disables the prev arrow on the first slide and enables it after stepping forward", async () => {
-    const user = userEvent.setup();
-    renderSection();
-
-    const anterior = screen.getByRole("button", { name: /proyecto anterior/i });
-    const siguiente = screen.getByRole("button", { name: /siguiente proyecto/i });
-
-    expect(anterior).toBeDisabled();
-    expect(siguiente).not.toBeDisabled();
-
-    await user.click(siguiente);
-
-    expect(anterior).not.toBeDisabled();
-  });
-
-  it("disables the next arrow once the last slide is reached", async () => {
+  it("the arrows loop — next from the last slide wraps to the first, prev from the first wraps to the last", async () => {
     const user = userEvent.setup();
     renderSection({ limite: 2 });
 
+    const anterior = screen.getByRole("button", { name: /proyecto anterior/i });
     const siguiente = screen.getByRole("button", { name: /siguiente proyecto/i });
-    await user.click(siguiente);
+    const puntos = screen.getAllByRole("button", { name: /ir al proyecto/i });
 
-    expect(siguiente).toBeDisabled();
+    expect(puntos[0]).toHaveAttribute("aria-current", "true");
+
+    await user.click(anterior);
+    expect(puntos[1]).toHaveAttribute("aria-current", "true"); // wrapped to the last slide
+
+    await user.click(siguiente);
+    expect(puntos[0]).toHaveAttribute("aria-current", "true"); // wrapped back to the first
+
+    await user.click(siguiente);
+    expect(puntos[1]).toHaveAttribute("aria-current", "true");
+
+    await user.click(siguiente);
+    expect(puntos[0]).toHaveAttribute("aria-current", "true"); // wrapped again
   });
 
   it("marks the matching dot current when a dot is clicked", async () => {
@@ -128,5 +127,111 @@ describe("TrabajoSeleccionado", () => {
     renderSection({ limite: 1 });
     expect(screen.queryByRole("button", { name: /proyecto anterior/i })).not.toBeInTheDocument();
     expect(screen.queryByRole("button", { name: /ir al proyecto/i })).not.toBeInTheDocument();
+  });
+
+  describe("autoplay", () => {
+    beforeEach(() => {
+      vi.useFakeTimers();
+    });
+
+    afterEach(() => {
+      vi.useRealTimers();
+    });
+
+    it("advances to the next slide on its own after the interval elapses", () => {
+      renderSection();
+      const puntos = screen.getAllByRole("button", { name: /ir al proyecto/i });
+      expect(puntos[0]).toHaveAttribute("aria-current", "true");
+
+      act(() => {
+        vi.advanceTimersByTime(6000);
+      });
+
+      expect(puntos[1]).toHaveAttribute("aria-current", "true");
+    });
+
+    it("loops back to the first slide after the last one", () => {
+      renderSection({ limite: 2 });
+      const puntos = screen.getAllByRole("button", { name: /ir al proyecto/i });
+
+      act(() => {
+        vi.advanceTimersByTime(6000); // -> slide 2 (last)
+      });
+      expect(puntos[1]).toHaveAttribute("aria-current", "true");
+
+      act(() => {
+        vi.advanceTimersByTime(6000); // -> wraps back to slide 1
+      });
+      expect(puntos[0]).toHaveAttribute("aria-current", "true");
+    });
+
+    it("pauses while hovered and resumes once the pointer leaves", () => {
+      renderSection();
+      const puntos = screen.getAllByRole("button", { name: /ir al proyecto/i });
+      const region = screen.getByRole("region", { name: /proyectos recientes/i });
+      const contenedor = region.parentElement;
+
+      fireEvent.mouseEnter(contenedor);
+      act(() => {
+        vi.advanceTimersByTime(10000);
+      });
+      expect(puntos[0]).toHaveAttribute("aria-current", "true");
+
+      fireEvent.mouseLeave(contenedor);
+      act(() => {
+        vi.advanceTimersByTime(6000);
+      });
+      expect(puntos[1]).toHaveAttribute("aria-current", "true");
+    });
+
+    it("the pause button stops autoplay, and clicking it again resumes it", async () => {
+      renderSection();
+      const puntos = screen.getAllByRole("button", { name: /ir al proyecto/i });
+      const pausa = screen.getByRole("button", { name: /pausar avance automático/i });
+
+      act(() => {
+        pausa.click();
+      });
+      act(() => {
+        vi.advanceTimersByTime(10000);
+      });
+      expect(puntos[0]).toHaveAttribute("aria-current", "true");
+
+      const reanudar = screen.getByRole("button", { name: /reanudar avance automático/i });
+      act(() => {
+        reanudar.click();
+      });
+      act(() => {
+        vi.advanceTimersByTime(6000);
+      });
+      expect(puntos[1]).toHaveAttribute("aria-current", "true");
+    });
+
+    it("never autoplays, and hides the pause button, under reduced motion", () => {
+      setReducedMotion(true);
+      renderSection();
+      const puntos = screen.getAllByRole("button", { name: /ir al proyecto/i });
+
+      expect(
+        screen.queryByRole("button", { name: /pausar avance automático/i })
+      ).not.toBeInTheDocument();
+
+      act(() => {
+        vi.advanceTimersByTime(30000);
+      });
+      expect(puntos[0]).toHaveAttribute("aria-current", "true");
+    });
+
+    it("does not autoplay a single project — nothing to advance to", () => {
+      renderSection({ limite: 1 });
+      // No dots/arrows/pause button render at all for a single project
+      // (already covered above); this just confirms autoplay's own guard
+      // doesn't throw when there's nothing to loop through.
+      expect(() => {
+        act(() => {
+          vi.advanceTimersByTime(30000);
+        });
+      }).not.toThrow();
+    });
   });
 });
