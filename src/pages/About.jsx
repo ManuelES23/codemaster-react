@@ -54,7 +54,7 @@ const About = () => {
           {/* Mission and Vision Grid */}
           <div className='grid grid-cols-1 md:grid-cols-2 gap-8 mb-16'>
             <Reveal
-            >
+             once={false}>
               <CardLift className='bg-card border border-card-border rounded-card p-8 h-full'>
               <h2 className='font-display text-2xl font-bold text-fg mb-4'>
                 Nuestra <span className='text-brand'>misión</span>
@@ -71,7 +71,7 @@ const About = () => {
 
             <Reveal
               delay={0.15}
-            >
+             once={false}>
               <CardLift className='bg-card border border-card-border rounded-card p-8 h-full'>
               <h2 className='font-display text-2xl font-bold text-fg mb-4'>
                 Nuestra <span className='text-brand'>visión</span>
@@ -97,7 +97,7 @@ const About = () => {
             </Reveal>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'>
               <Reveal
-              >
+               once={false}>
                 <CardLift className='bg-card border border-card-border rounded-card p-6 h-full group'>
                 <div className='text-brand text-4xl font-bold mb-4 motion-safe:group-hover:scale-110 transition-transform duration-300'>
                   01
@@ -114,7 +114,7 @@ const About = () => {
 
               <Reveal
                 delay={0.1}
-              >
+               once={false}>
                 <CardLift className='bg-card border border-card-border rounded-card p-6 h-full group'>
                 <div className='text-brand text-4xl font-bold mb-4 motion-safe:group-hover:scale-110 transition-transform duration-300'>
                   02
@@ -131,7 +131,7 @@ const About = () => {
 
               <Reveal
                 delay={0.2}
-              >
+               once={false}>
                 <CardLift className='bg-card border border-card-border rounded-card p-6 h-full group'>
                 <div className='text-brand text-4xl font-bold mb-4 motion-safe:group-hover:scale-110 transition-transform duration-300'>
                   03
@@ -148,7 +148,7 @@ const About = () => {
 
               <Reveal
                 delay={0.3}
-              >
+               once={false}>
                 <CardLift className='bg-card border border-card-border rounded-card p-6 h-full group'>
                 <div className='text-brand text-4xl font-bold mb-4 motion-safe:group-hover:scale-110 transition-transform duration-300'>
                   04
@@ -177,7 +177,7 @@ const About = () => {
             {/* Services Grid with Images */}
             <div className='grid grid-cols-1 md:grid-cols-3 gap-8 mb-8'>
               <Reveal
-              >
+               once={false}>
                 <CardLift className='bg-card border border-card-border rounded-card overflow-hidden h-full'>
                 <img
                   src='/img/mk-redes.jpg'
@@ -204,7 +204,7 @@ const About = () => {
 
               <Reveal
                 delay={0.15}
-              >
+               once={false}>
                 <CardLift className='bg-card border border-card-border rounded-card overflow-hidden h-full'>
                 <img
                   src='/img/office.jpeg'
@@ -227,7 +227,7 @@ const About = () => {
 
               <Reveal
                 delay={0.3}
-              >
+               once={false}>
                 <CardLift className='bg-card border border-card-border rounded-card overflow-hidden h-full'>
                 <img
                   src='/img/aseasoramientoti.jpeg'
@@ -252,7 +252,7 @@ const About = () => {
             {/* Additional Services */}
             <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4'>
               <Reveal
-              >
+               once={false}>
                 <CardLift className='bg-card border border-card-border rounded-card p-6 text-center h-full'>
                 <div className='flex justify-center mb-3'>
                   <Globe className='w-10 h-10 text-brand' />
@@ -264,7 +264,7 @@ const About = () => {
               </Reveal>
               <Reveal
                 delay={0.1}
-              >
+               once={false}>
                 <CardLift className='bg-card border border-card-border rounded-card p-6 text-center h-full'>
                 <div className='flex justify-center mb-3'>
                   <Smartphone className='w-10 h-10 text-brand' />
@@ -276,7 +276,7 @@ const About = () => {
               </Reveal>
               <Reveal
                 delay={0.2}
-              >
+               once={false}>
                 <CardLift className='bg-card border border-card-border rounded-card p-6 text-center h-full'>
                 <div className='flex justify-center mb-3'>
                   <Laptop className='w-10 h-10 text-brand' />
@@ -303,7 +303,7 @@ const About = () => {
               </p>
               <div className='grid grid-cols-1 md:grid-cols-3 gap-8 mt-12'>
                 <Reveal
-                >
+                 once={false}>
                   <CardLift className='bg-card border border-card-border rounded-card p-8 text-center h-full group'>
                   <div className='inline-flex items-center justify-center w-16 h-16 bg-brand rounded-btn mb-4 motion-safe:group-hover:scale-110 transition-transform duration-300'>
                     <Target className='w-8 h-8 text-fg' />
@@ -318,7 +318,7 @@ const About = () => {
                 </Reveal>
                 <Reveal
                   delay={0.15}
-                >
+                 once={false}>
                   <CardLift className='bg-card border border-card-border rounded-card p-8 text-center h-full group'>
                   <div className='inline-flex items-center justify-center w-16 h-16 bg-brand rounded-btn mb-4 motion-safe:group-hover:scale-110 transition-transform duration-300'>
                     <Shield className='w-8 h-8 text-fg' />
@@ -333,7 +333,7 @@ const About = () => {
                 </Reveal>
                 <Reveal
                   delay={0.3}
-                >
+                 once={false}>
                   <CardLift className='bg-card border border-card-border rounded-card p-8 text-center h-full group'>
                   <div className='inline-flex items-center justify-center w-16 h-16 bg-brand rounded-btn mb-4 motion-safe:group-hover:scale-110 transition-transform duration-300'>
                     <Gem className='w-8 h-8 text-fg' />

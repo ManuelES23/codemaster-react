@@ -1,7 +1,12 @@
 import { motion } from "framer-motion";
 import { DISTANCE, DURATION, EASE_OUT, VIEWPORT, useMotionDistance } from "./tokens";
 
-const Stagger = ({ as = "div", className = "", gap = 0.08, children, ...rest }) => {
+// Default (true): the group animates in once and stays. Pass `once={false}`
+// for card grids and other visual groups — the whole group then also
+// reverses (fades/slides back out, staggered) when it scrolls out of view
+// in either direction, not just in. See Reveal.jsx for the same knob and
+// why text-bearing usages should never flip it.
+const Stagger = ({ as = "div", className = "", gap = 0.08, once = true, children, ...rest }) => {
   const Component = motion[as] ?? motion.div;
 
   return (
@@ -9,7 +14,7 @@ const Stagger = ({ as = "div", className = "", gap = 0.08, children, ...rest }) 
       className={className}
       initial="hidden"
       whileInView="visible"
-      viewport={VIEWPORT}
+      viewport={{ ...VIEWPORT, once }}
       variants={{ hidden: {}, visible: { transition: { staggerChildren: gap } } }}
       {...rest}
     >

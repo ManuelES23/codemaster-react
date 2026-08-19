@@ -11,7 +11,10 @@ const LogosClientes = () => {
           Confían en nosotros
         </p>
         <div className="h-px w-full bg-line" />
-        <Stagger className="grid grid-cols-2 items-center gap-px bg-line sm:grid-cols-3 lg:grid-cols-5">
+        <Stagger
+          className="grid grid-cols-2 items-center gap-px bg-line sm:grid-cols-3 lg:grid-cols-5"
+          once={false}
+        >
           {clientes.map((cliente) => (
             <StaggerItem
               key={cliente.nombre}

@@ -49,7 +49,7 @@ const Hero = () => (
             </Link>
           </Reveal>
 
-          <Reveal delay={0.24} className="mt-10 grid grid-cols-3 gap-3">
+          <Reveal delay={0.24} once={false} className="mt-10 grid grid-cols-3 gap-3">
             {badges.map(({ icono: Icono, texto }) => (
               <div
                 key={texto}
@@ -72,7 +72,7 @@ const Hero = () => (
             </Parallax>
           </div>
 
-          <Reveal delay={0.1}>
+          <Reveal delay={0.1} once={false}>
             <Tilt3D max={12}>
               <div className="relative rounded-panel border border-card-border bg-card p-12">
                 <LogoMarca variante="isotipo" className="mx-auto h-32" />
