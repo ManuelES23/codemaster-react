@@ -14,9 +14,10 @@ const renderSection = (props = {}) =>
 
 describe("TrabajoSeleccionado", () => {
   beforeEach(() => {
-    // jsdom doesn't implement scrollIntoView — stub it so the slider's
-    // arrow/dot navigation doesn't throw when it tries to scroll the track.
-    Element.prototype.scrollIntoView = vi.fn();
+    // jsdom doesn't implement scrollTo on elements — stub it so the
+    // slider's arrow/dot/autoplay navigation doesn't throw when it scrolls
+    // the track.
+    Element.prototype.scrollTo = vi.fn();
   });
 
   afterEach(() => {
@@ -107,6 +108,29 @@ describe("TrabajoSeleccionado", () => {
 
     await user.click(siguiente);
     expect(puntos[0]).toHaveAttribute("aria-current", "true"); // wrapped again
+  });
+
+  it("regression: navigating never scrolls the page, only the track's own scrollLeft", async () => {
+    // Bug report: "sin avisar y derrepente cuando el slider de los
+    // proyectos cambia se dirije haciasa alla" — scrollIntoView({block:
+    // "nearest"}) looks safe but only skips scrolling an axis where the
+    // element is *already* visible; when the slider is off-screen
+    // vertically, it happily drags the whole page down to it. Confirms the
+    // fix (scrolling the track's own scrollLeft directly) by asserting
+    // scrollTo is called on the track element itself, with no `top` in the
+    // arguments — i.e. it's structurally incapable of moving the page.
+    const user = userEvent.setup();
+    renderSection();
+
+    const region = screen.getByRole("region", { name: /proyectos recientes/i });
+    const siguiente = screen.getByRole("button", { name: /siguiente proyecto/i });
+
+    await user.click(siguiente);
+
+    expect(region.scrollTo).toHaveBeenCalled();
+    const llamada = region.scrollTo.mock.calls.at(-1)[0];
+    expect(llamada).not.toHaveProperty("top");
+    expect(llamada).toHaveProperty("left");
   });
 
   it("marks the matching dot current when a dot is clicked", async () => {

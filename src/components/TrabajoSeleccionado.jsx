@@ -18,6 +18,21 @@ const TrabajoSeleccionado = ({ limite = 3 }) => {
   );
   const reduced = useReducedMotion();
 
+  // Scrolls only the slider's own horizontal track — never the page.
+  // scrollIntoView({block: "nearest"}) looks like the right tool here, but
+  // "nearest" only skips scrolling an axis where the element is *already*
+  // visible; when the slider is off-screen vertically (the user reading
+  // some other section while autoplay ticks in the background), it happily
+  // scrolls the whole page down to it. scrollTo on the track itself can
+  // only ever move scrollLeft, so the page can't be dragged along no
+  // matter where the user is looking.
+  const desplazarA = (objetivo, comportamiento) => {
+    const pista = pistaRef.current;
+    const slide = pista?.children[objetivo];
+    if (!pista || !slide) return;
+    pista.scrollTo({ left: slide.offsetLeft, behavior: comportamiento });
+  };
+
   // Keeps the dots in sync with manual swipe/drag scrolling too, not just
   // the arrow buttons or autoplay — finds whichever slide's offsetLeft is
   // closest to the track's current scrollLeft.
@@ -70,11 +85,7 @@ const TrabajoSeleccionado = ({ limite = 3 }) => {
     const id = setInterval(() => {
       setActivo((previo) => {
         const siguiente = (previo + 1) % seleccion.length;
-        pistaRef.current?.children[siguiente]?.scrollIntoView({
-          behavior: "smooth",
-          block: "nearest",
-          inline: "start",
-        });
+        desplazarA(siguiente, "smooth");
         return siguiente;
       });
     }, INTERVALO_AUTOPLAY);
@@ -89,12 +100,7 @@ const TrabajoSeleccionado = ({ limite = 3 }) => {
   const irA = (indice) => {
     const total = seleccion.length;
     const objetivo = ((indice % total) + total) % total;
-    const pista = pistaRef.current;
-    pista?.children[objetivo]?.scrollIntoView({
-      behavior: reduced ? "instant" : "smooth",
-      block: "nearest",
-      inline: "start",
-    });
+    desplazarA(objetivo, reduced ? "instant" : "smooth");
     setActivo(objetivo);
   };
 
