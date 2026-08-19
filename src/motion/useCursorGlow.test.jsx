@@ -1,153 +1,100 @@
 import { useRef } from "react";
 import { motion } from "framer-motion";
 import { render, screen, waitFor } from "@testing-library/react";
-import { describe, it, expect, afterEach } from "vitest";
+import { describe, it, expect } from "vitest";
 import { setReducedMotion } from "../test/setup";
 import { useCursorGlow } from "./useCursorGlow";
 
 // A minimal host so the hook can be exercised through real DOM events —
 // consistent with how the rest of this codebase tests motion primitives
 // (through rendered output, not an isolated hook harness). Reads back
-// through a motion.div's own written `transform`, not `x.get()`/`y.get()`
-// in JSX: motion values update the DOM directly and deliberately don't
-// trigger a React re-render, so a JSX read of `.get()` would only ever
-// show the value from the very first render, same as every other
-// scroll/pointer-linked primitive test in this codebase.
+// through a motion.div's own written style, not `.get()` in JSX: motion
+// values update the DOM directly and deliberately don't trigger a React
+// re-render, so a JSX read of `.get()` would only ever show the value from
+// the very first render, same as every other pointer/scroll-linked
+// primitive test in this codebase.
 function Sonda() {
   const ref = useRef(null);
-  const { x, y } = useCursorGlow(ref);
+  const { x, y, opacity } = useCursorGlow(ref);
   return (
     <div ref={ref} data-testid="objetivo">
-      <motion.div data-testid="lectura" style={{ x, y }} />
+      <motion.div data-testid="lectura" style={{ x, y, opacity }} />
     </div>
   );
 }
 
-function leerTransform() {
+function leerEstilo() {
   return screen.getByTestId("lectura").outerHTML;
 }
 
-// jsdom doesn't do real layout, so clientWidth is always 0 by default.
-// Stubbed on the prototype (rather than the instance, after render) so
-// it's already in place before useCursorGlow's mount-time effect reads
-// it — an instance-level stub set after render() would miss that first
-// read entirely, since effects run synchronously within render()'s own
-// act() wrapper.
-const ANCHO_OBJETIVO = 200;
-const originalClientWidth = Object.getOwnPropertyDescriptor(HTMLElement.prototype, "clientWidth");
+function ponerCaja(objetivo, box) {
+  objetivo.getBoundingClientRect = () => ({ right: box.left + box.width, bottom: box.top + box.height, ...box });
+}
 
 describe("useCursorGlow", () => {
-  afterEach(() => {
-    if (originalClientWidth) {
-      Object.defineProperty(HTMLElement.prototype, "clientWidth", originalClientWidth);
-    }
-  });
-
-  it("settles at the target's top-right corner before any pointer interaction", async () => {
-    Object.defineProperty(HTMLElement.prototype, "clientWidth", {
-      configurable: true,
-      value: ANCHO_OBJETIVO,
-    });
-
+  it("starts invisible — no static resting glow before the pointer ever enters", () => {
     render(<Sonda />);
-
-    await waitFor(() => {
-      expect(leerTransform()).toMatch(new RegExp(`translateX\\(${ANCHO_OBJETIVO}px\\)`));
-    });
-    // framer-motion omits a translate component entirely when the
-    // MotionValue is at 0 rather than always writing translateY(0px) —
-    // asserting the absence of any *non-zero* translateY covers both.
-    expect(leerTransform()).not.toMatch(/translateY\((?!0px)/);
+    expect(leerEstilo()).toMatch(/opacity:\s*0(?:[^.]|$)/);
   });
 
-  it("follows the pointer's position within the target on pointermove", async () => {
+  it("becomes visible and positioned at the pointer's entry point on pointerenter", async () => {
     render(<Sonda />);
     const objetivo = screen.getByTestId("objetivo");
-    objetivo.getBoundingClientRect = () => ({
-      left: 10,
-      top: 20,
-      width: 200,
-      height: 100,
-      right: 210,
-      bottom: 120,
-    });
+    ponerCaja(objetivo, { left: 10, top: 20, width: 200, height: 100 });
 
-    const evento = new Event("pointermove");
-    evento.clientX = 60;
-    evento.clientY = 45;
-    objetivo.dispatchEvent(evento);
+    const entrada = new Event("pointerenter");
+    entrada.clientX = 60;
+    entrada.clientY = 45;
+    objetivo.dispatchEvent(entrada);
 
     await waitFor(() => {
-      expect(leerTransform()).toMatch(/translateX\(50px\)/);
-      expect(leerTransform()).toMatch(/translateY\(25px\)/);
+      expect(leerEstilo()).toMatch(/opacity:\s*1/);
+      expect(leerEstilo()).toMatch(/translateX\(50px\)/);
+      expect(leerEstilo()).toMatch(/translateY\(25px\)/);
     });
   });
 
-  it("returns to the corner on pointerleave instead of staying wherever the pointer last was", async () => {
-    Object.defineProperty(HTMLElement.prototype, "clientWidth", {
-      configurable: true,
-      value: ANCHO_OBJETIVO,
-    });
-
+  it("keeps following pointermove while visible", async () => {
     render(<Sonda />);
     const objetivo = screen.getByTestId("objetivo");
-    objetivo.getBoundingClientRect = () => ({
-      left: 0,
-      top: 0,
-      width: 200,
-      height: 100,
-      right: 200,
-      bottom: 100,
-    });
+    ponerCaja(objetivo, { left: 0, top: 0, width: 200, height: 100 });
+
+    objetivo.dispatchEvent(new Event("pointerenter"));
 
     const mover = new Event("pointermove");
     mover.clientX = 150;
     mover.clientY = 80;
     objetivo.dispatchEvent(mover);
-    await waitFor(() => expect(leerTransform()).toMatch(/translateX\(150px\)/));
+
+    await waitFor(() => {
+      expect(leerEstilo()).toMatch(/translateX\(150px\)/);
+      expect(leerEstilo()).toMatch(/translateY\(80px\)/);
+    });
+  });
+
+  it("fades back out on pointerleave", async () => {
+    render(<Sonda />);
+    const objetivo = screen.getByTestId("objetivo");
+    ponerCaja(objetivo, { left: 0, top: 0, width: 200, height: 100 });
+
+    objetivo.dispatchEvent(new Event("pointerenter"));
+    await waitFor(() => expect(leerEstilo()).toMatch(/opacity:\s*1/));
 
     objetivo.dispatchEvent(new Event("pointerleave"));
-    await waitFor(() => {
-      expect(leerTransform()).toMatch(new RegExp(`translateX\\(${ANCHO_OBJETIVO}px\\)`));
-      // framer-motion omits a translate component entirely when the
-    // MotionValue is at 0 rather than always writing translateY(0px) —
-    // asserting the absence of any *non-zero* translateY covers both.
-    expect(leerTransform()).not.toMatch(/translateY\((?!0px)/);
-    });
+    await waitFor(() => expect(leerEstilo()).toMatch(/opacity:\s*0(?:[^.]|$)/));
   });
 
-  it("never tracks the pointer under reduced motion — stays pinned at the corner", async () => {
+  it("never appears under reduced motion, even when the pointer enters", async () => {
     setReducedMotion(true);
-    Object.defineProperty(HTMLElement.prototype, "clientWidth", {
-      configurable: true,
-      value: ANCHO_OBJETIVO,
-    });
-
     render(<Sonda />);
     const objetivo = screen.getByTestId("objetivo");
-    objetivo.getBoundingClientRect = () => ({
-      left: 0,
-      top: 0,
-      width: 200,
-      height: 100,
-      right: 200,
-      bottom: 100,
-    });
+    ponerCaja(objetivo, { left: 0, top: 0, width: 200, height: 100 });
 
-    await waitFor(() => expect(leerTransform()).toMatch(new RegExp(`translateX\\(${ANCHO_OBJETIVO}px\\)`)));
-
-    const mover = new Event("pointermove");
-    mover.clientX = 150;
-    mover.clientY = 80;
-    objetivo.dispatchEvent(mover);
+    objetivo.dispatchEvent(new Event("pointerenter"));
 
     // Give any (incorrect) listener a chance to fire before asserting it
     // didn't.
     await new Promise((resolve) => setTimeout(resolve, 50));
-    expect(leerTransform()).toMatch(new RegExp(`translateX\\(${ANCHO_OBJETIVO}px\\)`));
-    // framer-motion omits a translate component entirely when the
-    // MotionValue is at 0 rather than always writing translateY(0px) —
-    // asserting the absence of any *non-zero* translateY covers both.
-    expect(leerTransform()).not.toMatch(/translateY\((?!0px)/);
+    expect(leerEstilo()).toMatch(/opacity:\s*0(?:[^.]|$)/);
   });
 });

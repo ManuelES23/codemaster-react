@@ -27,7 +27,7 @@ const BentoCard = ({
   const grande = span === "2x2";
 
   const contenidoRef = useRef(null);
-  const { x, y } = useCursorGlow(contenidoRef);
+  const { x, y, opacity } = useCursorGlow(contenidoRef);
 
   const cuerpo = (
     <CardLift
@@ -38,10 +38,11 @@ const BentoCard = ({
       <div ref={contenidoRef} className="relative flex h-full flex-col justify-between p-5">
         {/* Ambient light: a blurred brand-orange glow that follows the
             cursor within the card, diffused by the card's own
-            translucency — settles in the top-right corner at rest. */}
+            translucency. Invisible until the cursor actually enters — no
+            static resting glow — and fades out again on the way out. */}
         <motion.div
-          className="pointer-events-none absolute h-40 w-40 rounded-full bg-brand/50 blur-3xl"
-          style={{ left: 0, top: 0, marginLeft: -80, marginTop: -80, x, y }}
+          className="pointer-events-none absolute h-40 w-40 rounded-full bg-brand/50 blur-3xl transition-opacity duration-300"
+          style={{ left: 0, top: 0, marginLeft: -80, marginTop: -80, x, y, opacity }}
           aria-hidden="true"
         />
 

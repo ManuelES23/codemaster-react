@@ -4,15 +4,16 @@ import { useIsMobile } from "./tokens";
 
 // Tracks the pointer's position within `ref`'s own box, exposed as pixel
 // motion values — for a glow (or any decoration) that follows the cursor
-// instead of sitting fixed in one spot. At rest — before the pointer ever
-// enters, after it leaves, or whenever there's no real cursor to track
-// (touch, reduced motion) — it settles at the target's top-right corner,
-// the same static position this effect originally had.
+// instead of sitting fixed in one spot. Invisible (opacity 0) until the
+// pointer actually enters, and fades back out on pointerleave — no resting
+// position to show when nobody's hovering. Never appears at all under
+// reduced motion or on touch (existing useIsMobile), where there's no real
+// cursor to react to in the first place.
 //
-// Uses native pointermove/pointerleave listeners on `ref.current` rather
-// than JSX event props: the elements this attaches to (CardLift, Tilt3D)
-// are plain function components without forwardRef, so there's no JSX
-// element here to attach handlers to directly.
+// Uses native pointerenter/pointermove/pointerleave listeners on
+// `ref.current` rather than JSX event props: the elements this attaches
+// to (CardLift, Tilt3D) are plain function components without forwardRef,
+// so there's no JSX element here to attach handlers to directly.
 export function useCursorGlow(ref) {
   const reduced = useReducedMotion();
   const isMobile = useIsMobile();
@@ -20,32 +21,32 @@ export function useCursorGlow(ref) {
 
   const x = useMotionValue(0);
   const y = useMotionValue(0);
+  const opacity = useMotionValue(0);
 
   useEffect(() => {
     const el = ref.current;
-    if (!el) return undefined;
+    if (!el || disabled) return undefined;
 
-    const posarEnEsquina = () => {
-      x.set(el.clientWidth);
-      y.set(0);
-    };
-    posarEnEsquina();
-
-    if (disabled) return undefined;
-
-    const onMove = (event) => {
+    const posicionar = (event) => {
       const box = el.getBoundingClientRect();
       x.set(event.clientX - box.left);
       y.set(event.clientY - box.top);
     };
-
-    el.addEventListener("pointermove", onMove);
-    el.addEventListener("pointerleave", posarEnEsquina);
-    return () => {
-      el.removeEventListener("pointermove", onMove);
-      el.removeEventListener("pointerleave", posarEnEsquina);
+    const onEnter = (event) => {
+      posicionar(event);
+      opacity.set(1);
     };
-  }, [disabled, ref, x, y]);
+    const onLeave = () => opacity.set(0);
 
-  return { x, y, disabled };
+    el.addEventListener("pointerenter", onEnter);
+    el.addEventListener("pointermove", posicionar);
+    el.addEventListener("pointerleave", onLeave);
+    return () => {
+      el.removeEventListener("pointerenter", onEnter);
+      el.removeEventListener("pointermove", posicionar);
+      el.removeEventListener("pointerleave", onLeave);
+    };
+  }, [disabled, ref, x, y, opacity]);
+
+  return { x, y, opacity, disabled };
 }
