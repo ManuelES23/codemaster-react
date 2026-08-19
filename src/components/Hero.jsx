@@ -11,13 +11,12 @@ const badges = [
   { icono: Headphones, texto: "Soporte continuo" },
 ];
 
-// This is the base layer of the section-stack effect (see Home.jsx): sticky
-// at the lowest z-index, it pins in place as the user scrolls so the next
-// section can slide up and visually cover it, card-over-card. No rounded
-// top corners here — it's the bottom of the stack, nothing before it to
-// reveal.
+// Base layer of the page: no `sticky`, no pin — it's the first thing on
+// screen at load, so it doesn't need a scroll-triggered entrance either.
+// See Home.jsx for why the sections after it use SectionSlide instead of
+// the sticky-stack this used to be.
 const Hero = () => (
-  <section className="relative sticky top-0 z-[1] bg-ink-0 pt-28 pb-16 md:pt-36 md:pb-24">
+  <section className="relative bg-ink-0 pt-28 pb-16 md:pt-36 md:pb-24">
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div className="grid items-center gap-12 lg:grid-cols-2">
         <div>
