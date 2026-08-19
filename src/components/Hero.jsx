@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Rocket, Award, Headphones } from "lucide-react";
 import Reveal from "../motion/Reveal";
 import Tilt3D from "../motion/Tilt3D";
+import Parallax from "../motion/Parallax";
 import LogoMarca from "./LogoMarca";
 
 const badges = [
@@ -57,13 +58,24 @@ const Hero = () => (
           </Reveal>
         </div>
 
-        <Reveal delay={0.1} className="hidden lg:block">
-          <Tilt3D max={12}>
-            <div className="rounded-panel border border-card-border bg-card p-12">
-              <LogoMarca variante="isotipo" className="mx-auto h-32" />
-            </div>
-          </Tilt3D>
-        </Reveal>
+        <div className="relative hidden lg:block">
+          <div className="pointer-events-none absolute inset-0" aria-hidden="true">
+            <Parallax offset={70} className="absolute -top-8 -right-8 h-56 w-56">
+              <div className="h-56 w-56 rounded-full bg-brand/20 blur-3xl" />
+            </Parallax>
+            <Parallax offset={35} className="absolute -bottom-10 -left-10 h-44 w-44">
+              <div className="h-44 w-44 rounded-full bg-brand/10 blur-3xl" />
+            </Parallax>
+          </div>
+
+          <Reveal delay={0.1}>
+            <Tilt3D max={12}>
+              <div className="relative rounded-panel border border-card-border bg-card p-12">
+                <LogoMarca variante="isotipo" className="mx-auto h-32" />
+              </div>
+            </Tilt3D>
+          </Reveal>
+        </div>
       </div>
     </div>
   </section>
