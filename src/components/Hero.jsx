@@ -59,12 +59,12 @@ const Hero = () => (
         </div>
 
         <div className="relative hidden lg:block">
-          <div className="pointer-events-none absolute inset-0" aria-hidden="true">
-            <Parallax offset={70} className="absolute -top-8 -right-8 h-56 w-56">
-              <div className="h-56 w-56 rounded-full bg-brand/20 blur-3xl" />
+          <div className="pointer-events-none absolute inset-0 overflow-visible" aria-hidden="true">
+            <Parallax offset={140} className="absolute -top-14 -right-14 h-80 w-80">
+              <div className="h-80 w-80 rounded-full bg-brand/40 blur-2xl" />
             </Parallax>
-            <Parallax offset={35} className="absolute -bottom-10 -left-10 h-44 w-44">
-              <div className="h-44 w-44 rounded-full bg-brand/10 blur-3xl" />
+            <Parallax offset={70} className="absolute -bottom-16 -left-16 h-64 w-64">
+              <div className="h-64 w-64 rounded-full bg-brand/25 blur-2xl" />
             </Parallax>
           </div>
 
