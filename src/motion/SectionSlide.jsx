@@ -21,20 +21,27 @@ const SectionSlide = ({ className = "", children }) => {
   const reduced = useReducedMotion();
 
   // Progress 0 when this section's top is about to enter the viewport
-  // from below, 1 once it's settled into the upper third of the screen —
+  // from below, 1 once it's settled into the upper fifth of the screen —
   // tracks only the section's own top edge, so its own height never
   // factors into the range.
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start end", "start 35%"],
+    offset: ["start end", "start 20%"],
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], reduced ? [0, 0] : [64, 0]);
-  const scale = useTransform(scrollYProgress, [0, 1], reduced ? [1, 1] : [0.97, 1]);
+  // First pass used 64px / scale 0.97 — technically correct but too
+  // subtle to read as a transition at normal scroll speed (user report:
+  // "ahora no tiene ningún efecto"). Pushed further on all three axes,
+  // and added an opacity fade-in — safe here in a way it wasn't for the
+  // old ScrollExit: this only ever fades IN, before the section is what
+  // the user is reading, never OUT while they're mid-read.
+  const y = useTransform(scrollYProgress, [0, 1], reduced ? [0, 0] : [140, 0]);
+  const scale = useTransform(scrollYProgress, [0, 1], reduced ? [1, 1] : [0.9, 1]);
+  const opacity = useTransform(scrollYProgress, [0, 1], reduced ? [1, 1] : [0, 1]);
 
   return (
     <div ref={ref} className={className}>
-      <motion.div style={{ y, scale }}>{children}</motion.div>
+      <motion.div style={{ y, scale, opacity }}>{children}</motion.div>
     </div>
   );
 };
