@@ -25,14 +25,21 @@ const BentoCard = ({
 
   const cuerpo = (
     <CardLift
-      className={`group relative flex h-full flex-col justify-between overflow-hidden rounded-card border bg-card p-5 ${
+      className={`group relative flex h-full flex-col justify-between overflow-hidden rounded-card border bg-card/60 p-5 backdrop-blur-sm ${
         destacada ? "border-brand" : "border-card-border"
       }`}
     >
-      <span className="absolute inset-x-0 top-0 h-1 bg-brand" aria-hidden="true" />
-      <div>
+      {/* Ambient light: a blurred brand-orange glow bleeding in from the
+          top-right corner, diffused by the card's own translucency —
+          not a hard-edged badge or strip. */}
+      <div
+        className="pointer-events-none absolute -top-16 -right-16 h-40 w-40 rounded-full bg-brand/50 blur-3xl transition-opacity duration-300 group-hover:opacity-80"
+        aria-hidden="true"
+      />
+
+      <div className="relative">
         <div className="mb-4 flex items-start justify-between gap-2">
-          <span className="inline-flex h-10 w-10 items-center justify-center rounded-btn bg-brand text-fg">
+          <span className="inline-flex h-10 w-10 items-center justify-center rounded-btn bg-brand/12 text-brand">
             <Icono className="h-5 w-5" aria-hidden="true" />
           </span>
           {to && (
@@ -53,7 +60,7 @@ const BentoCard = ({
           <p className="mt-2 text-sm leading-relaxed text-fg-muted">{descripcion}</p>
         )}
       </div>
-      {children}
+      <div className="relative">{children}</div>
     </CardLift>
   );
 
