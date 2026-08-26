@@ -40,13 +40,15 @@ describe("Portfolio", () => {
     expect(screen.getByText(/todavía no tenemos/i)).toBeInTheDocument();
   });
 
-  it("badges every template project in the default view", () => {
+  // Placeholder projects shouldn't ship at all — an empty category is
+  // meant to fall back to the honest "todavía no tenemos" state above,
+  // not a fake card with nothing in it. The badging mechanism itself
+  // (for the day a template *is* mid-migration) is still verified below
+  // with controlled mock data, independent of production content.
+  it("never ships a template placeholder in production data", () => {
     renderPortfolio();
-    const plantillas = proyectos.filter((p) => p.esPlantilla);
-    expect(plantillas.length).toBeGreaterThan(0);
-    expect(screen.getAllByText(/Plantilla — pendiente de sustituir/i)).toHaveLength(
-      plantillas.length
-    );
+    expect(proyectos.some((p) => p.esPlantilla)).toBe(false);
+    expect(screen.queryByText(/Plantilla — pendiente de sustituir/i)).not.toBeInTheDocument();
   });
 
   it("badges template entries and leaves real ones unmarked", async () => {

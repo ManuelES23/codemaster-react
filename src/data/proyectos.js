@@ -82,20 +82,6 @@ export const proyectos = [
     url: "",
     esPlantilla: false,
   },
-  {
-    slug: "plantilla-app",
-    titulo: "Título del proyecto móvil",
-    cliente: "Pendiente de completar",
-    categoria: "app",
-    resumen: "Una línea que resume qué se construyó y para quién.",
-    reto: "Qué problema tenía el cliente antes de este proyecto.",
-    solucion: "Qué construyó CodeMaster y por qué se resolvió así.",
-    resultado: "Qué cambió para el cliente. Solo datos verificables.",
-    tecnologias: ["React Native"],
-    imagen: "/img/proyectos/plantilla-app.png",
-    url: "",
-    esPlantilla: true,
-  },
 ];
 
 export function getProyectosPorCategoria(id) {
