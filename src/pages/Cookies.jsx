@@ -1,9 +1,15 @@
 import { motion } from "framer-motion";
 import { Cookie, Settings, BarChart3, Shield } from "lucide-react";
+import Seo from "../components/Seo";
 
 const Cookies = () => {
   return (
     <div className='min-h-screen bg-linear-to-b from-ink-0 from-30% via-ink-1 via-70% to-ink-0 text-fg'>
+      <Seo
+        title="Política de Cookies | CodeMaster"
+        description="Cómo usa CodeMaster las cookies en su sitio web y cómo puedes gestionarlas o desactivarlas."
+        path="/cookies"
+      />
       {/* Hero Section */}
       <motion.section
         initial={{ opacity: 0 }}

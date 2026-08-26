@@ -10,12 +10,18 @@ import {
   Gem,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import Seo from "../components/Seo";
 import Reveal from "../motion/Reveal";
 import CardLift from "../motion/CardLift";
 
 const About = () => {
   return (
     <div className='bg-ink-0 min-h-screen'>
+      <Seo
+        title="Sobre Nosotros | CodeMaster"
+        description="CodeMaster es una empresa de soluciones digitales en Los Mochis, Sinaloa. Conoce quiénes somos, nuestra misión y el equipo detrás del desarrollo web, apps y sistemas a medida."
+        path="/nosotros"
+      />
       {/* Hero Section */}
       <section className='border-b border-line bg-ink-0 pt-28 pb-14 md:pt-36 md:pb-20'>
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Seo from "../components/Seo";
 import Hero from "../components/Hero";
 import LogosClientes from "../components/LogosClientes";
 import ServiciosBento from "../components/ServiciosBento";
@@ -36,6 +37,11 @@ const diferenciadores = [
 // every section, regardless of how tall it is or grows to be.
 const Home = () => (
   <div className="bg-ink-0">
+    <Seo
+      title="CodeMaster - Desarrollo Web, Apps Móviles y Soluciones Digitales"
+      description="CodeMaster ofrece desarrollo web profesional, aplicaciones móviles, sistemas a medida, gestión de redes sociales y licencias Microsoft en Los Mochis, Sinaloa. Transformamos tu negocio digitalmente."
+      path="/"
+    />
     <Hero />
 
     <SectionSlide className="relative z-[2] -mt-6">

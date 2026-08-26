@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
+import Seo from "../components/Seo";
 import Reveal from "../motion/Reveal";
 
 const Contacto = () => {
@@ -21,6 +22,11 @@ const Contacto = () => {
 
   return (
     <div className="bg-ink-0 min-h-screen">
+      <Seo
+        title="Contacto | CodeMaster"
+        description="Contáctanos para cotizar tu proyecto de desarrollo web, apps móviles o sistemas a medida. Atendemos desde Los Mochis, Sinaloa. Llama al +52 668 131 6931 o escríbenos."
+        path="/contacto"
+      />
       {/* Hero Section */}
       <section className="border-b border-line bg-ink-0 pt-28 pb-14 md:pt-36 md:pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

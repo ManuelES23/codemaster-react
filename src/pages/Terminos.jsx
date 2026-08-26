@@ -1,9 +1,15 @@
 import { motion } from "framer-motion";
 import { FileCheck, Scale, AlertCircle, Users } from "lucide-react";
+import Seo from "../components/Seo";
 
 const Terminos = () => {
   return (
     <div className='min-h-screen bg-linear-to-b from-ink-0 from-30% via-ink-1 via-70% to-ink-0 text-fg'>
+      <Seo
+        title="Términos y Condiciones | CodeMaster"
+        description="Términos y condiciones de uso de los servicios de desarrollo web, apps y soluciones digitales de CodeMaster."
+        path="/terminos"
+      />
       {/* Hero Section */}
       <motion.section
         initial={{ opacity: 0 }}

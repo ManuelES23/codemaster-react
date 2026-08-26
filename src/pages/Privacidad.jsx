@@ -1,10 +1,16 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Shield, Lock, Eye, FileText } from "lucide-react";
+import Seo from "../components/Seo";
 
 const Privacidad = () => {
   return (
     <div className='min-h-screen bg-linear-to-b from-ink-0 from-30% via-ink-1 via-70% to-ink-0 text-fg'>
+      <Seo
+        title="Política de Privacidad | CodeMaster"
+        description="Conoce cómo CodeMaster recopila, usa y protege tus datos personales al navegar y contactarnos."
+        path="/privacidad"
+      />
       {/* Hero Section */}
       <motion.section
         initial={{ opacity: 0 }}

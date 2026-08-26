@@ -1,10 +1,16 @@
 import { Link } from "react-router-dom";
+import Seo from "../components/Seo";
 import Reveal from "../motion/Reveal";
 import Velaris from "../motion/Velaris";
 import ServiciosBento from "../components/ServiciosBento";
 
 const Servicios = () => (
   <div className="bg-ink-0">
+    <Seo
+      title="Servicios de Desarrollo Web y Tecnología | CodeMaster"
+      description="Desarrollo web, apps móviles, sistemas a medida, redes sociales, diseño gráfico, licencias Microsoft, consultoría IT y hosting cloud. Soluciones digitales para tu empresa en Los Mochis, Sinaloa."
+      path="/servicios"
+    />
     <section className="border-b border-line bg-ink-0 pt-28 pb-14 md:pt-36 md:pb-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <p className="mb-6 text-xs font-semibold tracking-[0.14em] text-brand uppercase">

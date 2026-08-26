@@ -33,8 +33,10 @@
     />
     <meta
       property="og:image"
-      content="https://www.codemaster.com.mx/img/codemaster.png"
+      content="https://www.codemaster.com.mx/img/og-image.png"
     />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
@@ -49,12 +51,49 @@
     />
     <meta
       property="twitter:image"
-      content="https://www.codemaster.com.mx/img/codemaster.png"
+      content="https://www.codemaster.com.mx/img/og-image.png"
     />
 
     <!-- Additional SEO -->
     <meta name="theme-color" content="#ff6600" />
     <link rel="canonical" href="https://www.codemaster.com.mx/" />
+
+    <!-- Structured data: negocio local (estático, disponible sin ejecutar JS) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "CodeMaster",
+        "image": "https://www.codemaster.com.mx/img/codemaster.png",
+        "url": "https://www.codemaster.com.mx/",
+        "email": "manuel@codemaster.com.mx",
+        "telephone": "+52-668-131-6931",
+        "priceRange": "$$",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Los Mochis",
+          "addressRegion": "Sinaloa",
+          "addressCountry": "MX"
+        },
+        "areaServed": "MX",
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "18:00"
+        },
+        "makesOffer": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Desarrollo web" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Aplicaciones móviles" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sistemas a medida" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Gestión de redes sociales" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Diseño gráfico" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Licencias Microsoft" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Consultoría IT" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Hosting y cloud" } }
+        ]
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>

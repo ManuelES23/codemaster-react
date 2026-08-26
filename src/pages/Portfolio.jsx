@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import Seo from "../components/Seo";
 import Reveal from "../motion/Reveal";
 import Velaris from "../motion/Velaris";
 import ProyectoGaleria from "../components/ProyectoGaleria";
@@ -11,6 +12,11 @@ const Portfolio = () => {
 
   return (
     <div className="bg-ink-0">
+      <Seo
+        title="Portfolio de Proyectos | CodeMaster"
+        description="Sitios web, apps y sistemas que hemos entregado a empresas y emprendedores. Conoce los proyectos reales de desarrollo web y tecnología de CodeMaster."
+        path="/portfolio"
+      />
       <section className="border-b border-line pt-28 pb-14 md:pt-36 md:pb-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <p className="mb-6 text-xs font-semibold tracking-[0.14em] text-brand uppercase">

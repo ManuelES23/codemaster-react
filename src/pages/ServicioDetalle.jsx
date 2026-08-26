@@ -1,5 +1,6 @@
 import { Link, useParams } from "react-router-dom";
 import ICONOS from "../components/iconos";
+import Seo, { SITE_URL, SITE_NAME } from "../components/Seo";
 import Reveal from "../motion/Reveal";
 import Velaris from "../motion/Velaris";
 import Stagger, { StaggerItem } from "../motion/Stagger";
@@ -9,6 +10,12 @@ import { getServicioBySlug, servicios } from "../data/servicios";
 
 const NoEncontrado = () => (
   <div className="mx-auto max-w-3xl px-4 pt-40 pb-24 text-center sm:px-6 lg:px-8">
+    <Seo
+      title="Servicio no encontrado | CodeMaster"
+      description="El servicio que buscas no existe o cambió de nombre. Consulta el listado completo de servicios de CodeMaster."
+      path="/servicios"
+      noIndex
+    />
     <h1 className="font-display text-4xl font-semibold tracking-[-0.03em] text-fg">
       No encontramos ese servicio
     </h1>
@@ -32,9 +39,37 @@ const ServicioDetalle = () => {
 
   const Icono = ICONOS[servicio.icono] ?? ICONOS.Circle;
   const otros = servicios.filter((s) => s.slug !== servicio.slug).slice(0, 3);
+  const path = `/servicios/${servicio.slug}`;
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        name: servicio.titulo,
+        description: servicio.descripcion,
+        provider: { "@type": "ProfessionalService", name: SITE_NAME, url: `${SITE_URL}/` },
+        areaServed: "MX",
+        url: `${SITE_URL}${path}`,
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Inicio", item: `${SITE_URL}/` },
+          { "@type": "ListItem", position: 2, name: "Servicios", item: `${SITE_URL}/servicios` },
+          { "@type": "ListItem", position: 3, name: servicio.titulo, item: `${SITE_URL}${path}` },
+        ],
+      },
+    ],
+  };
 
   return (
     <div className="bg-ink-0">
+      <Seo
+        title={`${servicio.titulo} | CodeMaster`}
+        description={servicio.descripcion}
+        path={path}
+        jsonLd={jsonLd}
+      />
       <section className="border-b border-line pt-28 pb-14 md:pt-36 md:pb-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-6 flex items-center gap-4">
