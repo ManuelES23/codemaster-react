@@ -67,6 +67,22 @@ export const proyectos = [
     esPlantilla: false,
   },
   {
+    slug: "contactos-graficos",
+    titulo: "Sitio web — Contactos Gráficos",
+    cliente: "Contactos Gráficos — Publicidad y Diseño Gráfico",
+    categoria: "web",
+    resumen: "Sitio para una agencia de publicidad y diseño gráfico con más de 10 años de trayectoria.",
+    reto:
+      "Con más de 10 años y 2000+ proyectos entregados, no tenía un sitio que mostrara su portafolio ni permitiera cotizar en línea.",
+    solucion:
+      "Sitio a medida con catálogo de servicios y productos, portafolio de trabajos y un flujo directo de cotización.",
+    resultado: "Sitio terminado, pendiente de despliegue.",
+    tecnologias: ["React", "Vite", "Tailwind CSS", "GSAP"],
+    imagen: "/img/proyectos/contactos-graficos.png",
+    url: "",
+    esPlantilla: false,
+  },
+  {
     slug: "plantilla-app",
     titulo: "Título del proyecto móvil",
     cliente: "Pendiente de completar",
