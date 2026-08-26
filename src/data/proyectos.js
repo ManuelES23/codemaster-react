@@ -16,7 +16,7 @@ export const proyectos = [
     reto:
       "Los equipos pequeños coordinan proyectos, tareas y soporte en herramientas sueltas, sin un solo lugar con visibilidad al instante.",
     solucion:
-      "Una plataforma propia con dashboard, proyectos, tareas y equipos, con notificaciones en tiempo real vía WebSockets (Laravel Reverb + Echo) en vez de recargar o refrescar la página.",
+      "Un dashboard con el progreso de cada proyecto, tableros en vista Grid o Gantt, tareas organizadas por equipo y notificaciones e invitaciones en tiempo real vía WebSockets (Laravel Reverb + Echo) — sin recargar la página para enterarte de nada.",
     resultado:
       "Producto propio en desarrollo activo. Pendiente: landing page pública — por ahora, vista previa en galería.",
     tecnologias: ["React", "Laravel", "Tailwind CSS", "WebSockets"],
@@ -38,7 +38,7 @@ export const proyectos = [
     reto:
       "Las fincas y exportadoras agrícolas siguen su producción, cosecha y empaque en hojas de cálculo dispersas, sin trazabilidad ni datos en tiempo real.",
     solucion:
-      "Un sistema multiempresa — varias organizaciones (corporativo/RH, finca, exportadora) desde una sola cuenta — con la misma base en tiempo real que Orkela.",
+      "Un sistema multiempresa donde cada organización — corporativo y RH, finca, o exportadora — trabaja en su propio espacio con datos separados desde una sola cuenta, sobre la misma base en tiempo real de Orkela, siguiendo el ciclo completo del campo: cultivo, cosecha, empaque y exportación.",
     resultado:
       "Producto propio en desarrollo activo, versión 3.0. Pendiente: landing page pública — por ahora, vista previa en galería.",
     tecnologias: ["React", "Laravel", "Tailwind CSS", "WebSockets"],
