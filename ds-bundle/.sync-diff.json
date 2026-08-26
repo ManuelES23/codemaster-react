@@ -1,0 +1,31 @@
+{
+  "styleChanged": false,
+  "anchorUsed": false,
+  "anchorReason": "not_provided",
+  "keyedBy": "renderHashes",
+  "unchanged": [],
+  "changed": [],
+  "added": [
+    "Footer",
+    "Hero",
+    "LoadingScreen",
+    "Navbar",
+    "ScrollToTop"
+  ],
+  "removed": [],
+  "renderChurned": [],
+  "upload": {
+    "any": true,
+    "components": [
+      "Footer",
+      "Hero",
+      "LoadingScreen",
+      "Navbar",
+      "ScrollToTop"
+    ],
+    "deletePaths": [],
+    "bundle": true,
+    "styling": true,
+    "aux": true
+  }
+}

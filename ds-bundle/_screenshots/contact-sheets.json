@@ -1,0 +1,12 @@
+[
+  {
+    "sheet": 1,
+    "components": [
+      "Footer",
+      "Hero",
+      "LoadingScreen",
+      "Navbar",
+      "ScrollToTop"
+    ]
+  }
+]

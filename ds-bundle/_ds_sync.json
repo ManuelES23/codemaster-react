@@ -1,0 +1,39 @@
+{
+  "shape": "package",
+  "styleSha": "5e4b67003ff744d17dd3935ddfb540e4b1dcfeef98aa8be5dd0bd78797bb4b4b",
+  "renderHashes": {
+    "Footer": "43952b6856351a54",
+    "Hero": "089eb3be26a05829",
+    "LoadingScreen": "967caf433d2bffd8",
+    "Navbar": "c2c053c84e32b1f6",
+    "ScrollToTop": "c40eaf49d77d1e01"
+  },
+  "sourceKeys": {
+    "Footer": "ec946426ace7a5d5",
+    "Hero": "009842d4dd7bfde6",
+    "LoadingScreen": "72f8d114fa0a68c6",
+    "Navbar": "78242685e4a9bd86",
+    "ScrollToTop": "9aa81923c759fb17"
+  },
+  "keyRecipe": 7,
+  "scriptsSha": "e0316766f3bdd146",
+  "sourceHashes": {
+    "components/layout/Footer/Footer.jsx": "b2a1ca69c274",
+    "components/layout/Footer/Footer.d.ts": "fc3b07d49a9d",
+    "components/layout/Footer/Footer.prompt.md": "cc7ae0b44bc2",
+    "components/sections/Hero/Hero.jsx": "b99f2578bbb5",
+    "components/sections/Hero/Hero.d.ts": "56818efaabaa",
+    "components/sections/Hero/Hero.prompt.md": "eedb7b46af6c",
+    "components/feedback/LoadingScreen/LoadingScreen.jsx": "aaec254658bc",
+    "components/feedback/LoadingScreen/LoadingScreen.d.ts": "3bd71e8cc6b6",
+    "components/feedback/LoadingScreen/LoadingScreen.prompt.md": "c7938dd16867",
+    "components/layout/Navbar/Navbar.jsx": "c86145892078",
+    "components/layout/Navbar/Navbar.d.ts": "4e980dcaafaf",
+    "components/layout/Navbar/Navbar.prompt.md": "15ad7234d4e8",
+    "components/utilities/ScrollToTop/ScrollToTop.jsx": "3abb00275a86",
+    "components/utilities/ScrollToTop/ScrollToTop.d.ts": "dbff6f486faa",
+    "components/utilities/ScrollToTop/ScrollToTop.prompt.md": "e2afc44d58c6"
+  },
+  "auxSha": "1f48390eee5ba262",
+  "bundleSha12": "1b6a863b04dc"
+}

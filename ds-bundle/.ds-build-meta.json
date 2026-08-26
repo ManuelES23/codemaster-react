@@ -1,0 +1,9 @@
+{
+  "namespace": "CodeMaster",
+  "source": "codemaster-react@0.0.0",
+  "shape": "package",
+  "provider": "PreviewRouter",
+  "componentCount": 5,
+  "skippedStoryIds": [],
+  "runtimeFontPrefixes": []
+}

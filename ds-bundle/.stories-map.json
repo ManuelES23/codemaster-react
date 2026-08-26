@@ -1,0 +1,52 @@
+{
+  "global": "CodeMaster",
+  "pkg": "codemaster-react",
+  "pkgDir": "C:\\Users\\bafar\\Desktop\\personal\\CodeMaster\\codemaster-react",
+  "extraEntries": [],
+  "exported": [],
+  "storybookStatic": null,
+  "keyRecipe": 7,
+  "cfgSliceGlobal": "714a93b2b4d87c12398298bededb0d1e041a7571a87fc0a91aa68b99cf027f19",
+  "components": [
+    {
+      "name": "Footer",
+      "group": "layout",
+      "srcSha": null,
+      "sourceKey": "ec946426ace7a5d5",
+      "cfgSlice": "ea8567fa044942c5abaf1c417e1f4cb577db56a9212e1984528abb2f02b1f63b",
+      "stories": []
+    },
+    {
+      "name": "Hero",
+      "group": "sections",
+      "srcSha": null,
+      "sourceKey": "009842d4dd7bfde6",
+      "cfgSlice": "f5cefd8b0b92b4a25ab645309a9cbe43c809a52393717a73840a7e5a58c685b3",
+      "stories": []
+    },
+    {
+      "name": "LoadingScreen",
+      "group": "feedback",
+      "srcSha": null,
+      "sourceKey": "72f8d114fa0a68c6",
+      "cfgSlice": "ed12ab6601fa8ba6ed2528adaa057109cd93e0cb7da38d0b8b09eabc5f3fb674",
+      "stories": []
+    },
+    {
+      "name": "Navbar",
+      "group": "layout",
+      "srcSha": null,
+      "sourceKey": "78242685e4a9bd86",
+      "cfgSlice": "7b60b1698fb4b5589682d8e4338751975553434af3080d07a67e7fef46203fa0",
+      "stories": []
+    },
+    {
+      "name": "ScrollToTop",
+      "group": "utilities",
+      "srcSha": null,
+      "sourceKey": "9aa81923c759fb17",
+      "cfgSlice": "5ff899b099eb6923833804cda955efdd69101524bec86f67dac5537cd81802e8",
+      "stories": []
+    }
+  ]
+}
