@@ -20,8 +20,12 @@ export const proyectos = [
     resultado:
       "Producto propio en desarrollo activo. Pendiente: landing page pública — por ahora, vista previa en galería.",
     tecnologias: ["React", "Laravel", "Tailwind CSS", "WebSockets"],
-    imagen: "/img/proyectos/orkela-dashboard.png",
-    galeria: ["/img/proyectos/orkela-dashboard.png", "/img/proyectos/orkela-proyectos.png"],
+    imagen: "/img/proyectos/orkela-login.png",
+    galeria: [
+      "/img/proyectos/orkela-login.png",
+      "/img/proyectos/orkela-dashboard.png",
+      "/img/proyectos/orkela-proyectos.png",
+    ],
     url: "",
     esPlantilla: false,
   },
@@ -38,8 +42,11 @@ export const proyectos = [
     resultado:
       "Producto propio en desarrollo activo, versión 3.0. Pendiente: landing page pública — por ahora, vista previa en galería.",
     tecnologias: ["React", "Laravel", "Tailwind CSS", "WebSockets"],
-    imagen: "/img/proyectos/orkela-crops-select-enterprise.png",
-    galeria: ["/img/proyectos/orkela-crops-select-enterprise.png"],
+    imagen: "/img/proyectos/orkela-crops-login.png",
+    galeria: [
+      "/img/proyectos/orkela-crops-login.png",
+      "/img/proyectos/orkela-crops-select-enterprise.png",
+    ],
     url: "",
     esPlantilla: false,
   },
