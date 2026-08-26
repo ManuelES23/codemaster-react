@@ -1,9 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import Reveal from "../motion/Reveal";
-import Parallax from "../motion/Parallax";
-import Tilt3D from "../motion/Tilt3D";
 import Velaris from "../motion/Velaris";
+import ProyectoGaleria from "../components/ProyectoGaleria";
 import { categorias, getProyectosPorCategoria } from "../data/proyectos";
 
 const Portfolio = () => {
@@ -58,18 +57,7 @@ const Portfolio = () => {
                     index % 2 === 1 ? "lg:[&>*:first-child]:order-2" : ""
                   }`}
                 >
-                  <Tilt3D max={5}>
-                    <Parallax offset={40}>
-                      <div className="overflow-hidden rounded-panel border border-card-border bg-card">
-                        <img
-                          src={proyecto.imagen}
-                          alt={proyecto.titulo}
-                          loading="lazy"
-                          className="aspect-[4/3] w-full object-cover"
-                        />
-                      </div>
-                    </Parallax>
-                  </Tilt3D>
+                  <ProyectoGaleria proyecto={proyecto} />
 
                   <Reveal>
                     {proyecto.esPlantilla && (

@@ -27,17 +27,17 @@ describe("TrabajoSeleccionado", () => {
 
   it("shows at most the requested number of projects", () => {
     renderSection({ limite: 2 });
-    // proyectos has 3 entries, so limite: 2 must yield exactly 2 images.
-    // (toBeLessThanOrEqual alone would also pass for a component that
-    // ignores `limite` and always renders fewer images than requested.)
+    // proyectos has more than 2 entries, so limite: 2 must yield exactly 2
+    // images. (toBeLessThanOrEqual alone would also pass for a component
+    // that ignores `limite` and always renders fewer images than requested.)
     expect(screen.getAllByRole("img").length).toBe(2);
   });
 
-  it("marks template entries so they are never mistaken for real work", () => {
-    renderSection();
-    expect(screen.getAllByText(/plantilla/i).length).toBeGreaterThan(0);
-  });
-
+  // Whether a template badge shows up among the first `limite` home-slider
+  // items now depends on how many real projects precede the templates in
+  // ../data/proyectos — content that's expected to change over time. The
+  // actual badging logic (never confusing a template row for a real one)
+  // is tested below with controlled mock data instead of production content.
   it("badges template entries and leaves real ones unmarked", async () => {
     const base = {
       categoria: "web",

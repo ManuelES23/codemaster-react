@@ -8,18 +8,56 @@ export const categorias = [
 
 export const proyectos = [
   {
-    slug: "plantilla-web",
-    titulo: "Título del proyecto web",
-    cliente: "Pendiente de completar",
-    categoria: "web",
-    resumen: "Una línea que resume qué se construyó y para quién.",
-    reto: "Qué problema tenía el cliente antes de este proyecto.",
-    solucion: "Qué construyó CodeMaster y por qué se resolvió así.",
-    resultado: "Qué cambió para el cliente. Solo datos verificables.",
-    tecnologias: ["React", "Node.js"],
-    imagen: "/img/proyectos/plantilla-web.png",
+    slug: "orkela",
+    titulo: "Orkela — Gestión de Proyectos",
+    cliente: "Producto propio",
+    categoria: "sistema",
+    resumen: "SaaS de gestión de proyectos, equipos y tickets con notificaciones en tiempo real.",
+    reto:
+      "Los equipos pequeños coordinan proyectos, tareas y soporte en herramientas sueltas, sin un solo lugar con visibilidad al instante.",
+    solucion:
+      "Una plataforma propia con dashboard, proyectos, tareas y equipos, con notificaciones en tiempo real vía WebSockets (Laravel Reverb + Echo) en vez de recargar o refrescar la página.",
+    resultado:
+      "Producto propio en desarrollo activo. Pendiente: landing page pública — por ahora, vista previa en galería.",
+    tecnologias: ["React", "Laravel", "Tailwind CSS", "WebSockets"],
+    imagen: "/img/proyectos/orkela-dashboard.png",
+    galeria: ["/img/proyectos/orkela-dashboard.png", "/img/proyectos/orkela-proyectos.png"],
     url: "",
-    esPlantilla: true,
+    esPlantilla: false,
+  },
+  {
+    slug: "orkela-crops",
+    titulo: "Orkela Crops — Gestión Agrícola",
+    cliente: "Producto propio",
+    categoria: "sistema",
+    resumen: "SaaS multiempresa para el ciclo completo del campo: cultivos, cosecha, empaque y exportación.",
+    reto:
+      "Las fincas y exportadoras agrícolas siguen su producción, cosecha y empaque en hojas de cálculo dispersas, sin trazabilidad ni datos en tiempo real.",
+    solucion:
+      "Un sistema multiempresa — varias organizaciones (corporativo/RH, finca, exportadora) desde una sola cuenta — con la misma base en tiempo real que Orkela.",
+    resultado:
+      "Producto propio en desarrollo activo, versión 3.0. Pendiente: landing page pública — por ahora, vista previa en galería.",
+    tecnologias: ["React", "Laravel", "Tailwind CSS", "WebSockets"],
+    imagen: "/img/proyectos/orkela-crops-select-enterprise.png",
+    galeria: ["/img/proyectos/orkela-crops-select-enterprise.png"],
+    url: "",
+    esPlantilla: false,
+  },
+  {
+    slug: "alfredo-alvarez",
+    titulo: "Sitio web — Alfredo Álvarez, Contador Público",
+    cliente: "Alfredo Álvarez — Contador Público",
+    categoria: "web",
+    resumen: "Sitio profesional para un contador público especializado en RESICO y CFDI 4.0.",
+    reto:
+      "Necesitaba presencia digital que transmitiera autoridad fiscal y convirtiera visitas en consultas agendadas.",
+    solucion:
+      "Landing page a medida con servicios, blog, podcast y cursos, y un flujo directo para agendar consulta.",
+    resultado: "Sitio en producción en corporativoaa.com.mx.",
+    tecnologias: ["React", "Vite", "Tailwind CSS", "Framer Motion"],
+    imagen: "/img/proyectos/alfredo-alvarez.png",
+    url: "https://corporativoaa.com.mx/",
+    esPlantilla: false,
   },
   {
     slug: "plantilla-app",
@@ -32,20 +70,6 @@ export const proyectos = [
     resultado: "Qué cambió para el cliente. Solo datos verificables.",
     tecnologias: ["React Native"],
     imagen: "/img/proyectos/plantilla-app.png",
-    url: "",
-    esPlantilla: true,
-  },
-  {
-    slug: "plantilla-sistema",
-    titulo: "Título del sistema a medida",
-    cliente: "Pendiente de completar",
-    categoria: "sistema",
-    resumen: "Una línea que resume qué se construyó y para quién.",
-    reto: "Qué problema tenía el cliente antes de este proyecto.",
-    solucion: "Qué construyó CodeMaster y por qué se resolvió así.",
-    resultado: "Qué cambió para el cliente. Solo datos verificables.",
-    tecnologias: ["React", "PostgreSQL"],
-    imagen: "/img/proyectos/plantilla-sistema.png",
     url: "",
     esPlantilla: true,
   },
