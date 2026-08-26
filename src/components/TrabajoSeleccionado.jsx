@@ -152,7 +152,7 @@ const TrabajoSeleccionado = ({ limite = 3 }) => {
                     src={proyecto.imagen}
                     alt={proyecto.titulo}
                     loading="lazy"
-                    className="aspect-[4/3] w-full object-cover"
+                    className="aspect-[4/3] w-full object-contain"
                   />
                 </div>
 

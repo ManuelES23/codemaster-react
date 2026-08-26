@@ -21,7 +21,7 @@ const ProyectoGaleria = ({ proyecto }) => {
               src={imagenes[activa]}
               alt={proyecto.titulo}
               loading="lazy"
-              className="aspect-[4/3] w-full object-cover"
+              className="aspect-[4/3] w-full object-contain"
             />
           </div>
         </Parallax>
@@ -36,7 +36,7 @@ const ProyectoGaleria = ({ proyecto }) => {
               onClick={() => setActiva(indice)}
               aria-label={`Ver imagen ${indice + 1} de ${proyecto.titulo}`}
               aria-current={activa === indice}
-              className={`overflow-hidden rounded-btn border transition-colors ${
+              className={`overflow-hidden rounded-btn border bg-card transition-colors ${
                 activa === indice ? "border-brand" : "border-card-border hover:border-brand"
               }`}
             >
@@ -45,7 +45,7 @@ const ProyectoGaleria = ({ proyecto }) => {
                 alt=""
                 aria-hidden="true"
                 loading="lazy"
-                className="aspect-[4/3] w-20 object-cover"
+                className="aspect-[4/3] w-20 object-contain"
               />
             </button>
           ))}
