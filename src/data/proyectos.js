@@ -12,13 +12,14 @@ export const proyectos = [
     titulo: "Orkela — Gestión de Proyectos",
     cliente: "Producto propio",
     categoria: "sistema",
-    resumen: "SaaS de gestión de proyectos, equipos y tickets con notificaciones en tiempo real.",
+    resumen:
+      "SaaS de gestión de proyectos y equipos con calendario sincronizado a Google y Microsoft, para organizar tu operación y medir el avance de tu equipo.",
     reto:
-      "Los equipos pequeños coordinan proyectos, tareas y soporte en herramientas sueltas, sin un solo lugar con visibilidad al instante.",
+      "Los equipos pequeños coordinan proyectos, tareas y soporte en herramientas sueltas, con el calendario aparte de todo lo demás y sin una forma clara de ver cómo va cada quien.",
     solucion:
-      "Un dashboard con el progreso de cada proyecto, tableros en vista Grid o Gantt, tareas organizadas por equipo y notificaciones e invitaciones en tiempo real vía WebSockets (Laravel Reverb + Echo) — sin recargar la página para enterarte de nada.",
+      "Organiza proyectos, tareas y tickets en un solo lugar, con el calendario sincronizado a Google Calendar o Microsoft Calendar para que nada se cruce entre plataformas. Mide el avance de cada equipo y cada persona, y agiliza tanto la operación de tu empresa como tu día a día.",
     resultado:
-      "Producto propio en desarrollo activo. Pendiente: landing page pública — por ahora, vista previa en galería.",
+      "Producto propio en desarrollo activo, sin landing pública todavía — estas capturas son un adelanto de cómo se ve por dentro.",
     tecnologias: ["React", "Laravel", "Tailwind CSS", "WebSockets"],
     imagen: "/img/proyectos/orkela-login.png",
     galeria: [
@@ -34,13 +35,14 @@ export const proyectos = [
     titulo: "Orkela Crops — Gestión Agrícola",
     cliente: "Producto propio",
     categoria: "sistema",
-    resumen: "SaaS multiempresa para el ciclo completo del campo: cultivos, cosecha, empaque y exportación.",
+    resumen:
+      "Sistema a la medida para agrícolas y exportadoras: controla cultivos, cosechas, rendimientos, empaque, embarques y personal con información veraz de tu operación.",
     reto:
-      "Las fincas y exportadoras agrícolas siguen su producción, cosecha y empaque en hojas de cálculo dispersas, sin trazabilidad ni datos en tiempo real.",
+      "Las fincas y exportadoras agrícolas manejan cultivos, cosechas, rendimientos, empaque, embarques y personal en hojas de cálculo dispersas, sin información veraz para decidir a tiempo.",
     solucion:
-      "Un sistema multiempresa donde cada organización — corporativo y RH, finca, o exportadora — trabaja en su propio espacio con datos separados desde una sola cuenta, sobre la misma base en tiempo real de Orkela, siguiendo el ciclo completo del campo: cultivo, cosecha, empaque y exportación.",
+      "Un sistema construido a la medida de cada agrícola para controlar todo el ciclo del campo — cultivos, cosechas, rendimientos, empaque, embarques y personal — con información veraz y centralizada, ya sea que operes una sola finca o varias empresas del grupo a la vez.",
     resultado:
-      "Producto propio en desarrollo activo, versión 3.0. Pendiente: landing page pública — por ahora, vista previa en galería.",
+      "Producto propio en desarrollo activo, sin landing pública todavía — estas capturas son un adelanto de cómo se ve por dentro.",
     tecnologias: ["React", "Laravel", "Tailwind CSS", "WebSockets"],
     imagen: "/img/proyectos/orkela-crops-login.png",
     galeria: [
